@@ -11,21 +11,17 @@
             <element name="GetData">
                 <complexType>
                     <choice maxOccurs="1">
-                        <element name="promoter_swa_org_ref" type="string"/>
-                        <element name="ha_swa_org_ref" type="string"/>
-                        <element name="eton_works_ref" type="string"/>
-                        <element name="by_date">
-                            <complexType>
-                                <sequence>
-                                    <element name="start_date" type="dateTime"/>
-                                    <element name="end_date" type="dateTime"/>
-                                </sequence>
-                            </complexType>
-                        </element>
-                        <element name="tmentity_group" type="e:EntityGroupSType"/>
-                        <element name="tmitem_type" type="e:ItemTypeSType"/>
-                        <element name="tmentity_category" type="e:EntityCategorySType"/>
-                        <element name="fromDate" type="dateTime"/>
+                        <element name="EntityOriginatingSystem" type="string"/>
+                        <element name="ItemOriginatingSystem" type="string"/>
+                        <element name="DataSourceID" type="string"/>
+                        <element name="HighwayAuthorityID" type="string"/>
+                        <element name="EntitySourceID" type="string"/>
+                        <element name="StartDate" type="dateTime"/>
+                        <element name="EndDate" type="dateTime"/>
+                        <element name="LastUpdated" type="dateTime"/>
+                        <element name="EntityGroup" type="e:EntityGroupSType"/>
+                        <element name="EntityCategory" type="e:EntityCategorySType"/>
+                        <element name="ItemType" type="e:ItemTypeSType"/>
                     </choice>
                 </complexType>
             </element>
