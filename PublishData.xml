@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" 
+    xmlns="http://www.elgin.org.uk/schemas/api" 
+    xmlns:gml="http://www.opengis.net/gml" 
+    xmlns:xlin="http://www.w3.org/1999/xlink">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <PublishData>
+         <In>
+             <Items Created="2015-12-16T06:01:12Z" Version="2">
+                 <Item Created="2015-12-16T06:01:12" Checksum="c9b18ed4093065834cbd17e4fdb30674" EntityID="33694" ItemID="1060303">
+                     <LastUpdated>2015-12-16T05:54:00Z</LastUpdated>
+                     <DataSource id="1155">Devon County Council</DataSource>
+                     <eCollectionID>FB013_20000004</eCollectionID>
+                     <eCategory>Roadworks</eCategory>
+                     <eSourceID>NTCC_UF-15-12-16-000274</eSourceID>
+                     <eGroup>Roadworks</eGroup>
+                     <eDescription>Great Eastern Run Route</eDescription>
+                     <TrafficImpact>High - delays likely</TrafficImpact>
+                     <eStart estimated="false">2014-07-04T11:53:00</eStart>
+                     <eEnd estimated="true">2016-09-05T23:59:59</eEnd>
+                     <eUsrnList>11111,1111,11111,11111,11111</eUsrnList>
+                     <ePoint srsName="EPSG:4326" derived="false">
+                         <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
+                     </ePoint>
+                     <eLineString srsName="EPSG:4326" derived="false">
+                         <gml:posList srsDimension="2">-0.02259864 51.58772289 -0.0228275 51.58777171</gml:posList>
+                     </eLineString>
+                     <ePolygon srsName="EPSG:4326" derived="false">
+                         <gml:exterior>
+                             <gml:LinearRing>
+                                 <gml:posList srsDimension="86">-0.16274748 51.54538867 -0.16271757 51.54541518 -0.16267288 51.54545045 -0.16245016 51.54560883 -0.16233232 51.54566993 -0.16213951 51.5458018 -0.16199176 51.54588941 -0.16173912 51.5460743 -0.16160577 51.54616214 -0.16147279 51.54624099 -0.16123529 51.54640812 -0.16108608 51.54653168 -0.16090876 51.54663681 -0.16077469 51.54674262 -0.16058079 51.54690145 -0.16041716 51.54702478 -0.16028381 51.54711261 -0.16017929 51.5472009 -0.16000015 51.54735097 -0.15995582 51.54737725 -0.16009851 51.54741546 -0.16014357 51.5473712 -0.16029206 51.54726562 -0.16038217 51.54717711 -0.16048778 51.54706186 -0.16065141 51.54693853 -0.16078548 51.54683272 -0.16087341 51.54679813 -0.16093324 51.54674511 -0.16096352 51.54670961 -0.16121544 51.5465427 -0.1614378 51.54639331 -0.16167531 51.54622617 -0.16188217 51.54610352 -0.16197118 51.54604197 -0.1620011 51.54601546 -0.16206056 51.54597143 -0.16214958 51.54590987 -0.16231247 51.54580451 -0.16259393 51.54562008 -0.16277196 51.54549697 -0.16280152 51.54547945 -0.16274748 51.54538867</gml:posList>
+                             </gml:LinearRing>
+                         </gml:exterior>
+                     </ePolygon>
+                     <eFrom srsName="EPSG:4326" derived="false">
+                         <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
+                     </eFrom>
+                     <eTo srsName="EPSG:4326" derived="false">
+                         <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
+                     </eTo>
+                     <eURL>http://roadworks.org/?tm33694</eURL>
+                     <eCancelled>false</eCancelled>
+                     <eOriginatingSystem>System</eOriginatingSystem>
+                     <iType>Road closure</iType>
+                     <iLocationDescription>Hedingham Grove, Chelmsley Wood, Solihull</iLocationDescription>
+                     <iStart estimated="true" derived="true">2014-07-04T11:53:00</iStart>
+                     <iEnd estimated="true" derived="true">2016-09-05T23:59:59</iEnd>
+                     <iSchedule>
+                         <ScheduleStartEnd Start="2014-07-04T11:00:00" End="2014-07-04T13:00:00"/>
+                         <ScheduleStartEnd Start="2014-07-04T15:00:00" End="2014-07-04T17:00:00"/>
+                         <ScheduleStartEnd Start="2014-07-05T11:00:00" End="2014-07-05T13:00:00"/>
+                         <ScheduleStartEnd Start="2014-07-06T11:00:00" End="2014-07-06T13:00:00"/>
+                     </iSchedule>
+                     <iUsrnList>11111,1111,11111,11111,11111</iUsrnList>
+                     <iPoint srsName="EPSG:4326" derived="false">
+                         <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
+                     </iPoint>
+                     <iLineString srsName="EPSG:4326" derived="false">
+                         <gml:posList srsDimension="2">-0.02259864 51.58772289 -0.0228275 51.58777171</gml:posList>
+                     </iLineString>
+                     <iPolygon srsName="EPSG:4326" derived="false">
+                         <gml:exterior>
+                             <gml:LinearRing>
+                                 <gml:posList srsDimension="86">-0.16274748 51.54538867 -0.16271757 51.54541518 -0.16267288 51.54545045 -0.16245016 51.54560883 -0.16233232 51.54566993 -0.16213951 51.5458018 -0.16199176 51.54588941 -0.16173912 51.5460743 -0.16160577 51.54616214 -0.16147279 51.54624099 -0.16123529 51.54640812 -0.16108608 51.54653168 -0.16090876 51.54663681 -0.16077469 51.54674262 -0.16058079 51.54690145 -0.16041716 51.54702478 -0.16028381 51.54711261 -0.16017929 51.5472009 -0.16000015 51.54735097 -0.15995582 51.54737725 -0.16009851 51.54741546 -0.16014357 51.5473712 -0.16029206 51.54726562 -0.16038217 51.54717711 -0.16048778 51.54706186 -0.16065141 51.54693853 -0.16078548 51.54683272 -0.16087341 51.54679813 -0.16093324 51.54674511 -0.16096352 51.54670961 -0.16121544 51.5465427 -0.1614378 51.54639331 -0.16167531 51.54622617 -0.16188217 51.54610352 -0.16197118 51.54604197 -0.1620011 51.54601546 -0.16206056 51.54597143 -0.16214958 51.54590987 -0.16231247 51.54580451 -0.16259393 51.54562008 -0.16277196 51.54549697 -0.16280152 51.54547945 -0.16274748 51.54538867</gml:posList>
+                             </gml:LinearRing>
+                         </gml:exterior>
+                     </iPolygon>
+                     <iFrom srsName="EPSG:4326" derived="false">
+                         <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
+                     </iFrom>
+                     <iTo srsName="EPSG:4326" derived="false">
+                         <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
+                     </iTo>
+                     <iURL>http://roadworks.org/?tmi1060303</iURL>
+                     <iCancelled>false</iCancelled>
+                     <iOriginatingSystem>System</iOriginatingSystem>
+                 </Item>
+                 <Item Created="2016-12-16T06:01:12" Checksum="c9b18ed4093065834cbd17e4fdb30674" EntityID="33695" ItemID="1060304">
+                     <LastUpdated>2016-12-16T05:54:00Z</LastUpdated>
+                     <DataSource id="1155">Kent County Council</DataSource>
+                     <eCollectionID>FB013_20000004</eCollectionID>
+                     <eCategory>Roadworks</eCategory>
+                     <eSourceID>NTCC_UF-15-12-16-000274</eSourceID>
+                     <eGroup>Roadworks</eGroup>
+                     <eDescription>Great Eastern Run Route</eDescription>
+                     <TrafficImpact>High - delays likely</TrafficImpact>
+                     <eStart estimated="false">2014-07-04T11:53:00</eStart>
+                     <eEnd estimated="true">2016-09-05T23:59:59</eEnd>
+                     <eUsrnList>11111,1111,11111,11111,11111</eUsrnList>
+                     <ePoint srsName="EPSG:4326" derived="false">
+                         <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
+                     </ePoint>
+                     <eLineString srsName="EPSG:4326" derived="false">
+                         <gml:posList srsDimension="2">-0.02259864 51.58772289 -0.0228275 51.58777171</gml:posList>
+                     </eLineString>
+                     <ePolygon srsName="EPSG:4326" derived="false">
+                         <gml:exterior>
+                             <gml:LinearRing>
+                                 <gml:posList srsDimension="86">-0.16274748 51.54538867 -0.16271757 51.54541518 -0.16267288 51.54545045 -0.16245016 51.54560883 -0.16233232 51.54566993 -0.16213951 51.5458018 -0.16199176 51.54588941 -0.16173912 51.5460743 -0.16160577 51.54616214 -0.16147279 51.54624099 -0.16123529 51.54640812 -0.16108608 51.54653168 -0.16090876 51.54663681 -0.16077469 51.54674262 -0.16058079 51.54690145 -0.16041716 51.54702478 -0.16028381 51.54711261 -0.16017929 51.5472009 -0.16000015 51.54735097 -0.15995582 51.54737725 -0.16009851 51.54741546 -0.16014357 51.5473712 -0.16029206 51.54726562 -0.16038217 51.54717711 -0.16048778 51.54706186 -0.16065141 51.54693853 -0.16078548 51.54683272 -0.16087341 51.54679813 -0.16093324 51.54674511 -0.16096352 51.54670961 -0.16121544 51.5465427 -0.1614378 51.54639331 -0.16167531 51.54622617 -0.16188217 51.54610352 -0.16197118 51.54604197 -0.1620011 51.54601546 -0.16206056 51.54597143 -0.16214958 51.54590987 -0.16231247 51.54580451 -0.16259393 51.54562008 -0.16277196 51.54549697 -0.16280152 51.54547945 -0.16274748 51.54538867</gml:posList>
+                             </gml:LinearRing>
+                         </gml:exterior>
+                     </ePolygon>
+                     <eFrom srsName="EPSG:4326" derived="false">
+                         <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
+                     </eFrom>
+                     <eTo srsName="EPSG:4326" derived="false">
+                         <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
+                     </eTo>
+                     <eURL>http://roadworks.org/?tm33695</eURL>
+                     <eCancelled>false</eCancelled>
+                     <eOriginatingSystem>System</eOriginatingSystem>
+                     <iType>Road closure</iType>
+                     <iLocationDescription>Hedingham Grove, Chelmsley Wood, Solihull</iLocationDescription>
+                     <iStart estimated="true" derived="true">2014-07-04T11:53:00</iStart>
+                     <iEnd estimated="true" derived="true">2016-09-05T23:59:59</iEnd>
+                     <iSchedule>
+                         <ScheduleStartEnd Start="2016-07-04T11:00:00" End="2016-07-04T13:00:00"/>
+                         <ScheduleStartEnd Start="2016-07-04T15:00:00" End="2016-07-04T17:00:00"/>
+                         <ScheduleStartEnd Start="2016-07-05T11:00:00" End="2016-07-05T13:00:00"/>
+                         <ScheduleStartEnd Start="2016-07-06T11:00:00" End="2016-07-06T13:00:00"/>
+                     </iSchedule>
+                     <iUsrnList>11111,1111,11111,11111,11111</iUsrnList>
+                     <iPoint srsName="EPSG:4326" derived="false">
+                         <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
+                     </iPoint>
+                     <iLineString srsName="EPSG:4326" derived="false">
+                         <gml:posList srsDimension="2">-0.02259864 51.58772289 -0.0228275 51.58777171</gml:posList>
+                     </iLineString>
+                     <iPolygon srsName="EPSG:4326" derived="false">
+                         <gml:exterior>
+                             <gml:LinearRing>
+                                 <gml:posList srsDimension="86">-0.16274748 51.54538867 -0.16271757 51.54541518 -0.16267288 51.54545045 -0.16245016 51.54560883 -0.16233232 51.54566993 -0.16213951 51.5458018 -0.16199176 51.54588941 -0.16173912 51.5460743 -0.16160577 51.54616214 -0.16147279 51.54624099 -0.16123529 51.54640812 -0.16108608 51.54653168 -0.16090876 51.54663681 -0.16077469 51.54674262 -0.16058079 51.54690145 -0.16041716 51.54702478 -0.16028381 51.54711261 -0.16017929 51.5472009 -0.16000015 51.54735097 -0.15995582 51.54737725 -0.16009851 51.54741546 -0.16014357 51.5473712 -0.16029206 51.54726562 -0.16038217 51.54717711 -0.16048778 51.54706186 -0.16065141 51.54693853 -0.16078548 51.54683272 -0.16087341 51.54679813 -0.16093324 51.54674511 -0.16096352 51.54670961 -0.16121544 51.5465427 -0.1614378 51.54639331 -0.16167531 51.54622617 -0.16188217 51.54610352 -0.16197118 51.54604197 -0.1620011 51.54601546 -0.16206056 51.54597143 -0.16214958 51.54590987 -0.16231247 51.54580451 -0.16259393 51.54562008 -0.16277196 51.54549697 -0.16280152 51.54547945 -0.16274748 51.54538867</gml:posList>
+                             </gml:LinearRing>
+                         </gml:exterior>
+                     </iPolygon>
+                     <iFrom srsName="EPSG:4326" derived="false">
+                         <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
+                     </iFrom>
+                     <iTo srsName="EPSG:4326" derived="false">
+                         <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
+                     </iTo>
+                     <iURL>http://roadworks.org/?tmi1060304</iURL>
+                     <iCancelled>false</iCancelled>
+                     <iOriginatingSystem>System</iOriginatingSystem>
+                 </Item>
+             </Items>
+         </In>
+      </PublishData>
+   </soapenv:Body>
+</soapenv:Envelope>

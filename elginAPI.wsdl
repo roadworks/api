@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+    xmlns:e="http://www.elgin.org.uk/schemas/api" 
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+    xmlns="http://www.w3.org/2001/XMLSchema" 
+    name="Elgin" 
+    targetNamespace="http://www.elgin.org.uk/schemas/api">
+    <wsdl:import namespace="http://www.elgin.org.uk/schemas/api" location="elginItems.xsd"/>
+    <wsdl:types>
+        <schema targetNamespace="http://www.elgin.org.uk/schemas/api">
+            <element name="GetData">
+                <complexType>
+                    <choice maxOccurs="1">
+                        <element name="promoter_swa_org_ref" type="string"/>
+                        <element name="ha_swa_org_ref" type="string"/>
+                        <element name="eton_works_ref" type="string"/>
+                        <element name="by_date">
+                            <complexType>
+                                <sequence>
+                                    <element name="start_date" type="dateTime"/>
+                                    <element name="end_date" type="dateTime"/>
+                                </sequence>
+                            </complexType>
+                        </element>
+                        <element name="tmentity_group" type="e:EntityGroupSType"/>
+                        <element name="tmitem_type" type="e:ItemTypeSType"/>
+                        <element name="tmentity_category" type="e:EntityCategorySType"/>
+                        <element name="fromDate" type="dateTime"/>
+                    </choice>
+                </complexType>
+            </element>
+            <element name="GetDataResponse">
+                <complexType>
+                    <sequence>
+                        <element ref="e:Out"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="PublishData">
+                <complexType>
+                    <sequence>
+                        <element ref="e:In"/>
+                    </sequence>
+                </complexType>
+            </element>
+            <element name="PublishDataResponse">
+                <complexType>
+                    <sequence>
+                        <element name="success" type="boolean"></element>
+                        <element name="message" type="string"></element>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
+    </wsdl:types>
+    <wsdl:message name="GetDataRequest">
+        <wsdl:part element="e:GetData" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="GetDataResponse">
+        <wsdl:part element="e:GetDataResponse" name="parameters"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="PublishDataRequest">
+        <wsdl:part name="parameters" element="e:PublishData"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="PublishDataResponse">
+        <wsdl:part name="parameters" element="e:PublishDataResponse"></wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="Elgin">
+        <wsdl:operation name="GetData">
+            <wsdl:input message="e:GetDataRequest"></wsdl:input>
+            <wsdl:output message="e:GetDataResponse"></wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="PublishData">
+            <wsdl:input message="e:PublishDataRequest"></wsdl:input>
+            <wsdl:output message="e:PublishDataResponse"></wsdl:output>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ElginSOAP" type="e:Elgin">
+        <soap:binding style="document"
+            transport="http://schemas.xmlsoap.org/soap/http" />
+        <wsdl:operation name="GetData">
+            <soap:operation
+                soapAction="http://www.elgin.org.uk/elgin/api/GetData" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+        <wsdl:operation name="PublishData">
+            <soap:operation
+                soapAction="http://www.elgin.org.uk/elgin/api/PublishData" />
+            <wsdl:input>
+                <soap:body use="literal" />
+            </wsdl:input>
+            <wsdl:output>
+                <soap:body use="literal" />
+            </wsdl:output>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="Elgin">
+        <wsdl:port binding="e:ElginSOAP" name="ElginSOAP">
+            <soap:address location="http://services.roadworks.org/api/" />
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

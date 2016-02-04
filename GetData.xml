@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:api="http://www.elgin.org.uk/schemas/api">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <api:GetData>
+            <!--You have a CHOICE of the next 10 items at this level-->
+            <promoter_swa_org_ref>1111</promoter_swa_org_ref>
+            <ha_swa_org_ref>NTCC_UF-15-12-16-000274</ha_swa_org_ref>
+            <eton_works_ref>NTCC_UF-15-12-16-000274</eton_works_ref>
+            <by_date>
+                <start_date>2015-07-04T11:00:00</start_date>
+                <end_date>2017-07-04T11:00:00</end_date>
+            </by_date>
+            <tmentity_group>Roadworks</tmentity_group>
+            <tmitem_type>Road closure</tmitem_type>
+            <tmentity_category>Skip</tmentity_category>
+            <fromDate>2015-07-04T11:00:00</fromDate>
+        </api:GetData>
+    </soapenv:Body>
+</soapenv:Envelope>

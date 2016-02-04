@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://www.elgin.org.uk/schemas/api"
+	xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.elgin.org.uk/schemas/api"
+	elementFormDefault="qualified">
+	<import namespace="http://www.opengis.net/gml"
+		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/geometryBasic2d.xsd"/>
+	<import namespace="http://www.opengis.net/gml"
+		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/feature.xsd"/>
+	<element name="ePoint" type="e:PointCType">
+		<annotation>
+			<documentation>Point coordinate of Entity location</documentation>
+		</annotation>
+	</element>
+	<element name="iPoint" type="e:PointCType"/>
+	<complexType name="PointCType">
+		<complexContent mixed="false">
+			<extension base="gml:PointType">
+				<attribute name="derived" type="boolean" use="required">
+					<annotation>
+						<documentation>Indicates whether the point location has been derived by Elgin. False indicates that the location was present in the source data.</documentation>
+					</annotation>
+				</attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="eLineString" type="e:LineStringCType">
+		<annotation>
+			<documentation>Entity line geometry is described in GML 3.1. Longitude and latitude and vertices are space delimited. </documentation>
+		</annotation>
+	</element>
+	<element name="iLineString" type="e:LineStringCType">
+		<annotation>
+			<documentation>Item line geometry is described in GML 3.1. Longitude and latitude and vertices are space delimited. </documentation>
+		</annotation>
+	</element>
+	<complexType name="LineStringCType">
+		<complexContent mixed="false">
+			<extension base="gml:LineStringType">
+				<attribute name="derived" type="boolean" use="required">
+					<annotation>
+						<documentation>Indicates whether the LineString location has been derived by Elgin. False indicates that the location was present in the source data.</documentation>
+					</annotation>
+				</attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="ePolygon" type="e:PolygonCType">
+		<annotation>
+			<documentation>Entity polygon geometry is described in GML 3.1. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</documentation>
+		</annotation>
+	</element>
+	<element name="iPolygon" type="e:PolygonCType">
+		<annotation>
+			<documentation>Item polygon geometry is described in GML 3.1. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</documentation>
+		</annotation>
+	</element>
+	<complexType name="PolygonCType">
+		<complexContent mixed="false">
+			<extension base="gml:PolygonType">
+				<attribute name="derived" type="boolean" use="required">
+					<annotation>
+						<documentation>Indicates whether the Polygon location has been derived by Elgin. False indicates that the location was present in the source data.</documentation>
+					</annotation>
+				</attribute>
+			</extension>
+		</complexContent>
+	</complexType>
+	<element name="eFrom" type="e:PointCType">
+		<annotation>
+			<documentation>Entity From/To route geometry is described in GML 3.1. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</documentation>
+		</annotation>
+	</element>
+	<element name="eTo" type="e:PointCType">
+		<annotation>
+			<documentation>Entity From/To route geometry is described in GML 3.1. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</documentation>
+		</annotation>
+	</element>
+	<element name="iFrom" type="e:PointCType">
+		<annotation>
+			<documentation>Item From/To data is described in GML 3.1. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</documentation>
+		</annotation>
+	</element>
+	<element name="iTo" type="e:PointCType">
+		<annotation>
+			<documentation>Item From/To data is described in GML 3.1. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</documentation>
+		</annotation>
+	</element>
+	<simpleType name="TrafficImpactCType">
+		<restriction base="string">
+			<enumeration value="High - delays likely"/>
+			<enumeration value="Medium - delays possible"/>
+			<enumeration value="Low - delays unlikely"/>
+		</restriction>
+	</simpleType>
+	<element name="TrafficImpact">
+		<annotation>
+			<documentation>Estimated impact on road traffic of Entity</documentation>
+		</annotation>
+		<complexType>
+			<simpleContent>
+				<extension base="e:TrafficImpactCType"/>
+			</simpleContent>
+		</complexType>
+	</element>
+	<element name="eGroup">
+		<annotation>
+			<documentation>The top level category of "parent" Entity (can be thought of as the "Cause" or "Consequence")</documentation>
+		</annotation>
+		<complexType>
+			<simpleContent>
+				<extension base="e:EntityGroupSType"/>
+			</simpleContent>
+		</complexType>
+	</element>
+	<simpleType name="EntityGroupSType">
+		<restriction base="string">
+			<enumeration value="Roadworks"/>
+			<enumeration value="Public Event"/>
+			<enumeration value="Incident"/>
+			<enumeration value="Unclassified"/>
+		</restriction>
+	</simpleType>
+	<element name="eCategory">
+		<annotation>
+			<documentation>The category of  "parent" Entity (can be thought of as the "Cause")</documentation>
+		</annotation>
+		<complexType>
+			<simpleContent>
+				<extension base="e:EntityCategorySType"/>
+			</simpleContent>
+		</complexType>
+	</element>
+	<simpleType name="EntityCategorySType">
+		<restriction base="string">
+			<enumeration value="Incident"/>
+			<enumeration value="Accident"/>
+			<enumeration value="Weather Incident"/>
+			<enumeration value="Roadworks"/>
+			<enumeration value="Skip"/>
+			<enumeration value="Scaffolding"/>
+			<enumeration value="Materials"/>
+			<enumeration value="Obstruction"/>
+			<enumeration value="License (Other)"/>
+			<enumeration value="Sport Event"/>
+			<enumeration value="Entertainment Event"/>
+			<enumeration value="Market"/>
+			<enumeration value="Carnival / Parade / Street Party"/>
+			<enumeration value="Public Event (Other)"/>
+			<enumeration value="Unclassified"/>
+		</restriction>
+	</simpleType>
+	<element name="iType">
+		<complexType>
+			<simpleContent>
+				<extension base="e:ItemTypeSType"/>
+			</simpleContent>
+		</complexType>
+	</element>
+	<simpleType name="ItemTypeSType">
+		<restriction base="string">
+			<enumeration value="Advisory and preferred access route"/>
+			<enumeration value="Bridge closure"/>
+			<enumeration value="Contraflow"/>
+			<enumeration value="Closed to HGVs"/>
+			<enumeration value="Convoy working"/>
+			<enumeration value="Diversion route"/>
+			<enumeration value="Footway closure"/>
+			<enumeration value="Gritting in progress"/>
+			<enumeration value="Give and take"/>
+			<enumeration value="HGV diversion route"/>
+			<enumeration value="HGV road closure"/>
+			<enumeration value="Lane closure"/>
+			<enumeration value="Multi-way traffic signals"/>
+			<enumeration value="No carriageway incursion"/>
+			<enumeration value="No left turn"/>
+			<enumeration value="No right turn"/>
+			<enumeration value="Clearway / no stopping"/>
+			<enumeration value="No vehicle access"/>
+			<enumeration value="Temporary one-way"/>
+			<enumeration value="Temporary parking restriction"/>
+			<enumeration value="Priority signs"/>
+			<enumeration value="Road ahead closed"/>
+			<enumeration value="Road closure"/>
+			<enumeration value="Road closure crossing point"/>
+			<enumeration value="Stop and go"/>
+			<enumeration value="Some carriageway incursion"/>
+			<enumeration value="Temporary speed limit"/>
+			<enumeration value="Suspension of parking restriction"/>
+			<enumeration value="Suspension of weight restriction"/>
+			<enumeration value="Two-way traffic signals"/>
+			<enumeration value="Tow away zone"/>
+			<enumeration value="Weight restriction"/>
+			<enumeration value="Works stop"/>
+			<enumeration value="Unclassified"/>
+		</restriction>
+	</simpleType>
+</schema>

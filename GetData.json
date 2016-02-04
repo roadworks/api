@@ -1,0 +1,18 @@
+{"soapenv:Envelope": {
+    "xmlns:soapenv": "http://schemas.xmlsoap.org/soap/envelope/",
+    "xmlns:api": "http://www.elgin.org.uk/schemas/api",
+    "soapenv:Header": "",
+    "soapenv:Body": {"api:GetData": {
+        "promoter_swa_org_ref": 1111,
+        "ha_swa_org_ref": "NTCC_UF-15-12-16-000274",
+        "eton_works_ref": "NTCC_UF-15-12-16-000274",
+        "by_date": {
+            "start_date": "2015-07-04T11:00:00",
+            "end_date": "2017-07-04T11:00:00"
+        },
+        "tmentity_group": "Roadworks",
+        "tmitem_type": "Road closure",
+        "tmentity_category": "Skip",
+        "fromDate": "2015-07-04T11:00:00"
+    }}
+}}
