@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Point xmlns:xlink="http://www.w3.org/1999/xlink"
+ xmlns="http://www.opengis.net/gml"
+ xmlns:sch="http://www.ascc.net/xml/schematron"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.opengis.net/gml file:/E:/Emilio/Elgin/Projects/Data/SDEP/SDEP5_Beta_100525_Release_multi_geoms/03-105r1_GML_3.1.1/GML-3.1.1/base/geometryBasic0d1d.xsd">
+    <coordinates>coordinates0</coordinates>
+</Point>
