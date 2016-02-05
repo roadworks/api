@@ -85,6 +85,27 @@
 			<documentation>Item From/To data is described in GML 3.1. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</documentation>
 		</annotation>
 	</element>
+	<element name="eTmCode" type="e:TmCodeCType">
+		<annotation>
+			<documentation>Traffic Management Code - only applies to EToN roadworks.</documentation>
+		</annotation>
+	</element>
+	<simpleType name="TmCodeCType">
+		<restriction base="string">
+			<enumeration value="Contra-flow"/>
+			<enumeration value="Footway closure"/>
+			<enumeration value="Lane closure"/>
+			<enumeration value="No carriageway incursion"/>
+			<enumeration value="Road closure"/>
+			<enumeration value="Some carriageway incursion"/>
+			<enumeration value="Traffic control(convoy working)"/>
+			<enumeration value="Traffic control(give and take)"/>
+			<enumeration value="Traffic control(multi-way signals)"/>
+			<enumeration value="Traffic control(priority working)"/>
+			<enumeration value="Traffic control(stop/go boards)"/>
+			<enumeration value="Traffic control(two-way signals)"/>
+		</restriction>
+	</simpleType>
 	<simpleType name="TrafficImpactCType">
 		<restriction base="string">
 			<enumeration value="High - delays likely"/>
@@ -92,7 +113,7 @@
 			<enumeration value="Low - delays unlikely"/>
 		</restriction>
 	</simpleType>
-	<element name="TrafficImpact">
+	<element name="eTrafficImpact">
 		<annotation>
 			<documentation>Estimated impact on road traffic of Entity</documentation>
 		</annotation>

@@ -3,18 +3,18 @@
     <soapenv:Header/>
     <soapenv:Body>
         <api:GetData>
-            <!--You have a CHOICE of the next 10 items at this level-->
-            <promoter_swa_org_ref>1111</promoter_swa_org_ref>
-            <ha_swa_org_ref>NTCC_UF-15-12-16-000274</ha_swa_org_ref>
-            <eton_works_ref>NTCC_UF-15-12-16-000274</eton_works_ref>
-            <by_date>
-                <start_date>2015-07-04T11:00:00</start_date>
-                <end_date>2017-07-04T11:00:00</end_date>
-            </by_date>
-            <tmentity_group>Roadworks</tmentity_group>
-            <tmitem_type>Road closure</tmitem_type>
-            <tmentity_category>Skip</tmentity_category>
-            <fromDate>2015-07-04T11:00:00</fromDate>
+            <!--Choose one of the below elements-->
+            <EntityOriginatingSystem>roadworks.org</EntityOriginatingSystem>
+            <ItemOriginatingSystem>roadworks.org</ItemOriginatingSystem>
+            <DataSourceID>7289</DataSourceID>
+            <HighwayAuthorityID>1155</HighwayAuthorityID>
+            <EntitySourceID>FB013_20000004</EntitySourceID>
+            <StartDate>2016-01-16T05:54:00Z</StartDate>
+            <EndDate>2017-12-16T05:54:00Z</EndDate>
+            <LastUpdated>2016-02-04T05:54:00Z</LastUpdated>
+            <EntityGroup>Roadworks</EntityGroup>
+            <EntityCategory>Sport Event</EntityCategory>
+            <ItemType>Lane closure</ItemType>
         </api:GetData>
     </soapenv:Body>
 </soapenv:Envelope>

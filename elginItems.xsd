@@ -27,14 +27,19 @@
 		<sequence>
 			<element ref="e:LastUpdated"/>
 			<element ref="e:DataSource"/>
+			<element ref="e:HighwayAuthority"/>
 			<element ref="e:eCollectionID" minOccurs="0"/>
 			<element ref="e:eCategory"/>
 			<element ref="e:eSourceID" minOccurs="0"/>
 			<element ref="e:eGroup"/>
 			<element ref="e:eDescription" minOccurs="0"/>
-			<element ref="e:TrafficImpact" minOccurs="0"/>
+			<element ref="e:eTrafficImpact" minOccurs="0"/>
+			<element ref="e:eTmCode" minOccurs="0"/>
+			<element ref="e:eLocationDescription" minOccurs="0"/>
+			<element ref="e:eStatus" minOccurs="0"/>
 			<element ref="e:eStart"/>
 			<element ref="e:eEnd"/>
+			<element ref="e:eSchedule" minOccurs="0"/>
 			<element ref="e:eUsrnList" minOccurs="0"/>
 			<element ref="e:ePoint"/>
 			<sequence minOccurs="0" maxOccurs="unbounded">
@@ -95,6 +100,28 @@
 		<attribute name="Created" type="dateTime" use="optional"/>
 		<attribute name="Version" type="string" use="optional"/>
 	</complexType>
+	<element name="HighwayAuthority">
+		<annotation>
+			<documentation>Identifies the Highway Authority area in which the data is located.</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<attribute name="id" type="string" use="required">
+				<annotation>
+					<documentation>Identifies the Highway Authority area in which the data is located.</documentation>
+				</annotation>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="eLocationDescription" type="string">
+		<annotation>
+			<documentation>Road name and location of the Entity</documentation>
+		</annotation>
+	</element>
+	<element name="eStatus" type="string">
+		<annotation>
+			<documentation>Current status of Entity, e.g. "Advanced planning".</documentation>
+		</annotation>
+	</element>
 	<element name="iOriginatingSystem" type="string">
 		<annotation>
 			<documentation>Identifies the system in which the Item data content was created</documentation>
@@ -185,38 +212,24 @@
 			<documentation>Start datetime of "child" Item. This value is mandatory as where it is missing from the source data it is derived from the Entity.</documentation>
 		</annotation>
 	</element>
+	<element name="eSchedule">
+		<annotation>
+			<documentation>Array of start and end datetimes when Entity is active. AKA Enforcement Pattern.</documentation>
+		</annotation>
+		<complexType>
+			<sequence minOccurs="1" maxOccurs="unbounded">
+				<element ref="e:ScheduleStartEnd" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
 	<element name="iSchedule">
 		<annotation>
 			<documentation>Array of start and end datetimes when Item is active. AKA Enforcement Pattern</documentation>
 		</annotation>
 		<complexType>
-			<choice maxOccurs="1">
+			<sequence minOccurs="1" maxOccurs="unbounded">
 				<element ref="e:ScheduleStartEnd" maxOccurs="unbounded"/>
-			</choice>
-		</complexType>
-	</element>
-	<element name="ScheduleTimeframes">
-		<complexType>
-			<attribute name="day" use="required">
-				<simpleType>
-					<restriction base="string">
-						<enumeration value="Monday"/>
-						<enumeration value="Tuesday"/>
-						<enumeration value="Wednesday"/>
-						<enumeration value="Thursday"/>
-						<enumeration value="Friday"/>
-						<enumeration value="Saturday"/>
-						<enumeration value="Sunday"/>
-					</restriction>
-				</simpleType>
-			</attribute>
-			<attribute name="timeframe" use="required">
-				<simpleType>
-					<restriction base="string">
-						<pattern value="[0-2]\d:[0-5]\d-[0-2]\d:[0-5]\d"/>
-					</restriction>
-				</simpleType>
-			</attribute>
+			</sequence>
 		</complexType>
 	</element>
 	<element name="ScheduleStartEnd">
@@ -227,7 +240,7 @@
 	</element>
 	<element name="iLocationDescription" type="string">
 		<annotation>
-			<documentation>Road name and location of the Entity</documentation>
+			<documentation>Road name and location of the Item</documentation>
 		</annotation>
 	</element>
 	<element name="LastUpdated" type="dateTime">

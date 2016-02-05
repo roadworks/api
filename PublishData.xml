@@ -11,12 +11,13 @@
                  <Item Created="2015-12-16T06:01:12" Checksum="c9b18ed4093065834cbd17e4fdb30674" EntityID="33694" ItemID="1060303">
                      <LastUpdated>2015-12-16T05:54:00Z</LastUpdated>
                      <DataSource id="1155">Devon County Council</DataSource>
+                     <HighwayAuthority id="7289">Elgin</HighwayAuthority>
                      <eCollectionID>FB013_20000004</eCollectionID>
                      <eCategory>Roadworks</eCategory>
                      <eSourceID>NTCC_UF-15-12-16-000274</eSourceID>
                      <eGroup>Roadworks</eGroup>
                      <eDescription>Great Eastern Run Route</eDescription>
-                     <TrafficImpact>High - delays likely</TrafficImpact>
+                     <eTrafficImpact>High - delays likely</eTrafficImpact>
                      <eStart estimated="false">2014-07-04T11:53:00</eStart>
                      <eEnd estimated="true">2016-09-05T23:59:59</eEnd>
                      <eUsrnList>11111,1111,11111,11111,11111</eUsrnList>
@@ -78,13 +79,14 @@
                  </Item>
                  <Item Created="2016-12-16T06:01:12" Checksum="c9b18ed4093065834cbd17e4fdb30674" EntityID="33695" ItemID="1060304">
                      <LastUpdated>2016-12-16T05:54:00Z</LastUpdated>
-                     <DataSource id="1155">Kent County Council</DataSource>
-                     <eCollectionID>FB013_20000004</eCollectionID>
+                     <DataSource id="1155">Devon County Council</DataSource>
+                     <HighwayAuthority id="7289">Elgin</HighwayAuthority>
+                     <eCollectionID>FB013_20000005</eCollectionID>
                      <eCategory>Roadworks</eCategory>
-                     <eSourceID>NTCC_UF-15-12-16-000274</eSourceID>
+                     <eSourceID>NTCC_UF-15-12-16-000275</eSourceID>
                      <eGroup>Roadworks</eGroup>
                      <eDescription>Great Eastern Run Route</eDescription>
-                     <TrafficImpact>High - delays likely</TrafficImpact>
+                     <eTrafficImpact>High - delays likely</eTrafficImpact>
                      <eStart estimated="false">2014-07-04T11:53:00</eStart>
                      <eEnd estimated="true">2016-09-05T23:59:59</eEnd>
                      <eUsrnList>11111,1111,11111,11111,11111</eUsrnList>

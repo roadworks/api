@@ -15,12 +15,16 @@
             "id": 1155,
             "content": "Devon County Council"
         },
+        "HighwayAuthority": {
+            "id": 7289,
+            "content": "Elgin"
+        },
         "eCollectionID": "FB013_20000004",
         "eCategory": "Roadworks",
         "eSourceID": "NTCC_UF-15-12-16-000274",
         "eGroup": "Roadworks",
         "eDescription": "Great Eastern Run Route",
-        "TrafficImpact": "High - delays likely",
+        "eTrafficImpact": "High - delays likely",
         "eStart": {
             "estimated": false,
             "content": "2014-07-04T11:53:00"
