@@ -1,11 +1,194 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://www.elgin.org.uk/schemas/api"
-	xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.elgin.org.uk/schemas/api"
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	xmlns:e="http://www.elgin.org.uk/schemas/data"
+	xmlns:gml="http://www.opengis.net/gml"
+	targetNamespace="http://www.elgin.org.uk/schemas/data"
 	elementFormDefault="qualified">
 	<import namespace="http://www.opengis.net/gml"
 		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/geometryBasic2d.xsd"/>
 	<import namespace="http://www.opengis.net/gml"
 		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/feature.xsd"/>
+	<element name="HighwayAuthority">
+		<annotation>
+			<documentation>Identifies the Highway Authority area in which the data is located.</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<attribute name="id" type="string" use="required">
+				<annotation>
+					<documentation>Identifies the Highway Authority area in which the data is located.</documentation>
+				</annotation>
+			</attribute>
+			<attribute name="url" type="string" use="required">
+				<annotation>
+					<documentation>Link to Highway Authority website.</documentation>
+				</annotation>
+			</attribute>
+		</complexType>
+	</element>
+	<element name="eLocationDescription" type="string">
+		<annotation>
+			<documentation>Road name and location of the Entity</documentation>
+		</annotation>
+	</element>
+	<element name="eStatus" type="string">
+		<annotation>
+			<documentation>Current status of Entity, e.g. "Advanced planning".</documentation>
+		</annotation>
+	</element>
+	<element name="iOriginatingSystem" type="string">
+		<annotation>
+			<documentation>Identifies the system in which the Item data content was created</documentation>
+		</annotation>
+	</element>
+	<element name="eOriginatingSystem" type="string">
+		<annotation>
+			<documentation>Identifies the system in which the Entity data content was created</documentation>
+		</annotation>
+	</element>
+	<element name="eUsrnList" type="string">
+		<annotation>
+			<documentation>Comma delimited list of USRNs corresponding to Entity geometry</documentation>
+		</annotation>
+	</element>
+	<element name="iUsrnList" type="string">
+		<annotation>
+			<documentation>Comma delimited list of USRNs corresponding to Item geometry</documentation>
+		</annotation>
+	</element>
+	<element name="eURL" type="anyURI">
+		<annotation>
+			<documentation>Deep link to Entity on roadworks.org</documentation>
+		</annotation>
+	</element>
+	<element name="iURL" type="anyURI">
+		<annotation>
+			<documentation>Deep link to Item on roadworks.org</documentation>
+		</annotation>
+	</element>
+	<element name="eCancelled" type="boolean">
+		<annotation>
+			<documentation>Indicates if the Entity is cancelled</documentation>
+		</annotation>
+	</element>
+	<element name="iCancelled" type="boolean">
+		<annotation>
+			<documentation>Indicates if the Item is cancelled</documentation>
+		</annotation>
+	</element>
+	<element name="DataSource">
+		<annotation>
+			<documentation>Identifies the organisation source of the data. 
+				The name of the Local Authority/Utility/National Highways Agency from whom the data was sourced. 
+				Please refer to an authoritative list <a href="http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026">here</a>.
+			</documentation>
+		</annotation>
+		<complexType mixed="true">
+			<attribute name="id" type="string" use="required">
+				<annotation>
+					<documentation>Identifies the organisation source of the data</documentation>
+				</annotation>
+			</attribute>
+		</complexType>
+	</element>
+	<simpleType name="CodeSType">
+		<restriction base="string">
+			<pattern value=".+"/>
+		</restriction>
+	</simpleType>
+	<element name="eCollectionID" type="string">
+		<annotation>
+			<documentation>ID identifying a collection of Entities. Grouping by this field will generate a list of all Entities belonging to a collection such as a major road scheme.   </documentation>
+		</annotation>
+	</element>
+	<element name="eDescription" type="string">
+		<annotation>
+			<documentation>Description of "parent" Entity</documentation>
+		</annotation>
+	</element>
+	<element name="eEnd" type="e:UnDerivedDateTimeSType">
+		<annotation>
+			<documentation>End datetime of "parent" Entity</documentation>
+		</annotation>
+	</element>
+	<element name="eStart" type="e:UnDerivedDateTimeSType">
+		<annotation>
+			<documentation>Start datetime of "parent" Entity</documentation>
+		</annotation>
+	</element>
+	<element name="iEnd" type="e:DateTimeSType">
+		<annotation>
+			<documentation>End datetime of "child" Item. This value is mandatory as where it is missing from the source data it is derived from the Entity.</documentation>
+		</annotation>
+	</element>
+	<element name="iStart" type="e:DateTimeSType">
+		<annotation>
+			<documentation>Start datetime of "child" Item. This value is mandatory as where it is missing from the source data it is derived from the Entity.</documentation>
+		</annotation>
+	</element>
+	<element name="eSchedule">
+		<annotation>
+			<documentation>Array of start and end datetimes when Entity is active. AKA Enforcement Pattern.</documentation>
+		</annotation>
+		<complexType>
+			<sequence minOccurs="1" maxOccurs="unbounded">
+				<element ref="e:ScheduleStartEnd" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="iSchedule">
+		<annotation>
+			<documentation>Array of start and end datetimes when Item is active. AKA Enforcement Pattern</documentation>
+		</annotation>
+		<complexType>
+			<sequence minOccurs="1" maxOccurs="unbounded">
+				<element ref="e:ScheduleStartEnd" maxOccurs="unbounded"/>
+			</sequence>
+		</complexType>
+	</element>
+	<element name="ScheduleStartEnd">
+		<complexType>
+			<attribute name="Start" type="dateTime"/>
+			<attribute name="End" type="dateTime"/>
+		</complexType>
+	</element>
+	<element name="iLocationDescription" type="string">
+		<annotation>
+			<documentation>Road name and location of the Item</documentation>
+		</annotation>
+	</element>
+	<element name="LastUpdated" type="dateTime">
+		<annotation>
+			<documentation>Datetime when the data was last updated within roadworks.org</documentation>
+		</annotation>
+	</element>
+	<element name="eSourceID" type="string">
+		<annotation>
+			<documentation>The reference used by the originating system from which the data was sourced. For roadworks this is the Eton works reference.</documentation>
+		</annotation>
+	</element>
+	<complexType name="UnDerivedDateTimeSType">
+		<simpleContent>
+			<extension base="dateTime">
+				<attribute name="estimated" type="boolean" use="required"/>
+			</extension>
+		</simpleContent>
+	</complexType>
+	<complexType name="DateTimeSType">
+		<simpleContent>
+			<extension base="dateTime">
+				<attribute name="estimated" type="boolean" use="required">
+					<annotation>
+						<documentation>Boolean flag to say the date is estimated or exact. This value is mandatory as where it is missing from the source data it is derived from the Entity (please see "derived" field)..</documentation>
+					</annotation>
+				</attribute>
+				<attribute name="derived" type="string" use="required">
+					<annotation>
+						<documentation>Boolean flag to say the date is derived from its parent Entity. False indicates the date is present in the source data.</documentation>
+					</annotation>
+				</attribute>
+			</extension>
+		</simpleContent>
+	</complexType>
 	<element name="ePoint" type="e:PointCType">
 		<annotation>
 			<documentation>Point coordinate of Entity location</documentation>

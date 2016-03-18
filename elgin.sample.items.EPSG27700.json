@@ -1,10 +1,10 @@
 {"Items": {
     "Created": "2015-12-16T06:01:12Z",
     "Version": 2,
-    "xmlns": "http://www.elgin.org.uk/schemas/api",
+    "xmlns": "http://www.elgin.org.uk/schemas/data",
     "xmlns:gml": "http://www.opengis.net/gml",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.elgin.org.uk/schemas/api\nelginItems.xsd",
+    "xsi:schemaLocation": "http://www.elgin.org.uk/schemas/data\nelginItems.xsd",
     "Item": {
         "Created": "2015-12-16T06:01:12",
         "Checksum": "c9b18ed4093065834cbd17e4fdb30674",
@@ -17,6 +17,7 @@
         },
         "HighwayAuthority": {
             "id": 7289,
+            "url": "http://www.elgin.org.uk",
             "content": "Elgin"
         },
         "eCollectionID": "FB013_20000004",

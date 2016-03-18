@@ -1,103 +1,106 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
-    xmlns:e="http://www.elgin.org.uk/schemas/api" 
-    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
-    xmlns="http://www.w3.org/2001/XMLSchema" 
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+    xmlns:api="http://www.elgin.org.uk/schemas/api" 
+    xmlns:e="http://www.elgin.org.uk/schemas/data"
+    xmlns="http://schemas.xmlsoap.org/wsdl/" 
+    xmlns:s="http://www.w3.org/2001/XMLSchema" 
     name="Elgin" 
     targetNamespace="http://www.elgin.org.uk/schemas/api">
-    <wsdl:import namespace="http://www.elgin.org.uk/schemas/api" location="elginItems.xsd"/>
-    <wsdl:types>
-        <schema targetNamespace="http://www.elgin.org.uk/schemas/api">
-            <element name="GetData">
-                <complexType>
-                    <choice maxOccurs="1">
-                        <element name="EntityOriginatingSystem" type="string"/>
-                        <element name="ItemOriginatingSystem" type="string"/>
-                        <element name="DataSourceID" type="string"/>
-                        <element name="HighwayAuthorityID" type="string"/>
-                        <element name="EntitySourceID" type="string"/>
-                        <element name="StartDate" type="dateTime"/>
-                        <element name="EndDate" type="dateTime"/>
-                        <element name="LastUpdated" type="dateTime"/>
-                        <element name="EntityGroup" type="e:EntityGroupSType"/>
-                        <element name="EntityCategory" type="e:EntityCategorySType"/>
-                        <element name="ItemType" type="e:ItemTypeSType"/>
-                    </choice>
-                </complexType>
-            </element>
-            <element name="GetDataResponse">
-                <complexType>
-                    <sequence>
-                        <element ref="e:Out"/>
-                    </sequence>
-                </complexType>
-            </element>
-            <element name="PublishData">
-                <complexType>
-                    <sequence>
-                        <element ref="e:In"/>
-                    </sequence>
-                </complexType>
-            </element>
-            <element name="PublishDataResponse">
-                <complexType>
-                    <sequence>
-                        <element name="success" type="boolean"></element>
-                        <element name="message" type="string"></element>
-                    </sequence>
-                </complexType>
-            </element>
-        </schema>
-    </wsdl:types>
-    <wsdl:message name="GetDataRequest">
-        <wsdl:part element="e:GetData" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="GetDataResponse">
-        <wsdl:part element="e:GetDataResponse" name="parameters"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="PublishDataRequest">
-        <wsdl:part name="parameters" element="e:PublishData"></wsdl:part>
-    </wsdl:message>
-    <wsdl:message name="PublishDataResponse">
-        <wsdl:part name="parameters" element="e:PublishDataResponse"></wsdl:part>
-    </wsdl:message>
-    <wsdl:portType name="Elgin">
-        <wsdl:operation name="GetData">
-            <wsdl:input message="e:GetDataRequest"></wsdl:input>
-            <wsdl:output message="e:GetDataResponse"></wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="PublishData">
-            <wsdl:input message="e:PublishDataRequest"></wsdl:input>
-            <wsdl:output message="e:PublishDataResponse"></wsdl:output>
-        </wsdl:operation>
-    </wsdl:portType>
-    <wsdl:binding name="ElginSOAP" type="e:Elgin">
+    <types>
+        <s:schema targetNamespace="http://www.elgin.org.uk/schemas/api">
+            <s:import namespace="http://www.elgin.org.uk/schemas/data" 
+                schemaLocation="elginItems.xsd"/>
+            <s:element name="GetData">
+                <s:complexType>
+                    <s:choice maxOccurs="1">
+                        <s:element name="EntityOriginatingSystem" type="s:string"/>
+                        <s:element name="ItemOriginatingSystem" type="s:string"/>
+                        <s:element name="DataSourceID" type="s:string"/>
+                        <s:element name="HighwayAuthorityID" type="s:string"/>
+                        <s:element name="EntitySourceID" type="s:string"/>
+                        <s:element name="StartDate" type="s:dateTime"/>
+                        <s:element name="EndDate" type="s:dateTime"/>
+                        <s:element name="LastUpdated" type="s:dateTime"/>
+                        <s:element name="EntityGroup" type="e:EntityGroupSType"/>
+                        <s:element name="EntityCategory" type="e:EntityCategorySType"/>
+                        <s:element name="ItemType" type="e:ItemTypeSType"/>
+                    </s:choice>
+                    <s:attribute name="DataGrouping" type="e:DataCType"/>
+                </s:complexType>
+            </s:element>
+            <s:element name="GetDataResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element ref="e:Out"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="PublishData">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element ref="e:In"/>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+            <s:element name="PublishDataResponse">
+                <s:complexType>
+                    <s:sequence>
+                        <s:element name="success" type="s:boolean"></s:element>
+                        <s:element name="message" type="s:string"></s:element>
+                    </s:sequence>
+                </s:complexType>
+            </s:element>
+        </s:schema>
+    </types>
+    <message name="GetDataRequest">
+        <part element="api:GetData" name="parameters"></part>
+    </message>
+    <message name="GetDataResponse">
+        <part element="api:GetDataResponse" name="parameters"></part>
+    </message>
+    <message name="PublishDataRequest">
+        <part name="parameters" element="api:PublishData"></part>
+    </message>
+    <message name="PublishDataResponse">
+        <part name="parameters" element="api:PublishDataResponse"></part>
+    </message>
+    <portType name="Elgin">
+        <operation name="GetData">
+            <input message="api:GetDataRequest"></input>
+            <output message="api:GetDataResponse"></output>
+        </operation>
+        <operation name="PublishData">
+            <input message="api:PublishDataRequest"></input>
+            <output message="api:PublishDataResponse"></output>
+        </operation>
+    </portType>
+    <binding name="ElginSOAP" type="api:Elgin">
         <soap:binding style="document"
             transport="http://schemas.xmlsoap.org/soap/http" />
-        <wsdl:operation name="GetData">
+        <operation name="GetData">
             <soap:operation
                 soapAction="http://www.elgin.org.uk/elgin/api/GetData" />
-            <wsdl:input>
+            <input>
                 <soap:body use="literal" />
-            </wsdl:input>
-            <wsdl:output>
+            </input>
+            <output>
                 <soap:body use="literal" />
-            </wsdl:output>
-        </wsdl:operation>
-        <wsdl:operation name="PublishData">
+            </output>
+        </operation>
+        <operation name="PublishData">
             <soap:operation
                 soapAction="http://www.elgin.org.uk/elgin/api/PublishData" />
-            <wsdl:input>
+            <input>
                 <soap:body use="literal" />
-            </wsdl:input>
-            <wsdl:output>
+            </input>
+            <output>
                 <soap:body use="literal" />
-            </wsdl:output>
-        </wsdl:operation>
-    </wsdl:binding>
-    <wsdl:service name="Elgin">
-        <wsdl:port binding="e:ElginSOAP" name="ElginSOAP">
+            </output>
+        </operation>
+    </binding>
+    <service name="Elgin">
+        <port binding="api:ElginSOAP" name="ElginSOAP">
             <soap:address location="http://services.roadworks.org/api/" />
-        </wsdl:port>
-    </wsdl:service>
-</wsdl:definitions>
+        </port>
+    </service>
+</definitions>

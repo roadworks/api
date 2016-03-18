@@ -1,12 +1,13 @@
 <?xml version="1.0" standalone="yes"?>
-<Items Created="2015-12-16T06:01:12Z" Version="2" xmlns="http://www.elgin.org.uk/schemas/api" 
+<Items Created="2015-12-16T06:01:12Z" Version="2" 
+xmlns="http://www.elgin.org.uk/schemas/data" 
 xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xsi:schemaLocation="http://www.elgin.org.uk/schemas/api
+xsi:schemaLocation="http://www.elgin.org.uk/schemas/data
 elginItems.xsd">
 	<Item Created="2015-12-16T06:01:12" Checksum="c9b18ed4093065834cbd17e4fdb30674" EntityID="33694" ItemID="1060303">
 		<LastUpdated>2015-12-16T05:54:00Z</LastUpdated>
 		<DataSource id="1155">Devon County Council</DataSource>
-		<HighwayAuthority id="7289">Elgin</HighwayAuthority>
+		<HighwayAuthority id="7289" url="http://www.elgin.org.uk">Elgin</HighwayAuthority>
 		<eCollectionID>FB013_20000004</eCollectionID>
 		<eCategory>Roadworks</eCategory>
 		<eSourceID>NTCC_UF-15-12-16-000274</eSourceID>

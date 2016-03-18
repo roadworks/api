@@ -1,0 +1,177 @@
+{"Entities": {
+    "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
+    "xmlns:gml": "http://www.opengis.net/gml",
+    "xmlns:xlink": "http://www.w3.org/1999/xlink",
+    "xmlns": "http://www.elgin.org.uk/schemas/data",
+    "xsi:schemaLocation": "http://www.elgin.org.uk/schemas/data file:elginItems.xsd",
+    "Created": "2006-05-04T18:13:51.0Z",
+    "Version": 2,
+    "Entity": {
+        "Created": "2006-05-04T18:13:51.0Z",
+        "Checksum": "c9b18ed4093065834cbd17e4fdb30674",
+        "EntityID": 33694,
+        "LastUpdated": "2015-12-16T05:54:00Z",
+        "DataSource": {
+            "id": 1155,
+            "content": "Devon County Council"
+        },
+        "HighwayAuthority": {
+            "id": 7289,
+            "url": "http://www.elgin.org.uk",
+            "content": "Elgin"
+        },
+        "eCollectionID": "FB013_20000004",
+        "eCategory": "Roadworks",
+        "eSourceID": "NTCC_UF-15-12-16-000274",
+        "eGroup": "Roadworks",
+        "eDescription": "Great Eastern Run Route",
+        "eTrafficImpact": "High - delays likely",
+        "eStart": {
+            "estimated": false,
+            "content": "2014-07-04T11:53:00"
+        },
+        "eEnd": {
+            "estimated": true,
+            "content": "2016-09-05T23:59:59"
+        },
+        "eSchedule": {"ScheduleStartEnd": [
+            {
+                "Start": "2006-05-04T18:13:51.0Z",
+                "End": "2006-05-04T18:13:51.0Z"
+            },
+            {
+                "Start": "2006-05-04T18:13:51.0Z",
+                "End": "2006-05-04T18:13:51.0Z"
+            },
+            {
+                "Start": "2006-05-04T18:13:51.0Z",
+                "End": "2006-05-04T18:13:51.0Z"
+            },
+            {
+                "Start": "2006-05-04T18:13:51.0Z",
+                "End": "2006-05-04T18:13:51.0Z"
+            }
+        ]},
+        "eUsrnList": "eUsrnList0",
+        "ePoint": {
+            "srsName": "EPSG:27700",
+            "derived": false,
+            "gml:pos": {
+                "srsDimension": 2,
+                "content": "464321.5 164361.5"
+            }
+        },
+        "eLineString": {
+            "srsName": "EPSG:27700",
+            "derived": false,
+            "gml:posList": {
+                "srsDimension": 10,
+                "content": "464145.5 164355.5 464213.5 164351.5 464269.5 164351.5 464321.5 164361.5 464373.5 164376.5"
+            }
+        },
+        "ePolygon": {
+            "srsName": "EPSG:27700",
+            "derived": false,
+            "gml:exterior": {"gml:LinearRing": {"gml:posList": {
+                "srsDimension": 12,
+                "content": "422175 425112 422165.25 425103.5 422199.25 425064.25 422211.75 425070.25 422188.25 425101 422175.25 425111.75"
+            }}}
+        },
+        "eFrom": {
+            "srsName": "EPSG:27700",
+            "derived": false,
+            "gml:pos": {
+                "srsDimension": 2,
+                "content": "464269.5 164351.5"
+            }
+        },
+        "eTo": {
+            "srsName": "EPSG:27700",
+            "derived": false,
+            "gml:pos": {
+                "srsDimension": 2,
+                "content": "464321.5 164361.5"
+            }
+        },
+        "eURL": "http://roadworks.org/?tm33694",
+        "eCancelled": false,
+        "eOriginatingSystem": "System",
+        "Items": {
+            "ItemID": 1060303,
+            "iType": "Road closure",
+            "iLocationDescription": "Hedingham Grove, Chelmsley Wood, Solihull",
+            "iStart": {
+                "estimated": true,
+                "derived": true,
+                "content": "2014-07-04T11:53:00"
+            },
+            "iEnd": {
+                "estimated": true,
+                "derived": true,
+                "content": "2016-09-05T23:59:59"
+            },
+            "iSchedule": {"ScheduleStartEnd": [
+                {
+                    "Start": "2014-07-04T11:00:00",
+                    "End": "2014-07-04T13:00:00"
+                },
+                {
+                    "Start": "2014-07-04T15:00:00",
+                    "End": "2014-07-04T17:00:00"
+                },
+                {
+                    "Start": "2014-07-05T11:00:00",
+                    "End": "2014-07-05T13:00:00"
+                },
+                {
+                    "Start": "2014-07-06T11:00:00",
+                    "End": "2014-07-06T13:00:00"
+                }
+            ]},
+            "iUsrnList": "11111,1111,11111,11111,11111",
+            "iPoint": {
+                "srsName": "EPSG:27700",
+                "derived": false,
+                "gml:pos": {
+                    "srsDimension": 2,
+                    "content": "460190.5 167228"
+                }
+            },
+            "iLineString": {
+                "srsName": "EPSG:27700",
+                "derived": false,
+                "gml:posList": {
+                    "srsDimension": 10,
+                    "content": "464145.5 164355.5 464213.5 164351.5 464269.5 164351.5 464321.5 164361.5 464373.5 164376.5"
+                }
+            },
+            "iPolygon": {
+                "srsName": "EPSG:27700",
+                "derived": false,
+                "gml:exterior": {"gml:LinearRing": {"gml:posList": {
+                    "srsDimension": 12,
+                    "content": "422175 425112 422165.25 425103.5 422199.25 425064.25 422211.75 425070.25 422188.25 425101 422175.25 425111.75"
+                }}}
+            },
+            "iFrom": {
+                "srsName": "EPSG:27700",
+                "derived": false,
+                "gml:pos": {
+                    "srsDimension": 2,
+                    "content": "464145.5 164355.5"
+                }
+            },
+            "iTo": {
+                "srsName": "EPSG:27700",
+                "derived": false,
+                "gml:pos": {
+                    "srsDimension": 2,
+                    "content": "464213.5 164351.5"
+                }
+            },
+            "iURL": "http://roadworks.org/?tmi1060303",
+            "iCancelled": false,
+            "iOriginatingSystem": "System"
+        }
+    }
+}}
