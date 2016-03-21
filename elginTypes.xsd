@@ -45,16 +45,6 @@
 			<documentation>Identifies the system in which the Entity data content was created</documentation>
 		</annotation>
 	</element>
-	<element name="eUsrnList" type="string">
-		<annotation>
-			<documentation>Comma delimited list of USRNs corresponding to Entity geometry</documentation>
-		</annotation>
-	</element>
-	<element name="iUsrnList" type="string">
-		<annotation>
-			<documentation>Comma delimited list of USRNs corresponding to Item geometry</documentation>
-		</annotation>
-	</element>
 	<element name="eURL" type="anyURI">
 		<annotation>
 			<documentation>Deep link to Entity on roadworks.org</documentation>
@@ -94,6 +84,37 @@
 				1) When an EToN roadworks' start date has passed but no confirmed works start alert has been receieved from the LHA
 				2) When an EToN roadworks' end date has passed and the works is still in it's grace period, but still considered active as no confirmed works stop alert has been received from the LHA
 				All other TM works and Incidents are considered  CONFIRMED
+			</documentation>
+		</annotation>
+	</element>
+	<element name="iDirectionOfTravel" type="string">
+		<annotation>
+			<documentation>The direction of the travel where the Item occurs</documentation>
+		</annotation>
+	</element>
+	<element name="eRoadName" type="string">
+		<annotation>
+			<documentation>The name of the road on which the Entity lies.</documentation>
+		</annotation>
+	</element>
+	<element name="iRoadName" type="string">
+		<annotation>
+			<documentation>The name of the road on which the item lies.</documentation>
+		</annotation>
+	</element>
+	<element name="eUsrnList" type="string">
+		<annotation>
+			<documentation>Comma delimited list of USRNs corresponding to Entity geometry
+				
+				USRN stands for Unique Street Reference Number. A USRN identifies a street segment in the UK Natonal Street Gazetteer
+			</documentation>
+		</annotation>
+	</element>
+	<element name="iUsrnList" type="string">
+		<annotation>
+			<documentation>Comma delimited list of USRNs corresponding to Item geometry
+				
+				USRN stands for Unique Street Reference Number. A USRN identifies a street segment in the UK Natonal Street Gazetteer
 			</documentation>
 		</annotation>
 	</element>

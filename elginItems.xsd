@@ -83,12 +83,17 @@
 			<element ref="e:eDescription" minOccurs="0"/>
 			<element ref="e:eTrafficImpact" minOccurs="0"/>
 			<element ref="e:eTmCode" minOccurs="0"/>
-			<element ref="e:eLocationDescription" minOccurs="0"/>
 			<element ref="e:eStatus" minOccurs="0"/>
 			<element ref="e:eStart"/>
 			<element ref="e:eEnd"/>
 			<element ref="e:eSchedule" minOccurs="0"/>
+			<element ref="e:eLocationDescription" minOccurs="0"/>
+			<element ref="e:eRoadName" minOccurs="0"/>
 			<element ref="e:eUsrnList" minOccurs="0"/>
+			<element ref="e:eURL" minOccurs="0"/>
+			<element ref="e:eCancelled" minOccurs="0"/>
+			<element ref="e:eConfirmed"/>
+			<element ref="e:eOriginatingSystem" minOccurs="0"/>
 			<element ref="e:ePoint"/>
 			<sequence minOccurs="0" maxOccurs="unbounded">
 				<element ref="e:eLineString" minOccurs="0"/>
@@ -98,20 +103,22 @@
 					<element ref="e:eTo"/>
 				</sequence>
 			</sequence>
-			<element ref="e:eURL" minOccurs="0"/>
-			<element ref="e:eCancelled" minOccurs="0"/>
-			<element ref="e:eConfirmed" minOccurs="0"/>
-			<element ref="e:eOriginatingSystem" minOccurs="0"/>
 		</sequence>
 	</group>
 	<group name="ItemGroup">
 		<sequence>
 			<element ref="e:iType" minOccurs="0"/>
-			<element ref="e:iLocationDescription" minOccurs="0"/>
 			<element ref="e:iStart"/>
 			<element ref="e:iEnd"/>
 			<element ref="e:iSchedule" minOccurs="0"/>
+			<element ref="e:iLocationDescription" minOccurs="0"/>
+			<element ref="e:iRoadName" minOccurs="0"/>
+			<element ref="e:iDirectionOfTravel" minOccurs="0"/>
 			<element ref="e:iUsrnList" minOccurs="0"/>
+			<element ref="e:iURL" minOccurs="0"/>
+			<element ref="e:iCancelled" minOccurs="0"/>
+			<element ref="e:iConfirmed"/>
+			<element ref="e:iOriginatingSystem" minOccurs="0"/>
 			<element ref="e:iPoint"/>
 			<sequence minOccurs="0" maxOccurs="unbounded">
 				<element ref="e:iLineString" minOccurs="0"/>
@@ -121,10 +128,6 @@
 					<element ref="e:iTo"/>
 				</sequence>
 			</sequence>
-			<element ref="e:iURL" minOccurs="0"/>
-			<element ref="e:iCancelled" minOccurs="0"/>
-			<element ref="e:iConfirmed" minOccurs="0"/>
-			<element ref="e:iOriginatingSystem" minOccurs="0"/>
 		</sequence>
 	</group>
 	<complexType name="EntityCType">
