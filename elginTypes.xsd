@@ -75,6 +75,28 @@
 			<documentation>Indicates if the Item is cancelled</documentation>
 		</annotation>
 	</element>
+	<element name="eConfirmed" type="boolean">
+		<annotation>
+			<documentation>A flag to identify if the works has been confirmed.
+				
+				An EToN works, and a TM works associated with an EToN works is considered CONFIRMED unless:
+				1) When an EToN roadworks' start date has passed but no confirmed works start alert has been receieved from the LHA
+				2) When an EToN roadworks' end date has passed and the works is still in it's grace period, but still considered active as no confirmed works stop alert has been received from the LHA
+				All other TM works and Incidents are considered  CONFIRMED
+			</documentation>
+		</annotation>
+	</element>
+	<element name="iConfirmed" type="boolean">
+		<annotation>
+			<documentation>A flag to identify if the works has been confirmed.
+				
+				An EToN works, and a TM works associated with an EToN works is considered CONFIRMED unless:
+				1) When an EToN roadworks' start date has passed but no confirmed works start alert has been receieved from the LHA
+				2) When an EToN roadworks' end date has passed and the works is still in it's grace period, but still considered active as no confirmed works stop alert has been received from the LHA
+				All other TM works and Incidents are considered  CONFIRMED
+			</documentation>
+		</annotation>
+	</element>
 	<element name="DataSource">
 		<annotation>
 			<documentation>Identifies the organisation source of the data. 

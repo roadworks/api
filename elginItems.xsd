@@ -100,6 +100,7 @@
 			</sequence>
 			<element ref="e:eURL" minOccurs="0"/>
 			<element ref="e:eCancelled" minOccurs="0"/>
+			<element ref="e:eConfirmed" minOccurs="0"/>
 			<element ref="e:eOriginatingSystem" minOccurs="0"/>
 		</sequence>
 	</group>
@@ -122,6 +123,7 @@
 			</sequence>
 			<element ref="e:iURL" minOccurs="0"/>
 			<element ref="e:iCancelled" minOccurs="0"/>
+			<element ref="e:iConfirmed" minOccurs="0"/>
 			<element ref="e:iOriginatingSystem" minOccurs="0"/>
 		</sequence>
 	</group>
