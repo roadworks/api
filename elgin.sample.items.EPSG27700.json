@@ -1,10 +1,10 @@
 {"Items": {
-    "Created": "2015-12-16T06:01:12Z",
-    "Version": 2,
     "xmlns": "http://www.elgin.org.uk/schemas/data",
     "xmlns:gml": "http://www.opengis.net/gml",
     "xmlns:xsi": "http://www.w3.org/2001/XMLSchema-instance",
-    "xsi:schemaLocation": "http://www.elgin.org.uk/schemas/data\nelginItems.xsd",
+    "xsi:schemaLocation": "http://www.elgin.org.uk/schemas/data\n elginItems.xsd",
+    "Created": "2015-12-16T06:01:12Z",
+    "Version": 2,
     "Item": {
         "Created": "2015-12-16T06:01:12",
         "Checksum": "c9b18ed4093065834cbd17e4fdb30674",
@@ -17,7 +17,6 @@
         },
         "HighwayAuthority": {
             "id": 7289,
-            "url": "http://www.elgin.org.uk",
             "content": "Elgin"
         },
         "eCollectionID": "FB013_20000004",
@@ -34,7 +33,23 @@
             "estimated": true,
             "content": "2016-09-05T23:59:59"
         },
+        "eSchedule": {"ScheduleStartEnd": [
+            {
+                "Start": "2014-07-04T09:00:00",
+                "End": "2014-07-04T11:53:00"
+            },
+            {
+                "Start": "2014-07-05T09:00:00",
+                "End": "2014-07-05T11:53:00"
+            }
+        ]},
+        "eLocationDescription": "Hedingham Grove, Chelmsley Wood, Solihull",
+        "eRoadName": "A483, Both directions, Newtown",
         "eUsrnList": "11111,1111,11111,11111,11111",
+        "eURL": "http://roadworks.org/?tm33694",
+        "eCancelled": false,
+        "eConfirmed": true,
+        "eOriginatingSystem": "Traffic Wales:WDM",
         "ePoint": {
             "srsName": "EPSG:27700",
             "derived": false,
@@ -75,11 +90,7 @@
                 "content": "464321.5 164361.5"
             }
         },
-        "eURL": "http://roadworks.org/?tm33694",
-        "eCancelled": false,
-        "eOriginatingSystem": "System",
         "iType": "Road closure",
-        "iLocationDescription": "Hedingham Grove, Chelmsley Wood, Solihull",
         "iStart": {
             "estimated": true,
             "derived": true,
@@ -108,7 +119,13 @@
                 "End": "2014-07-06T13:00:00"
             }
         ]},
+        "iLocationDescription": "Hedingham Grove, Chelmsley Wood, Solihull",
+        "iRoadName": "A483, Both directions, Newtown",
         "iUsrnList": "11111,1111,11111,11111,11111",
+        "iURL": "http://roadworks.org/?tm33694",
+        "iCancelled": false,
+        "iConfirmed": true,
+        "iOriginatingSystem": "Traffic Wales:WDM",
         "iPoint": {
             "srsName": "EPSG:27700",
             "derived": false,
@@ -148,9 +165,6 @@
                 "srsDimension": 2,
                 "content": "464213.5 164351.5"
             }
-        },
-        "iURL": "http://roadworks.org/?tmi1060303",
-        "iCancelled": false,
-        "iOriginatingSystem": "System"
+        }
     }
 }}

@@ -8,7 +8,7 @@
 	<Item Created="2015-12-16T06:01:12" Checksum="c9b18ed4093065834cbd17e4fdb30674" EntityID="33694" ItemID="1060303">
 		<LastUpdated>2015-12-16T05:54:00Z</LastUpdated>
 		<DataSource id="1155">Devon County Council</DataSource>
-		<HighwayAuthority id="7289" url="http://www.elgin.org.uk">Elgin</HighwayAuthority>
+		<HighwayAuthority id="7289">Elgin</HighwayAuthority>
 		<eCollectionID>FB013_20000004</eCollectionID>
 		<eCategory>Roadworks</eCategory>
 		<eSourceID>NTCC_UF-15-12-16-000274</eSourceID>
@@ -17,7 +17,17 @@
 		<eTrafficImpact>High - delays likely</eTrafficImpact>
 		<eStart estimated="false">2014-07-04T11:53:00</eStart>
 		<eEnd estimated="true">2016-09-05T23:59:59</eEnd>
+		<eSchedule>
+			<ScheduleStartEnd Start="2014-07-04T09:00:00" End="2014-07-04T11:53:00"/>
+			<ScheduleStartEnd Start="2014-07-05T09:00:00" End="2014-07-05T11:53:00"/>
+		</eSchedule>
+		<eLocationDescription>Hedingham Grove, Chelmsley Wood, Solihull</eLocationDescription>
+		<eRoadName>A483, Both directions, Newtown</eRoadName>
 		<eUsrnList>11111,1111,11111,11111,11111</eUsrnList>
+		<eURL>http://roadworks.org/?tm33694</eURL>
+		<eCancelled>false</eCancelled>
+		<eConfirmed>true</eConfirmed>
+		<eOriginatingSystem>Traffic Wales:WDM</eOriginatingSystem>
 		<ePoint srsName="EPSG:27700" derived="false">
 			<gml:pos srsDimension="2">464321.5 164361.5</gml:pos>
 		</ePoint>
@@ -37,11 +47,7 @@
 		<eTo srsName="EPSG:27700" derived="false">
 			<gml:pos srsDimension="2">464321.5 164361.5</gml:pos>
 		</eTo>
-		<eURL>http://roadworks.org/?tm33694</eURL>
-		<eCancelled>false</eCancelled>
-		<eOriginatingSystem>System</eOriginatingSystem>
 		<iType>Road closure</iType>
-		<iLocationDescription>Hedingham Grove, Chelmsley Wood, Solihull</iLocationDescription>
 		<iStart estimated="true" derived="true">2014-07-04T11:53:00</iStart>
 		<iEnd estimated="true" derived="true">2016-09-05T23:59:59</iEnd>
 		<iSchedule>
@@ -50,7 +56,13 @@
 			<ScheduleStartEnd Start="2014-07-05T11:00:00" End="2014-07-05T13:00:00"/>
 			<ScheduleStartEnd Start="2014-07-06T11:00:00" End="2014-07-06T13:00:00"/>
 		</iSchedule>
+		<iLocationDescription>Hedingham Grove, Chelmsley Wood, Solihull</iLocationDescription>
+		<iRoadName>A483, Both directions, Newtown</iRoadName>
 		<iUsrnList>11111,1111,11111,11111,11111</iUsrnList>
+		<iURL>http://roadworks.org/?tm33694</iURL>
+		<iCancelled>false</iCancelled>
+		<iConfirmed>true</iConfirmed>
+		<iOriginatingSystem>Traffic Wales:WDM</iOriginatingSystem>
 		<iPoint srsName="EPSG:27700" derived="false">
 			<gml:pos srsDimension="2">460190.5 167228</gml:pos>
 		</iPoint>
@@ -70,8 +82,5 @@
 		<iTo srsName="EPSG:27700" derived="false">
 			<gml:pos srsDimension="2">464213.5 164351.5</gml:pos>
 		</iTo>
-		<iURL>http://roadworks.org/?tmi1060303</iURL>
-		<iCancelled>false</iCancelled>
-		<iOriginatingSystem>System</iOriginatingSystem>
 	</Item>
 </Items>
