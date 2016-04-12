@@ -47,7 +47,7 @@
         <eTo srsName="EPSG:4326" derived="false">
             <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
         </eTo>
-        <Items ItemID="1060303">
+        <Item ItemID="1060303" Checksum="c9b18ed4093065834cbd17e4fdb30676">
             <iType>Road closure</iType>
             <iStart estimated="true" derived="true">2014-07-04T11:53:00</iStart>
             <iEnd estimated="true" derived="true">2016-09-05T23:59:59</iEnd>
@@ -83,6 +83,6 @@
             <iTo srsName="EPSG:4326" derived="false">
                 <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
             </iTo>
-        </Items>
+        </Item>
     </Entity>
 </Entities>

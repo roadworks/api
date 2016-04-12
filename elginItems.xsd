@@ -136,15 +136,18 @@
 			<element ref="e:DataSource"/>
 			<element ref="e:HighwayAuthority"/>
 			<group ref="e:EntityGroup"/>
-			<sequence>
-				<element name="Items">
+			<sequence maxOccurs="unbounded">
+				<element name="Item">
 					<complexType>
-						<sequence>
-							<group ref="e:ItemGroup"/>
-						</sequence>
+						<group ref="e:ItemGroup"/>
 						<attribute name="ItemID" type="string" use="required">
 							<annotation>
 								<documentation>ID of traffic management Item. Persistently unique</documentation>
+							</annotation>
+						</attribute>
+						<attribute name="Checksum" type="string" use="required">
+							<annotation>
+								<documentation>A checksum derived from the data fields of the individual feed.</documentation>
 							</annotation>
 						</attribute>
 					</complexType>

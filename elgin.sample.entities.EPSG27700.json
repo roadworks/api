@@ -90,8 +90,9 @@
                 "content": "-0.414075 51.752357"
             }
         },
-        "Items": {
+        "Item": {
             "ItemID": 1060303,
+            "Checksum": "c9b18ed4093065834cbd17e4fdb30676",
             "iType": "Road closure",
             "iStart": {
                 "estimated": true,

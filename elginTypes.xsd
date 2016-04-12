@@ -429,6 +429,7 @@
 			<enumeration value="Temporary speed limit"/>
 			<enumeration value="Suspension of parking restriction"/>
 			<enumeration value="Suspension of weight restriction"/>
+			<enumeration value="Undefined road closure"/>
 			<enumeration value="Two-way traffic signals"/>
 			<enumeration value="Tow away zone"/>
 			<enumeration value="Weight restriction"/>
