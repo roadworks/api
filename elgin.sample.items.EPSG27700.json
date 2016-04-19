@@ -11,20 +11,33 @@
         "EntityID": 33694,
         "ItemID": 1060303,
         "LastUpdated": "2015-12-16T05:54:00Z",
-        "DataSource": {
+        "ResponsibleOrganisation": {
             "id": 1155,
+            "section": 115,
             "content": "Devon County Council"
         },
         "HighwayAuthority": {
             "id": 7289,
             "content": "Elgin"
         },
-        "eCollectionID": "FB013_20000004",
+        "EToNVersion": 5,
+        "eDataSource": {
+            "id": 1155,
+            "section": "001",
+            "content": "Devon County Council"
+        },
+        "eCollection": {
+            "id": "FB013_20000004",
+            "content": "Works along the A54 from Bigtown to Anytown"
+        },
         "eCategory": "Roadworks",
-        "eSourceID": "NTCC_UF-15-12-16-000274",
+        "eSourceID": "FB013_20000004",
         "eGroup": "Roadworks",
         "eDescription": "Great Eastern Run Route",
         "eTrafficImpact": "High - delays likely",
+        "eTmCode": "Contra-flow",
+        "eStatus": "Advanced Planning",
+        "ePermitStatus": 3,
         "eStart": {
             "estimated": false,
             "content": "2014-07-04T11:53:00"
@@ -90,6 +103,12 @@
                 "content": "464321.5 164361.5"
             }
         },
+        "iDataSource": {
+            "id": 1155,
+            "section": "001",
+            "content": "Devon County Council"
+        },
+        "iContractor": "Morrisons",
         "iType": "Road closure",
         "iStart": {
             "estimated": true,
@@ -122,6 +141,20 @@
         "iLocationDescription": "Hedingham Grove, Chelmsley Wood, Solihull",
         "iRoadName": "A483, Both directions, Newtown",
         "iUsrnList": "11111,1111,11111,11111,11111",
+        "iDirectionOfTravel": "Both",
+        "iFootwayClosure": false,
+        "iNoticeSequence": 1155,
+        "iNotificationType": 200,
+        "iWorksCategory": 1,
+        "iParkingSuspensions": false,
+        "iNoticeOutgoing": true,
+        "iPermitCondition": "Date Constraints",
+        "iOutOfHours": false,
+        "iReinstateCategory": "text",
+        "iTrafficSensitive": "",
+        "iReverseRoute": true,
+        "iSpeedLimit": 30,
+        "iWeightRestriction": 5,
         "iURL": "http://roadworks.org/?tm33694",
         "iCancelled": false,
         "iConfirmed": true,

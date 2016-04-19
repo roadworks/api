@@ -7,14 +7,19 @@
  Created="2006-05-04T18:13:51.0Z" Version="2">
     <Entity Created="2006-05-04T18:13:51.0Z" Checksum="c9b18ed4093065834cbd17e4fdb30674" EntityID="33694">
         <LastUpdated>2015-12-16T05:54:00Z</LastUpdated>
-        <DataSource id="1155">Devon County Council</DataSource>
+        <ResponsibleOrganisation id="1155" section="115">Devon County Council</ResponsibleOrganisation>
         <HighwayAuthority id="7289">Elgin</HighwayAuthority>
-        <eCollectionID>FB013_20000004</eCollectionID>
+        <EToNVersion>5</EToNVersion>
+        <eDataSource id="1155" section="001">Devon County Council</eDataSource>
+        <eCollection id="FB013_20000004">Works along the A54 from Bigtown to Anytown</eCollection>
         <eCategory>Roadworks</eCategory>
-        <eSourceID>NTCC_UF-15-12-16-000274</eSourceID>
+        <eSourceID>FB013_20000004</eSourceID>
         <eGroup>Roadworks</eGroup>
         <eDescription>Great Eastern Run Route</eDescription>
         <eTrafficImpact>High - delays likely</eTrafficImpact>
+        <eTmCode>Contra-flow</eTmCode>
+        <eStatus>Advanced Planning</eStatus>
+        <ePermitStatus>3</ePermitStatus>
         <eStart estimated="false">2014-07-04T11:53:00</eStart>
         <eEnd estimated="true">2016-09-05T23:59:59</eEnd>
         <eSchedule>
@@ -48,6 +53,8 @@
             <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
         </eTo>
         <Item ItemID="1060303" Checksum="c9b18ed4093065834cbd17e4fdb30676">
+            <iDataSource id="1155" section="001">Devon County Council</iDataSource>
+            <iContractor>Morrisons</iContractor>
             <iType>Road closure</iType>
             <iStart estimated="true" derived="true">2014-07-04T11:53:00</iStart>
             <iEnd estimated="true" derived="true">2016-09-05T23:59:59</iEnd>
@@ -60,6 +67,20 @@
             <iLocationDescription>Hedingham Grove, Chelmsley Wood, Solihull</iLocationDescription>
             <iRoadName>A483, Both directions, Newtown</iRoadName>
             <iUsrnList>11111,1111,11111,11111,11111</iUsrnList>
+            <iDirectionOfTravel>Both</iDirectionOfTravel>
+            <iFootwayClosure>false</iFootwayClosure>
+            <iNoticeSequence>1155</iNoticeSequence>
+            <iNotificationType>200</iNotificationType>
+            <iWorksCategory>1</iWorksCategory>
+            <iParkingSuspensions>false</iParkingSuspensions>
+            <iNoticeOutgoing>true</iNoticeOutgoing>
+            <iPermitCondition>Date Constraints</iPermitCondition>
+            <iOutOfHours>false</iOutOfHours>
+            <iReinstateCategory>text</iReinstateCategory>
+            <iTrafficSensitive></iTrafficSensitive>
+            <iReverseRoute>true</iReverseRoute>
+            <iSpeedLimit>30</iSpeedLimit>
+            <iWeightRestriction>5</iWeightRestriction>
             <iURL>http://roadworks.org/?tm33694</iURL>
             <iCancelled>false</iCancelled>
             <iConfirmed>true</iConfirmed>

@@ -60,8 +60,9 @@
 	<complexType name="ItemCType">
 		<sequence>
 			<element ref="e:LastUpdated"/>
-			<element ref="e:DataSource"/>
+			<element ref="e:ResponsibleOrganisation"/>
 			<element ref="e:HighwayAuthority"/>
+			<element ref="e:EToNVersion" minOccurs="0"/>
 			<group ref="e:EntityGroup"/>
 			<group ref="e:ItemGroup"/>
 		</sequence>
@@ -76,14 +77,16 @@
 	</complexType>
 	<group name="EntityGroup">
 		<sequence>
-			<element ref="e:eCollectionID" minOccurs="0"/>
+			<element ref="e:eDataSource"/>
+			<element ref="e:eCollection" minOccurs="0"/>
 			<element ref="e:eCategory"/>
-			<element ref="e:eSourceID" minOccurs="0"/>
+			<element ref="e:eSourceID"/>
 			<element ref="e:eGroup"/>
 			<element ref="e:eDescription" minOccurs="0"/>
 			<element ref="e:eTrafficImpact" minOccurs="0"/>
 			<element ref="e:eTmCode" minOccurs="0"/>
 			<element ref="e:eStatus" minOccurs="0"/>
+			<element ref="e:ePermitStatus" minOccurs="0"/>
 			<element ref="e:eStart"/>
 			<element ref="e:eEnd"/>
 			<element ref="e:eSchedule" minOccurs="0"/>
@@ -107,14 +110,29 @@
 	</group>
 	<group name="ItemGroup">
 		<sequence>
+			<element ref="e:iDataSource"/>
+			<element ref="e:iContractor" minOccurs="0"/>
 			<element ref="e:iType" minOccurs="0"/>
 			<element ref="e:iStart"/>
 			<element ref="e:iEnd"/>
 			<element ref="e:iSchedule" minOccurs="0"/>
 			<element ref="e:iLocationDescription" minOccurs="0"/>
 			<element ref="e:iRoadName" minOccurs="0"/>
-			<element ref="e:iDirectionOfTravel" minOccurs="0"/>
 			<element ref="e:iUsrnList" minOccurs="0"/>
+			<element ref="e:iDirectionOfTravel" minOccurs="0"/>
+			<element ref="e:iFootwayClosure" minOccurs="0"/>
+			<element ref="e:iNoticeSequence" minOccurs="0"/>
+			<element ref="e:iNotificationType" minOccurs="0"/>
+			<element ref="e:iWorksCategory" minOccurs="0"/>
+			<element ref="e:iParkingSuspensions" minOccurs="0"/>
+			<element ref="e:iNoticeOutgoing" minOccurs="0"/>
+			<element ref="e:iPermitCondition" minOccurs="0"/>
+			<element ref="e:iOutOfHours" minOccurs="0"/>
+			<element ref="e:iReinstateCategory" minOccurs="0"/>
+			<element ref="e:iTrafficSensitive" minOccurs="0"/>
+			<element ref="e:iReverseRoute" minOccurs="0"/>
+			<element ref="e:iSpeedLimit" minOccurs="0"/>
+			<element ref="e:iWeightRestriction" minOccurs="0"/>
 			<element ref="e:iURL" minOccurs="0"/>
 			<element ref="e:iCancelled" minOccurs="0"/>
 			<element ref="e:iConfirmed"/>
@@ -133,8 +151,9 @@
 	<complexType name="EntityCType">
 		<sequence>
 			<element ref="e:LastUpdated"/>
-			<element ref="e:DataSource"/>
+			<element ref="e:ResponsibleOrganisation"/>
 			<element ref="e:HighwayAuthority"/>
+			<element ref="e:EToNVersion" minOccurs="0"/>
 			<group ref="e:EntityGroup"/>
 			<sequence maxOccurs="unbounded">
 				<element name="Item">
