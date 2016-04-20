@@ -7,24 +7,25 @@
  Created="2006-05-04T18:13:51.0Z" Version="2">
     <Entity Created="2006-05-04T18:13:51.0Z" Checksum="c9b18ed4093065834cbd17e4fdb30674" EntityID="33694">
         <LastUpdated>2015-12-16T05:54:00Z</LastUpdated>
-        <ResponsibleOrganisation id="1155" section="115">Devon County Council</ResponsibleOrganisation>
+        <ResponsibleOrganisation id="1155" district="115">Devon County Council</ResponsibleOrganisation>
         <HighwayAuthority id="7289">Elgin</HighwayAuthority>
         <EToNVersion>5</EToNVersion>
-        <eDataSource id="1155" section="001">Devon County Council</eDataSource>
+        <eDataSource id="1155" district="001">Devon County Council</eDataSource>
         <eCollection id="FB013_20000004">Works along the A54 from Bigtown to Anytown</eCollection>
         <eCategory>Roadworks</eCategory>
         <eSourceID>FB013_20000004</eSourceID>
         <eGroup>Roadworks</eGroup>
         <eDescription>Great Eastern Run Route</eDescription>
         <eTrafficImpact>High - delays likely</eTrafficImpact>
-        <eTmCode>Contra-flow</eTmCode>
+        <eTrafficManagement>Contra-flow</eTrafficManagement>
         <eStatus>Advanced Planning</eStatus>
-        <ePermitStatus>3</ePermitStatus>
+        <ePermitStatus>Granted</ePermitStatus>
         <eStart estimated="false">2014-07-04T11:53:00</eStart>
         <eEnd estimated="true">2016-09-05T23:59:59</eEnd>
         <eSchedule>
             <ScheduleStartEnd Start="2014-07-04T09:00:00" End="2014-07-04T11:53:00"/>
             <ScheduleStartEnd Start="2014-07-05T09:00:00" End="2014-07-05T11:53:00"/>
+            <Text>Monday, Tuesday, Wednesday, Thursday, Saturday, Sunday 00:00 - 23:59</Text>
         </eSchedule>
         <eLocationDescription>Hedingham Grove, Chelmsley Wood, Solihull</eLocationDescription>
         <eRoadName>A483, Both directions, Newtown</eRoadName>
@@ -53,7 +54,7 @@
             <gml:pos srsDimension="2">-0.414075 51.752357</gml:pos>
         </eTo>
         <Item ItemID="1060303" Checksum="c9b18ed4093065834cbd17e4fdb30676">
-            <iDataSource id="1155" section="001">Devon County Council</iDataSource>
+            <iDataSource id="1155" district="001">Devon County Council</iDataSource>
             <iContractor>Morrisons</iContractor>
             <iType>Road closure</iType>
             <iStart estimated="true" derived="true">2014-07-04T11:53:00</iStart>
@@ -63,6 +64,8 @@
                 <ScheduleStartEnd Start="2014-07-04T15:00:00" End="2014-07-04T17:00:00"/>
                 <ScheduleStartEnd Start="2014-07-05T11:00:00" End="2014-07-05T13:00:00"/>
                 <ScheduleStartEnd Start="2014-07-06T11:00:00" End="2014-07-06T13:00:00"/>
+                <Text>Monday 09:30 - 15:30</Text>
+                <Text>Monday, Tuesday, Wednesday, Thursday, Saturday, Sunday 00:00 - 23:59</Text>
             </iSchedule>
             <iLocationDescription>Hedingham Grove, Chelmsley Wood, Solihull</iLocationDescription>
             <iRoadName>A483, Both directions, Newtown</iRoadName>
@@ -77,7 +80,7 @@
             <iPermitCondition>Date Constraints</iPermitCondition>
             <iOutOfHours>false</iOutOfHours>
             <iReinstateCategory>text</iReinstateCategory>
-            <iTrafficSensitive></iTrafficSensitive>
+            <iTrafficSensitive>true</iTrafficSensitive>
             <iReverseRoute>true</iReverseRoute>
             <iSpeedLimit>30</iSpeedLimit>
             <iWeightRestriction>5</iWeightRestriction>

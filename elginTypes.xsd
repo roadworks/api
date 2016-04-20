@@ -28,7 +28,7 @@
 			<documentation>Road name and location of the Entity</documentation>
 		</annotation>
 	</element>
-	<element name="ePermitStatus" type="integer">
+	<element name="ePermitStatus" type="e:PermitStatusCType">
 		<annotation>
 			<documentation>The Permit status of the EToN works. 
 				
@@ -141,7 +141,7 @@
 						This is an official DfT code associated with the Publisher's SWA_ORG_REF. Ref: http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026						</documentation>
 				</annotation>
 			</attribute>
-			<attribute name="section" type="string" use="optional">
+			<attribute name="district" type="string" use="optional">
 				<annotation>
 					<documentation>Identifies the organisation source of the data</documentation>
 				</annotation>
@@ -200,6 +200,7 @@
 		<complexType>
 			<sequence minOccurs="1" maxOccurs="unbounded">
 				<element ref="e:ScheduleStartEnd" maxOccurs="unbounded"/>
+				<element name="Text" type="string" maxOccurs="unbounded"/>
 			</sequence>
 		</complexType>
 	</element>
@@ -210,6 +211,7 @@
 		<complexType>
 			<sequence minOccurs="1" maxOccurs="unbounded">
 				<element ref="e:ScheduleStartEnd" maxOccurs="unbounded"/>
+				<element name="Text" type="string" maxOccurs="unbounded"/>
 			</sequence>
 		</complexType>
 	</element>
@@ -250,7 +252,7 @@
 					</documentation>
 				</annotation>
 			</attribute>
-			<attribute name="section" type="string" use="optional">
+			<attribute name="district" type="string" use="optional">
 				<annotation>
 					<documentation>The Entity's Datasource  Section ID.
 						
@@ -276,7 +278,7 @@
 					</documentation>
 				</annotation>
 			</attribute>
-			<attribute name="section" type="string" use="optional">
+			<attribute name="district" type="string" use="optional">
 				<annotation>
 					<documentation>The Entity's Datasource  Section ID.
 						
@@ -461,24 +463,38 @@
 			<documentation>Item From/To data is described in GML 3.1. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</documentation>
 		</annotation>
 	</element>
-	<element name="eTmCode" type="e:TmCodeCType">
+	<element name="eTrafficManagement" type="e:TrafficManagementCType">
 		<annotation>
 			<documentation>Traffic Management Code - only applies to EToN roadworks.</documentation>
 		</annotation>
 	</element>
-	<simpleType name="StatusCType">
+	<simpleType name="PermitStatusCType">
 		<restriction base="string">
-			<enumeration value="Forward Planning"/>
-			<enumeration value="Advanced Planning"/>
-			<enumeration value="Works about to start"/>
-			<enumeration value="Work in progress"/>
-			<enumeration value="Works complete with excavation"/>
-			<enumeration value="Works complete without excavation"/>
-			<enumeration value="Cancelled"/>
-			<enumeration value="Works Complete"/>
+			<enumeration value="None"/>       
+			<enumeration value="Application"/>       
+			<enumeration value="Application Made"/>       
+			<enumeration value="Refused"/>       
+			<enumeration value="Granted"/>       
+			<enumeration value="Revoked"/>       
+			<enumeration value="Superseded"/>       
+			<enumeration value="Cancelled"/>       
+			<enumeration value="PAA Granted"/>       
+			<enumeration value="Permit Granted"/>       
+			<enumeration value="Variation Granted"/>       
+			<enumeration value="PAA Pending"/>       
+			<enumeration value="Permit Pending"/>       
+			<enumeration value="Refused with PAA"/>       
+			<enumeration value="Refused with Permit"/>       
+			<enumeration value="PAA Variation Pending"/>       
+			<enumeration value="Permit Variation Pending"/>       
+			<enumeration value="Immediate Pending"/>
+			<enumeration value="Refused Immediate"/>       
+			<enumeration value="Revoked Permit"/>       
+			<enumeration value="Revoked PAA"/>       
+			<enumeration value="PAA with Perm"/>
 		</restriction>
 	</simpleType>
-	<simpleType name="TmCodeCType">
+	<simpleType name="TrafficManagementCType">
 		<restriction base="string">
 			<enumeration value="Contra-flow"/>
 			<enumeration value="Footway closure"/>

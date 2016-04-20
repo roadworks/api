@@ -84,7 +84,7 @@
 			<element ref="e:eGroup"/>
 			<element ref="e:eDescription" minOccurs="0"/>
 			<element ref="e:eTrafficImpact" minOccurs="0"/>
-			<element ref="e:eTmCode" minOccurs="0"/>
+			<element ref="e:eTrafficManagement" minOccurs="0"/>
 			<element ref="e:eStatus" minOccurs="0"/>
 			<element ref="e:ePermitStatus" minOccurs="0"/>
 			<element ref="e:eStart"/>

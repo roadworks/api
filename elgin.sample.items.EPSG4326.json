@@ -13,7 +13,7 @@
         "LastUpdated": "2015-12-16T05:54:00Z",
         "ResponsibleOrganisation": {
             "id": 1155,
-            "section": 115,
+            "district": 115,
             "content": "Devon County Council"
         },
         "HighwayAuthority": {
@@ -23,7 +23,7 @@
         "EToNVersion": 5,
         "eDataSource": {
             "id": 1155,
-            "section": "001",
+            "district": "001",
             "content": "Devon County Council"
         },
         "eCollection": {
@@ -35,9 +35,9 @@
         "eGroup": "Roadworks",
         "eDescription": "Great Eastern Run Route",
         "eTrafficImpact": "High - delays likely",
-        "eTmCode": "Contra-flow",
+        "eTrafficManagement": "Contra-flow",
         "eStatus": "Advanced Planning",
-        "ePermitStatus": 3,
+        "ePermitStatus": "Granted",
         "eStart": {
             "estimated": false,
             "content": "2014-07-04T11:53:00"
@@ -46,16 +46,19 @@
             "estimated": true,
             "content": "2016-09-05T23:59:59"
         },
-        "eSchedule": {"ScheduleStartEnd": [
-            {
-                "Start": "2014-07-04T09:00:00",
-                "End": "2014-07-04T11:53:00"
-            },
-            {
-                "Start": "2014-07-05T09:00:00",
-                "End": "2014-07-05T11:53:00"
-            }
-        ]},
+        "eSchedule": {
+            "ScheduleStartEnd": [
+                {
+                    "Start": "2014-07-04T09:00:00",
+                    "End": "2014-07-04T11:53:00"
+                },
+                {
+                    "Start": "2014-07-05T09:00:00",
+                    "End": "2014-07-05T11:53:00"
+                }
+            ],
+            "Text": "Monday, Tuesday, Wednesday, Thursday, Saturday, Sunday 00:00 - 23:59"
+        },
         "eLocationDescription": "Hedingham Grove, Chelmsley Wood, Solihull",
         "eRoadName": "A483, Both directions, Newtown",
         "eUsrnList": "11111,1111,11111,11111,11111",
@@ -105,7 +108,7 @@
         },
         "iDataSource": {
             "id": 1155,
-            "section": "001",
+            "district": "001",
             "content": "Devon County Council"
         },
         "iContractor": "Morrisons",
@@ -120,24 +123,30 @@
             "derived": true,
             "content": "2016-09-05T23:59:59"
         },
-        "iSchedule": {"ScheduleStartEnd": [
-            {
-                "Start": "2014-07-04T11:00:00",
-                "End": "2014-07-04T13:00:00"
-            },
-            {
-                "Start": "2014-07-04T15:00:00",
-                "End": "2014-07-04T17:00:00"
-            },
-            {
-                "Start": "2014-07-05T11:00:00",
-                "End": "2014-07-05T13:00:00"
-            },
-            {
-                "Start": "2014-07-06T11:00:00",
-                "End": "2014-07-06T13:00:00"
-            }
-        ]},
+        "iSchedule": {
+            "ScheduleStartEnd": [
+                {
+                    "Start": "2014-07-04T11:00:00",
+                    "End": "2014-07-04T13:00:00"
+                },
+                {
+                    "Start": "2014-07-04T15:00:00",
+                    "End": "2014-07-04T17:00:00"
+                },
+                {
+                    "Start": "2014-07-05T11:00:00",
+                    "End": "2014-07-05T13:00:00"
+                },
+                {
+                    "Start": "2014-07-06T11:00:00",
+                    "End": "2014-07-06T13:00:00"
+                }
+            ],
+            "Text": [
+                "Monday 09:30 - 15:30",
+                "Monday, Tuesday, Wednesday, Thursday, Saturday, Sunday 00:00 - 23:59"
+            ]
+        },
         "iLocationDescription": "Hedingham Grove, Chelmsley Wood, Solihull",
         "iRoadName": "A483, Both directions, Newtown",
         "iUsrnList": "11111,1111,11111,11111,11111",
