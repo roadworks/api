@@ -547,7 +547,7 @@
 	</simpleType>
 	<element name="eCategory">
 		<annotation>
-			<documentation>The category of  "parent" Entity (can be thought of as the "Cause")</documentation>
+			<documentation>The category of "parent" Entity (can be thought of as the "Cause")</documentation>
 		</annotation>
 		<complexType>
 			<simpleContent>
@@ -559,18 +559,32 @@
 		<restriction base="string">
 			<enumeration value="Incident"/>
 			<enumeration value="Accident"/>
-			<enumeration value="Weather Incident"/>
+			<enumeration value="Weather incident"/>
+			<enumeration value="Landslip"/>
+			<enumeration value="Flood"/>
+			<enumeration value="Cycling"/>
+			<enumeration value="Football"/>
+			<enumeration value="Horse racing"/>
+			<enumeration value="Motor sport event"/>
+			<enumeration value="Rugby"/>
+			<enumeration value="Running"/>
+			<enumeration value="Sport Event"/>
+			<enumeration value="Carnival / Parade / Street Party"/>
+			<enumeration value="Entertainment Event"/>
+			<enumeration value="Festival"/>
+			<enumeration value="Market"/>
+			<enumeration value="Cruise ship"/>
+			<enumeration value="Funeral"/>
+			<enumeration value="Public Event (Other)"/>
 			<enumeration value="Roadworks"/>
 			<enumeration value="Skip"/>
 			<enumeration value="Scaffolding"/>
 			<enumeration value="Materials"/>
 			<enumeration value="Obstruction"/>
+			<enumeration value="Crane"/>
+			<enumeration value="Hoarding"/>
+			<enumeration value="Table &amp; chairs"/>
 			<enumeration value="License (Other)"/>
-			<enumeration value="Sport Event"/>
-			<enumeration value="Entertainment Event"/>
-			<enumeration value="Market"/>
-			<enumeration value="Carnival / Parade / Street Party"/>
-			<enumeration value="Public Event (Other)"/>
 			<enumeration value="Unclassified"/>
 		</restriction>
 	</simpleType>
