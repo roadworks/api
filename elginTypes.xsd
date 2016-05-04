@@ -30,8 +30,8 @@
 	</element>
 	<element name="ePermitStatus" type="e:PermitStatusCType">
 		<annotation>
-			<documentation>The Permit status of the EToN works. 
-				
+			<documentation>The Permit status of the EToN works.
+
 				Only relevant to EToN works where the works is on a permitable USRN
 			</documentation>
 		</annotation>
@@ -74,7 +74,7 @@
 	<element name="eConfirmed" type="boolean">
 		<annotation>
 			<documentation>A flag to identify if the works has been confirmed.
-				
+
 				An EToN works, and a TM works associated with an EToN works is considered CONFIRMED unless:
 				1) When an EToN roadworks' start date has passed but no confirmed works start alert has been receieved from the LHA
 				2) When an EToN roadworks' end date has passed and the works is still in it's grace period, but still considered active as no confirmed works stop alert has been received from the LHA
@@ -85,7 +85,7 @@
 	<element name="iConfirmed" type="boolean">
 		<annotation>
 			<documentation>A flag to identify if the works has been confirmed.
-				
+
 				An EToN works, and a TM works associated with an EToN works is considered CONFIRMED unless:
 				1) When an EToN roadworks' start date has passed but no confirmed works start alert has been receieved from the LHA
 				2) When an EToN roadworks' end date has passed and the works is still in it's grace period, but still considered active as no confirmed works stop alert has been received from the LHA
@@ -111,7 +111,7 @@
 	<element name="eUsrnList" type="string">
 		<annotation>
 			<documentation>Comma delimited list of USRNs corresponding to Entity geometry
-				
+
 				USRN stands for Unique Street Reference Number. A USRN identifies a street segment in the UK Natonal Street Gazetteer
 			</documentation>
 		</annotation>
@@ -119,7 +119,7 @@
 	<element name="iUsrnList" type="string">
 		<annotation>
 			<documentation>Comma delimited list of USRNs corresponding to Item geometry
-				
+
 				USRN stands for Unique Street Reference Number. A USRN identifies a street segment in the UK Natonal Street Gazetteer
 			</documentation>
 		</annotation>
@@ -127,9 +127,9 @@
 	<element name="ResponsibleOrganisation">
 		<annotation>
 			<documentation>The organisation responsible for the traffic disruption.
-				
-				Identifies the organisation source of the data. 
-				The name of the Local Authority/Utility/National Highways Agency from whom the data was sourced. 
+
+				Identifies the organisation source of the data.
+				The name of the Local Authority/Utility/National Highways Agency from whom the data was sourced.
 				Please refer to an authoritative list <a href="http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026">here</a>.
 			</documentation>
 		</annotation>
@@ -137,7 +137,7 @@
 			<attribute name="id" type="string" use="required">
 				<annotation>
 					<documentation>The  Responsible Organisation's Section ID. This is an EToN field.
-						
+
 						This is an official DfT code associated with the Publisher's SWA_ORG_REF. Ref: http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026						</documentation>
 				</annotation>
 			</attribute>
@@ -160,8 +160,8 @@
 		<complexType mixed="true">
 			<attribute name="id" type="string" use="optional">
 				<annotation>
-					<documentation>ID identifying a collection of Entities. Grouping by this field will generate a list of all Entities belonging to a collection such as a major road scheme. 
-						
+					<documentation>ID identifying a collection of Entities. Grouping by this field will generate a list of all Entities belonging to a collection such as a major road scheme.
+
 						For a majority of the roadworks data this reference code is the same format as the SourceReference field. Where an EToN ProjectID is present it is encoded as the EntityCollectionID. For Incidents this data will be Null
 					</documentation>
 				</annotation>
@@ -238,16 +238,16 @@
 	</element>
 	<element name="eDataSource">
 		<annotation>
-			<documentation>Identifies the organisation from which the data is sourced.  
-				
+			<documentation>Identifies the organisation from which the data is sourced.
+
 				The name of the Local Authority/Utility/National Highways Agency or third party from whom the data was sourced.  
 			</documentation>
 		</annotation>
 		<complexType mixed="true">
 			<attribute name="id" type="string" use="required">
 				<annotation>
-					<documentation>Identifies the organisation from which the data is sourced.  
-						
+					<documentation>Identifies the organisation from which the data is sourced.
+
 						The name of the Local Authority/Utility/National Highways Agency or third party from whom the data was sourced.
 					</documentation>
 				</annotation>
@@ -255,7 +255,7 @@
 			<attribute name="district" type="string" use="optional">
 				<annotation>
 					<documentation>The Entity's Datasource  Section ID.
-						
+
 						This is an official DfT code associated with the Publisher's SWA_ORG_REF. Ref: http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026
 					</documentation>
 				</annotation>
@@ -264,16 +264,16 @@
 	</element>
 	<element name="iDataSource">
 		<annotation>
-			<documentation>Identifies the organisation from which the data is sourced.  
-				
+			<documentation>Identifies the organisation from which the data is sourced.
+
 				The name of the Local Authority/Utility/National Highways Agency or third party from whom the data was sourced.  
 			</documentation>
 		</annotation>
 		<complexType mixed="true">
 			<attribute name="id" type="string" use="required">
 				<annotation>
-					<documentation>Identifies the organisation from which the data is sourced.  
-						
+					<documentation>Identifies the organisation from which the data is sourced.
+
 						The name of the Local Authority/Utility/National Highways Agency or third party from whom the data was sourced.
 					</documentation>
 				</annotation>
@@ -281,7 +281,7 @@
 			<attribute name="district" type="string" use="optional">
 				<annotation>
 					<documentation>The Entity's Datasource  Section ID.
-						
+
 						This is an official DfT code associated with the Publisher's SWA_ORG_REF. Ref: http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026
 					</documentation>
 				</annotation>
@@ -306,7 +306,7 @@
 	<element name="iNotificationType" type="integer">
 		<annotation>
 			<documentation>The last EToN Notification Type received
-				
+
 				See https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/181675/eton-6-technical-specification.pdf for details
 			</documentation>
 		</annotation>
@@ -470,27 +470,27 @@
 	</element>
 	<simpleType name="PermitStatusCType">
 		<restriction base="string">
-			<enumeration value="None"/>       
-			<enumeration value="Application"/>       
-			<enumeration value="Application Made"/>       
-			<enumeration value="Refused"/>       
-			<enumeration value="Granted"/>       
-			<enumeration value="Revoked"/>       
-			<enumeration value="Superseded"/>       
-			<enumeration value="Cancelled"/>       
-			<enumeration value="PAA Granted"/>       
-			<enumeration value="Permit Granted"/>       
-			<enumeration value="Variation Granted"/>       
-			<enumeration value="PAA Pending"/>       
-			<enumeration value="Permit Pending"/>       
-			<enumeration value="Refused with PAA"/>       
-			<enumeration value="Refused with Permit"/>       
-			<enumeration value="PAA Variation Pending"/>       
-			<enumeration value="Permit Variation Pending"/>       
+			<enumeration value="None"/>
+			<enumeration value="Application"/>
+			<enumeration value="Application Made"/>
+			<enumeration value="Refused"/>
+			<enumeration value="Granted"/>
+			<enumeration value="Revoked"/>
+			<enumeration value="Superseded"/>
+			<enumeration value="Cancelled"/>
+			<enumeration value="PAA Granted"/>
+			<enumeration value="Permit Granted"/>
+			<enumeration value="Variation Granted"/>
+			<enumeration value="PAA Pending"/>
+			<enumeration value="Permit Pending"/>
+			<enumeration value="Refused with PAA"/>
+			<enumeration value="Refused with Permit"/>
+			<enumeration value="PAA Variation Pending"/>
+			<enumeration value="Permit Variation Pending"/>
 			<enumeration value="Immediate Pending"/>
-			<enumeration value="Refused Immediate"/>       
-			<enumeration value="Revoked Permit"/>       
-			<enumeration value="Revoked PAA"/>       
+			<enumeration value="Refused Immediate"/>
+			<enumeration value="Revoked Permit"/>
+			<enumeration value="Revoked PAA"/>
 			<enumeration value="PAA with Perm"/>
 		</restriction>
 	</simpleType>
@@ -547,7 +547,7 @@
 	</simpleType>
 	<element name="eCategory">
 		<annotation>
-			<documentation>The category of  "parent" Entity (can be thought of as the "Cause")</documentation>
+			<documentation>The category of "parent" Entity (can be thought of as the "Cause")</documentation>
 		</annotation>
 		<complexType>
 			<simpleContent>
@@ -559,18 +559,32 @@
 		<restriction base="string">
 			<enumeration value="Incident"/>
 			<enumeration value="Accident"/>
-			<enumeration value="Weather Incident"/>
+			<enumeration value="Weather incident"/>
+			<enumeration value="Landslip"/>
+			<enumeration value="Flood"/>
+			<enumeration value="Cycling"/>
+			<enumeration value="Football"/>
+			<enumeration value="Horse racing"/>
+			<enumeration value="Motor sport event"/>
+			<enumeration value="Rugby"/>
+			<enumeration value="Running"/>
+			<enumeration value="Sport Event"/>
+			<enumeration value="Carnival / Parade / Street Party"/>
+			<enumeration value="Entertainment Event"/>
+			<enumeration value="Festival"/>
+			<enumeration value="Market"/>
+			<enumeration value="Cruise ship"/>
+			<enumeration value="Funeral"/>
+			<enumeration value="Public Event (Other)"/>
 			<enumeration value="Roadworks"/>
 			<enumeration value="Skip"/>
 			<enumeration value="Scaffolding"/>
 			<enumeration value="Materials"/>
 			<enumeration value="Obstruction"/>
+			<enumeration value="Crane"/>
+			<enumeration value="Hoarding"/>
+			<enumeration value="Table &amp; chairs"/>
 			<enumeration value="License (Other)"/>
-			<enumeration value="Sport Event"/>
-			<enumeration value="Entertainment Event"/>
-			<enumeration value="Market"/>
-			<enumeration value="Carnival / Parade / Street Party"/>
-			<enumeration value="Public Event (Other)"/>
 			<enumeration value="Unclassified"/>
 		</restriction>
 	</simpleType>
