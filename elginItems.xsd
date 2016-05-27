@@ -80,7 +80,7 @@
 			<element ref="e:eDataSource"/>
 			<element ref="e:eCollection" minOccurs="0"/>
 			<element ref="e:eCategory"/>
-			<element ref="e:eSourceID"/>
+			<element ref="e:eSourceID" minOccurs="0"/>
 			<element ref="e:eGroup"/>
 			<element ref="e:eDescription" minOccurs="0"/>
 			<element ref="e:eTrafficImpact" minOccurs="0"/>
@@ -99,6 +99,7 @@
 			<element ref="e:eOriginatingSystem" minOccurs="0"/>
 			<element ref="e:ePoint"/>
 			<sequence minOccurs="0" maxOccurs="unbounded">
+				<element ref="e:eWayPoints" minOccurs="0"/>
 				<element ref="e:eLineString" minOccurs="0"/>
 				<element ref="e:ePolygon" minOccurs="0"/>
 				<sequence minOccurs="0">
@@ -139,6 +140,7 @@
 			<element ref="e:iOriginatingSystem" minOccurs="0"/>
 			<element ref="e:iPoint"/>
 			<sequence minOccurs="0" maxOccurs="unbounded">
+				<element ref="e:iWayPoints" minOccurs="0"/>
 				<element ref="e:iLineString" minOccurs="0"/>
 				<element ref="e:iPolygon" minOccurs="0"/>
 				<sequence minOccurs="0">

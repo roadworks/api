@@ -8,17 +8,20 @@
 		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/feature.xsd"/>
 	<element name="EToNVersion" type="integer">
 		<annotation>
-			<documentation>The EToN version used in the EToN data. Not applicable to Incident and TM data</documentation>
+			<documentation>The EToN version used in the EToN data. Not applicable to Incident and TM
+				data</documentation>
 		</annotation>
 	</element>
 	<element name="HighwayAuthority">
 		<annotation>
-			<documentation>Identifies the Highway Authority area in which the data is located.</documentation>
+			<documentation>Identifies the Highway Authority area in which the data is
+				located.</documentation>
 		</annotation>
 		<complexType mixed="true">
 			<attribute name="id" type="string" use="required">
 				<annotation>
-					<documentation>Identifies the Highway Authority area in which the data is located.</documentation>
+					<documentation>Identifies the Highway Authority area in which the data is
+						located.</documentation>
 				</annotation>
 			</attribute>
 		</complexType>
@@ -30,10 +33,8 @@
 	</element>
 	<element name="ePermitStatus" type="e:PermitStatusCType">
 		<annotation>
-			<documentation>The Permit status of the EToN works.
-
-				Only relevant to EToN works where the works is on a permitable USRN
-			</documentation>
+			<documentation>The Permit status of the EToN works. Only relevant to EToN works where
+				the works is on a permitable USRN </documentation>
 		</annotation>
 	</element>
 	<element name="eStatus" type="string">
@@ -43,12 +44,14 @@
 	</element>
 	<element name="iOriginatingSystem" type="string">
 		<annotation>
-			<documentation>Identifies the system in which the Item data content was created</documentation>
+			<documentation>Identifies the system in which the Item data content was
+				created</documentation>
 		</annotation>
 	</element>
 	<element name="eOriginatingSystem" type="string">
 		<annotation>
-			<documentation>Identifies the system in which the Entity data content was created</documentation>
+			<documentation>Identifies the system in which the Entity data content was
+				created</documentation>
 		</annotation>
 	</element>
 	<element name="eURL" type="anyURI">
@@ -73,24 +76,24 @@
 	</element>
 	<element name="eConfirmed" type="boolean">
 		<annotation>
-			<documentation>A flag to identify if the works has been confirmed.
-
-				An EToN works, and a TM works associated with an EToN works is considered CONFIRMED unless:
-				1) When an EToN roadworks' start date has passed but no confirmed works start alert has been receieved from the LHA
-				2) When an EToN roadworks' end date has passed and the works is still in it's grace period, but still considered active as no confirmed works stop alert has been received from the LHA
-				All other TM works and Incidents are considered  CONFIRMED
-			</documentation>
+			<documentation>A flag to identify if the works has been confirmed. An EToN works, and a
+				TM works associated with an EToN works is considered CONFIRMED unless: 1) When an
+				EToN roadworks' start date has passed but no confirmed works start alert has been
+				receieved from the LHA 2) When an EToN roadworks' end date has passed and the works
+				is still in it's grace period, but still considered active as no confirmed works
+				stop alert has been received from the LHA All other TM works and Incidents are
+				considered CONFIRMED </documentation>
 		</annotation>
 	</element>
 	<element name="iConfirmed" type="boolean">
 		<annotation>
-			<documentation>A flag to identify if the works has been confirmed.
-
-				An EToN works, and a TM works associated with an EToN works is considered CONFIRMED unless:
-				1) When an EToN roadworks' start date has passed but no confirmed works start alert has been receieved from the LHA
-				2) When an EToN roadworks' end date has passed and the works is still in it's grace period, but still considered active as no confirmed works stop alert has been received from the LHA
-				All other TM works and Incidents are considered  CONFIRMED
-			</documentation>
+			<documentation>A flag to identify if the works has been confirmed. An EToN works, and a
+				TM works associated with an EToN works is considered CONFIRMED unless: 1) When an
+				EToN roadworks' start date has passed but no confirmed works start alert has been
+				receieved from the LHA 2) When an EToN roadworks' end date has passed and the works
+				is still in it's grace period, but still considered active as no confirmed works
+				stop alert has been received from the LHA All other TM works and Incidents are
+				considered CONFIRMED </documentation>
 		</annotation>
 	</element>
 	<element name="iDirectionOfTravel" type="string">
@@ -110,35 +113,33 @@
 	</element>
 	<element name="eUsrnList" type="string">
 		<annotation>
-			<documentation>Comma delimited list of USRNs corresponding to Entity geometry
-
-				USRN stands for Unique Street Reference Number. A USRN identifies a street segment in the UK Natonal Street Gazetteer
-			</documentation>
+			<documentation>Comma delimited list of USRNs corresponding to Entity geometry USRN
+				stands for Unique Street Reference Number. A USRN identifies a street segment in the
+				UK Natonal Street Gazetteer </documentation>
 		</annotation>
 	</element>
 	<element name="iUsrnList" type="string">
 		<annotation>
-			<documentation>Comma delimited list of USRNs corresponding to Item geometry
-
-				USRN stands for Unique Street Reference Number. A USRN identifies a street segment in the UK Natonal Street Gazetteer
-			</documentation>
+			<documentation>Comma delimited list of USRNs corresponding to Item geometry USRN stands
+				for Unique Street Reference Number. A USRN identifies a street segment in the UK
+				Natonal Street Gazetteer </documentation>
 		</annotation>
 	</element>
 	<element name="ResponsibleOrganisation">
 		<annotation>
-			<documentation>The organisation responsible for the traffic disruption.
-
-				Identifies the organisation source of the data.
-				The name of the Local Authority/Utility/National Highways Agency from whom the data was sourced.
-				Please refer to an authoritative list <a href="http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026">here</a>.
-			</documentation>
+			<documentation>The organisation responsible for the traffic disruption. Identifies the
+				organisation source of the data. The name of the Local Authority/Utility/National
+				Highways Agency from whom the data was sourced. Please refer to an authoritative
+				list <a href="http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026"
+					>here</a>. </documentation>
 		</annotation>
 		<complexType mixed="true">
 			<attribute name="id" type="string" use="required">
 				<annotation>
-					<documentation>The  Responsible Organisation's Section ID. This is an EToN field.
-
-						This is an official DfT code associated with the Publisher's SWA_ORG_REF. Ref: http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026						</documentation>
+					<documentation>The Responsible Organisation's Section ID. This is an EToN field.
+						This is an official DfT code associated with the Publisher's SWA_ORG_REF.
+						Ref: http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026
+					</documentation>
 				</annotation>
 			</attribute>
 			<attribute name="district" type="string" use="optional">
@@ -160,10 +161,12 @@
 		<complexType mixed="true">
 			<attribute name="id" type="string" use="optional">
 				<annotation>
-					<documentation>ID identifying a collection of Entities. Grouping by this field will generate a list of all Entities belonging to a collection such as a major road scheme.
-
-						For a majority of the roadworks data this reference code is the same format as the SourceReference field. Where an EToN ProjectID is present it is encoded as the EntityCollectionID. For Incidents this data will be Null
-					</documentation>
+					<documentation>ID identifying a collection of Entities. Grouping by this field
+						will generate a list of all Entities belonging to a collection such as a
+						major road scheme. For a majority of the roadworks data this reference code
+						is the same format as the SourceReference field. Where an EToN ProjectID is
+						present it is encoded as the EntityCollectionID. For Incidents this data
+						will be Null </documentation>
 				</annotation>
 			</attribute>
 		</complexType>
@@ -185,17 +188,20 @@
 	</element>
 	<element name="iEnd" type="e:DateTimeSType">
 		<annotation>
-			<documentation>End datetime of "child" Item. This value is mandatory as where it is missing from the source data it is derived from the Entity.</documentation>
+			<documentation>End datetime of "child" Item. This value is mandatory as where it is
+				missing from the source data it is derived from the Entity.</documentation>
 		</annotation>
 	</element>
 	<element name="iStart" type="e:DateTimeSType">
 		<annotation>
-			<documentation>Start datetime of "child" Item. This value is mandatory as where it is missing from the source data it is derived from the Entity.</documentation>
+			<documentation>Start datetime of "child" Item. This value is mandatory as where it is
+				missing from the source data it is derived from the Entity.</documentation>
 		</annotation>
 	</element>
 	<element name="eSchedule">
 		<annotation>
-			<documentation>Array of start and end datetimes when Entity is active. AKA Enforcement Pattern.</documentation>
+			<documentation>Array of start and end datetimes when Entity is active. AKA Enforcement
+				Pattern.</documentation>
 		</annotation>
 		<complexType>
 			<sequence minOccurs="1" maxOccurs="unbounded">
@@ -206,7 +212,8 @@
 	</element>
 	<element name="iSchedule">
 		<annotation>
-			<documentation>Array of start and end datetimes when Item is active. AKA Enforcement Pattern</documentation>
+			<documentation>Array of start and end datetimes when Item is active. AKA Enforcement
+				Pattern</documentation>
 		</annotation>
 		<complexType>
 			<sequence minOccurs="1" maxOccurs="unbounded">
@@ -228,35 +235,35 @@
 	</element>
 	<element name="LastUpdated" type="dateTime">
 		<annotation>
-			<documentation>Datetime when the data was last updated within roadworks.org</documentation>
+			<documentation>Datetime when the data was last updated within
+				roadworks.org</documentation>
 		</annotation>
 	</element>
 	<element name="eSourceID">
 		<annotation>
-			<documentation>The reference used by the originating system from which the data was sourced. For roadworks this is the Eton works reference.</documentation>
+			<documentation>The reference used by the originating system from which the data was
+				sourced. For roadworks this is the Eton works reference.</documentation>
 		</annotation>
 	</element>
 	<element name="eDataSource">
 		<annotation>
-			<documentation>Identifies the organisation from which the data is sourced.
-
-				The name of the Local Authority/Utility/National Highways Agency or third party from whom the data was sourced.  
-			</documentation>
+			<documentation>Identifies the organisation from which the data is sourced. The name of
+				the Local Authority/Utility/National Highways Agency or third party from whom the
+				data was sourced.   </documentation>
 		</annotation>
 		<complexType mixed="true">
 			<attribute name="id" type="string" use="required">
 				<annotation>
-					<documentation>Identifies the organisation from which the data is sourced.
-
-						The name of the Local Authority/Utility/National Highways Agency or third party from whom the data was sourced.
-					</documentation>
+					<documentation>Identifies the organisation from which the data is sourced. The
+						name of the Local Authority/Utility/National Highways Agency or third party
+						from whom the data was sourced. </documentation>
 				</annotation>
 			</attribute>
 			<attribute name="district" type="string" use="optional">
 				<annotation>
-					<documentation>The Entity's Datasource  Section ID.
-
-						This is an official DfT code associated with the Publisher's SWA_ORG_REF. Ref: http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026
+					<documentation>The Entity's Datasource Section ID. This is an official DfT code
+						associated with the Publisher's SWA_ORG_REF. Ref:
+						http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026
 					</documentation>
 				</annotation>
 			</attribute>
@@ -264,25 +271,23 @@
 	</element>
 	<element name="iDataSource">
 		<annotation>
-			<documentation>Identifies the organisation from which the data is sourced.
-
-				The name of the Local Authority/Utility/National Highways Agency or third party from whom the data was sourced.  
-			</documentation>
+			<documentation>Identifies the organisation from which the data is sourced. The name of
+				the Local Authority/Utility/National Highways Agency or third party from whom the
+				data was sourced.   </documentation>
 		</annotation>
 		<complexType mixed="true">
 			<attribute name="id" type="string" use="required">
 				<annotation>
-					<documentation>Identifies the organisation from which the data is sourced.
-
-						The name of the Local Authority/Utility/National Highways Agency or third party from whom the data was sourced.
-					</documentation>
+					<documentation>Identifies the organisation from which the data is sourced. The
+						name of the Local Authority/Utility/National Highways Agency or third party
+						from whom the data was sourced. </documentation>
 				</annotation>
 			</attribute>
 			<attribute name="district" type="string" use="optional">
 				<annotation>
-					<documentation>The Entity's Datasource  Section ID.
-
-						This is an official DfT code associated with the Publisher's SWA_ORG_REF. Ref: http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026
+					<documentation>The Entity's Datasource Section ID. This is an official DfT code
+						associated with the Publisher's SWA_ORG_REF. Ref:
+						http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026
 					</documentation>
 				</annotation>
 			</attribute>
@@ -290,7 +295,8 @@
 	</element>
 	<element name="iContractor" type="string">
 		<annotation>
-			<documentation>The name of the Contractor. i.e who is carrying out the work.</documentation>
+			<documentation>The name of the Contractor. i.e who is carrying out the
+				work.</documentation>
 		</annotation>
 	</element>
 	<element name="iFootwayClosure" type="boolean">
@@ -305,10 +311,9 @@
 	</element>
 	<element name="iNotificationType" type="integer">
 		<annotation>
-			<documentation>The last EToN Notification Type received
-
-				See https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/181675/eton-6-technical-specification.pdf for details
-			</documentation>
+			<documentation>The last EToN Notification Type received See
+				https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/181675/eton-6-technical-specification.pdf
+				for details </documentation>
 		</annotation>
 	</element>
 	<element name="iWorksCategory" type="integer">
@@ -338,17 +343,20 @@
 	</element>
 	<element name="iReinstateCategory" type="string">
 		<annotation>
-			<documentation>The Reinstatement Categories that apply to the road on which the works are being carried out. EToN only</documentation>
+			<documentation>The Reinstatement Categories that apply to the road on which the works
+				are being carried out. EToN only</documentation>
 		</annotation>
 	</element>
 	<element name="iTrafficSensitive" type="string">
 		<annotation>
-			<documentation>The Traffic Sensitive information that applies to the road on whicih the works are being carried out. EToN only</documentation>
+			<documentation>The Traffic Sensitive information that applies to the road on whicih the
+				works are being carried out. EToN only</documentation>
 		</annotation>
 	</element>
 	<element name="iReverseRoute" type="boolean">
 		<annotation>
-			<documentation>If true then the reverse route of the TM diversion route plan applies</documentation>
+			<documentation>If true then the reverse route of the TM diversion route plan
+				applies</documentation>
 		</annotation>
 	</element>
 	<element name="iSpeedLimit" type="integer">
@@ -358,7 +366,8 @@
 	</element>
 	<element name="iWeightRestriction" type="integer">
 		<annotation>
-			<documentation>The weight restriction in tonnes (if any) that applies to the TM Item</documentation>
+			<documentation>The weight restriction in tonnes (if any) that applies to the TM
+				Item</documentation>
 		</annotation>
 	</element>
 	<complexType name="UnDerivedDateTimeSType">
@@ -373,12 +382,16 @@
 			<extension base="dateTime">
 				<attribute name="estimated" type="boolean" use="required">
 					<annotation>
-						<documentation>Boolean flag to say the date is estimated or exact. This value is mandatory as where it is missing from the source data it is derived from the Entity (please see "derived" field)..</documentation>
+						<documentation>Boolean flag to say the date is estimated or exact. This
+							value is mandatory as where it is missing from the source data it is
+							derived from the Entity (please see "derived" field)..</documentation>
 					</annotation>
 				</attribute>
 				<attribute name="derived" type="string" use="required">
 					<annotation>
-						<documentation>Boolean flag to say the date is derived from its parent Entity. False indicates the date is present in the source data.</documentation>
+						<documentation>Boolean flag to say the date is derived from its parent
+							Entity. False indicates the date is present in the source
+							data.</documentation>
 					</annotation>
 				</attribute>
 			</extension>
@@ -395,20 +408,38 @@
 			<extension base="gml:PointType">
 				<attribute name="derived" type="boolean" use="required">
 					<annotation>
-						<documentation>Indicates whether the point location has been derived by Elgin. False indicates that the location was present in the source data.</documentation>
+						<documentation>Indicates whether the point location has been derived by
+							Elgin. False indicates that the location was present in the source
+							data.</documentation>
 					</annotation>
 				</attribute>
 			</extension>
 		</complexContent>
 	</complexType>
+	<element name="eWayPoints" type="e:WayPointsCType">
+		<annotation>
+			<documentation>A delimited list of coords that represent the user defined way points in
+				a route. Ie: the points along the route explicitly defined by the user when
+				digitising their route on the map.</documentation>
+		</annotation>
+	</element>
+	<element name="iWayPoints" type="e:WayPointsCType">
+		<annotation>
+			<documentation>A delimited list of coords that represent the user defined way points in
+				a route. Ie: the points along the route explicitly defined by the user when
+				digitising their route on the map.</documentation>
+		</annotation>
+	</element>
 	<element name="eLineString" type="e:LineStringCType">
 		<annotation>
-			<documentation>Entity line geometry is described in GML 3.1. Longitude and latitude and vertices are space delimited. </documentation>
+			<documentation>Entity line geometry is described in GML 3.1. Longitude and latitude and
+				vertices are space delimited. </documentation>
 		</annotation>
 	</element>
 	<element name="iLineString" type="e:LineStringCType">
 		<annotation>
-			<documentation>Item line geometry is described in GML 3.1. Longitude and latitude and vertices are space delimited. </documentation>
+			<documentation>Item line geometry is described in GML 3.1. Longitude and latitude and
+				vertices are space delimited. </documentation>
 		</annotation>
 	</element>
 	<complexType name="LineStringCType">
@@ -416,20 +447,33 @@
 			<extension base="gml:LineStringType">
 				<attribute name="derived" type="boolean" use="required">
 					<annotation>
-						<documentation>Indicates whether the LineString location has been derived by Elgin. False indicates that the location was present in the source data.</documentation>
+						<documentation>Indicates whether the LineString location has been derived by
+							Elgin. False indicates that the location was present in the source
+							data.</documentation>
 					</annotation>
 				</attribute>
 			</extension>
 		</complexContent>
 	</complexType>
+	<complexType name="WayPointsCType">
+		<choice maxOccurs="1" minOccurs="1">
+			<element ref="gml:pos"/>
+			<element ref="gml:posList"/>
+		</choice>
+		<attributeGroup ref="gml:SRSReferenceGroup"/>
+	</complexType>
 	<element name="ePolygon" type="e:PolygonCType">
 		<annotation>
-			<documentation>Entity polygon geometry is described in GML 3.1. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</documentation>
+			<documentation>Entity polygon geometry is described in GML 3.1. Longitude and latitude
+				and vertices are space delimited. The last vertex in a polygon is always the start
+				and first vertex in the string.</documentation>
 		</annotation>
 	</element>
 	<element name="iPolygon" type="e:PolygonCType">
 		<annotation>
-			<documentation>Item polygon geometry is described in GML 3.1. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</documentation>
+			<documentation>Item polygon geometry is described in GML 3.1. Longitude and latitude and
+				vertices are space delimited. The last vertex in a polygon is always the start and
+				first vertex in the string.</documentation>
 		</annotation>
 	</element>
 	<complexType name="PolygonCType">
@@ -437,7 +481,9 @@
 			<extension base="gml:PolygonType">
 				<attribute name="derived" type="boolean" use="required">
 					<annotation>
-						<documentation>Indicates whether the Polygon location has been derived by Elgin. False indicates that the location was present in the source data.</documentation>
+						<documentation>Indicates whether the Polygon location has been derived by
+							Elgin. False indicates that the location was present in the source
+							data.</documentation>
 					</annotation>
 				</attribute>
 			</extension>
@@ -445,22 +491,30 @@
 	</complexType>
 	<element name="eFrom" type="e:PointCType">
 		<annotation>
-			<documentation>Entity From/To route geometry is described in GML 3.1. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</documentation>
+			<documentation>Entity From/To route geometry is described in GML 3.1. Longitude and
+				latitude and vertices are space delimited. The last vertex in a polygon is always
+				the start and first vertex in the string.</documentation>
 		</annotation>
 	</element>
 	<element name="eTo" type="e:PointCType">
 		<annotation>
-			<documentation>Entity From/To route geometry is described in GML 3.1. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</documentation>
+			<documentation>Entity From/To route geometry is described in GML 3.1. Longitude and
+				latitude and vertices are space delimited. The last vertex in a polygon is always
+				the start and first vertex in the string.</documentation>
 		</annotation>
 	</element>
 	<element name="iFrom" type="e:PointCType">
 		<annotation>
-			<documentation>Item From/To data is described in GML 3.1. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</documentation>
+			<documentation>Item From/To data is described in GML 3.1. Longitude and latitude and
+				vertices are space delimited. The last vertex in a polygon is always the start and
+				first vertex in the string.</documentation>
 		</annotation>
 	</element>
 	<element name="iTo" type="e:PointCType">
 		<annotation>
-			<documentation>Item From/To data is described in GML 3.1. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</documentation>
+			<documentation>Item From/To data is described in GML 3.1. Longitude and latitude and
+				vertices are space delimited. The last vertex in a polygon is always the start and
+				first vertex in the string.</documentation>
 		</annotation>
 	</element>
 	<element name="eTrafficManagement" type="e:TrafficManagementCType">
@@ -529,7 +583,8 @@
 	</element>
 	<element name="eGroup">
 		<annotation>
-			<documentation>The top level category of "parent" Entity (can be thought of as the "Cause" or "Consequence")</documentation>
+			<documentation>The top level category of "parent" Entity (can be thought of as the
+				"Cause" or "Consequence")</documentation>
 		</annotation>
 		<complexType>
 			<simpleContent>
@@ -547,11 +602,18 @@
 	</simpleType>
 	<element name="eCategory">
 		<annotation>
-			<documentation>The category of "parent" Entity (can be thought of as the "Cause")</documentation>
+			<documentation>The category of "parent" Entity (can be thought of as the
+				"Cause")</documentation>
 		</annotation>
 		<complexType>
 			<simpleContent>
-				<extension base="e:EntityCategorySType"/>
+				<extension base="e:EntityCategorySType">
+					<attribute name="SubCategory" type="e:EntitySubCategorySType" use="optional">
+						<annotation>
+							<documentation/>
+						</annotation>
+					</attribute>
+				</extension>
 			</simpleContent>
 		</complexType>
 	</element>
@@ -559,33 +621,54 @@
 		<restriction base="string">
 			<enumeration value="Incident"/>
 			<enumeration value="Accident"/>
-			<enumeration value="Weather incident"/>
-			<enumeration value="Landslip"/>
-			<enumeration value="Flood"/>
-			<enumeration value="Cycling"/>
-			<enumeration value="Football"/>
-			<enumeration value="Horse racing"/>
-			<enumeration value="Motor sport event"/>
-			<enumeration value="Rugby"/>
-			<enumeration value="Running"/>
-			<enumeration value="Sport Event"/>
-			<enumeration value="Carnival / Parade / Street Party"/>
-			<enumeration value="Entertainment Event"/>
-			<enumeration value="Festival"/>
+			<enumeration value="Carnival / Parade / Street party"/>
+			<enumeration value="Entertainment event"/>
+			<enumeration value="Incident"/>
+			<enumeration value="License (Other)"/>
 			<enumeration value="Market"/>
-			<enumeration value="Cruise ship"/>
-			<enumeration value="Funeral"/>
-			<enumeration value="Public Event (Other)"/>
-			<enumeration value="Roadworks"/>
-			<enumeration value="Skip"/>
-			<enumeration value="Scaffolding"/>
 			<enumeration value="Materials"/>
 			<enumeration value="Obstruction"/>
-			<enumeration value="Crane"/>
-			<enumeration value="Hoarding"/>
-			<enumeration value="Table &amp; chairs"/>
-			<enumeration value="License (Other)"/>
+			<enumeration value="Public event"/>
+			<enumeration value="Roadworks"/>
+			<enumeration value="Roadworks / Licence"/>
+			<enumeration value="Scaffolding"/>
+			<enumeration value="Skip"/>
+			<enumeration value="Sport event"/>
 			<enumeration value="Unclassified"/>
+			<enumeration value="Weather incident"/>
+		</restriction>
+	</simpleType>
+	<simpleType name="EntitySubCategorySType">
+		<restriction base="string">
+			<enumeration value="Accident"/>
+			<enumeration value="Carnival / Parade / Street party"/>
+			<enumeration value="Crane"/>
+			<enumeration value="Cruise ship"/>
+			<enumeration value="Cycling"/>
+			<enumeration value="Development works"/>
+			<enumeration value="Emergency works"/>
+			<enumeration value="Entertainment event"/>
+			<enumeration value="Festival"/>
+			<enumeration value="Flood"/>
+			<enumeration value="Football"/>
+			<enumeration value="Funeral"/>
+			<enumeration value="Hoarding"/>
+			<enumeration value="Horse racing"/>
+			<enumeration value="Incident"/>
+			<enumeration value="Landslip"/>
+			<enumeration value="Market"/>
+			<enumeration value="Materials on highway"/>
+			<enumeration value="Motor sport event"/>
+			<enumeration value="Obstruction"/>
+			<enumeration value="Other"/>
+			<enumeration value="Roadworks"/>
+			<enumeration value="Rugby"/>
+			<enumeration value="Running"/>
+			<enumeration value="Scaffolding"/>
+			<enumeration value="Skip"/>
+			<enumeration value="Sport event"/>
+			<enumeration value="Table &amp; chairs"/>
+			<enumeration value="Weather event"/>
 		</restriction>
 	</simpleType>
 	<element name="iType">
