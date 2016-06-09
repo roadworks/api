@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" 
-	xmlns:e="http://www.elgin.org.uk/schemas/data"
-	xmlns:gml="http://www.opengis.net/gml" 
-	targetNamespace="http://www.elgin.org.uk/schemas/data"
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:e="http://www.elgin.org.uk/schemas/data"
+	xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.elgin.org.uk/schemas/data"
 	elementFormDefault="qualified">
 	<import namespace="http://www.opengis.net/gml"
 		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/geometryBasic2d.xsd"/>
@@ -25,10 +23,10 @@
 			</choice>
 		</complexType>
 	</element>
-	<simpleType name="DataCType" final="restriction" >
+	<simpleType name="DataCType" final="restriction">
 		<restriction base="string">
-			<enumeration value="Entities" />
-			<enumeration value="Items" />
+			<enumeration value="Entities"/>
+			<enumeration value="Items"/>
 		</restriction>
 	</simpleType>
 	<element name="Items" type="e:ItemsCType"/>
@@ -64,7 +62,7 @@
 			<element ref="e:HighwayAuthority"/>
 			<element ref="e:EToNVersion" minOccurs="0"/>
 			<group ref="e:EntityGroup"/>
-			<group ref="e:ItemGroup"/>
+			<group ref="e:ItemGroup" minOccurs="0"/>
 		</sequence>
 		<attributeGroup ref="e:DefaultAttributesGroup"/>
 	</complexType>
@@ -87,6 +85,7 @@
 			<element ref="e:eTrafficManagement" minOccurs="0"/>
 			<element ref="e:eStatus" minOccurs="0"/>
 			<element ref="e:ePermitStatus" minOccurs="0"/>
+			<element ref="e:eWorksActivity" minOccurs="0"/>
 			<element ref="e:eStart"/>
 			<element ref="e:eEnd"/>
 			<element ref="e:eSchedule" minOccurs="0"/>
@@ -157,7 +156,7 @@
 			<element ref="e:HighwayAuthority"/>
 			<element ref="e:EToNVersion" minOccurs="0"/>
 			<group ref="e:EntityGroup"/>
-			<sequence maxOccurs="unbounded">
+			<sequence maxOccurs="unbounded" minOccurs="0">
 				<element name="Item">
 					<complexType>
 						<group ref="e:ItemGroup"/>

@@ -37,6 +37,24 @@
 				the works is on a permitable USRN </documentation>
 		</annotation>
 	</element>
+	<element name="eWorksActivity">
+		<annotation>
+			<documentation>"The works Activity. 
+				Relevant to EToN data"
+			</documentation>
+		</annotation>
+		<complexType>
+			<simpleContent>
+				<extension base="string">
+					<attribute name="code" type="string">
+						<annotation>
+							<documentation>The code for EntityWorksActivity</documentation>
+						</annotation>
+					</attribute>
+				</extension>
+			</simpleContent>
+		</complexType>
+	</element>
 	<element name="eStatus" type="string">
 		<annotation>
 			<documentation>Current status of Entity, e.g. "Advanced planning".</documentation>
@@ -130,8 +148,7 @@
 			<documentation>The organisation responsible for the traffic disruption. Identifies the
 				organisation source of the data. The name of the Local Authority/Utility/National
 				Highways Agency from whom the data was sourced. Please refer to an authoritative
-				list <a href="http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026"
-					>here</a>. </documentation>
+				list <a href="http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026">here</a>. </documentation>
 		</annotation>
 		<complexType mixed="true">
 			<attribute name="id" type="string" use="required">
