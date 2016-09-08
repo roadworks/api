@@ -404,7 +404,7 @@
 							derived from the Entity (please see "derived" field)..</documentation>
 					</annotation>
 				</attribute>
-				<attribute name="derived" type="string" use="required">
+				<attribute name="derived" type="boolean" use="required">
 					<annotation>
 						<documentation>Boolean flag to say the date is derived from its parent
 							Entity. False indicates the date is present in the source
