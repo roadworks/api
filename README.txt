@@ -3,10 +3,10 @@ Here you can find the specification of the data in form of XSD and WSDL schemas.
 
 The following files and directories are included:
 
-Elgin Traffic Disruptions Data API - Data Elements v20160420a (cust).xlsx
+Elgin Traffic Disruptions Data API - Data Elements v20x (cust).xlsx
 - Excel file containing a definition of each field 
 
-elginAPI.wsdl 
+elgin-api.wsdl
 - SOAP contract and definition
 
 elginItems.xsd 

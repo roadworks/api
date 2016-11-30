@@ -7,27 +7,36 @@
     name="Elgin" 
     targetNamespace="http://www.elgin.org.uk/schemas/api">
     <types>
-        <s:schema targetNamespace="http://www.elgin.org.uk/schemas/api">
+        <s:schema elementFormDefault="qualified" targetNamespace="http://www.elgin.org.uk/schemas/api">
             <s:import namespace="http://www.elgin.org.uk/schemas/data" 
-                schemaLocation="elginItems.xsd"/>
-            <s:element name="GetData">
+                      schemaLocation="xsd/elginItems.xsd"/>
+            <s:import namespace="http://www.elgin.org.uk/schemas/data"
+                      schemaLocation="xsd/elginTypes.xsd"/>
+            <s:element name="GetDataRequest">
                 <s:complexType>
-                    <s:choice maxOccurs="1">
-                        <s:element name="EntityOriginatingSystem" type="s:string"/>
-                        <s:element name="ItemOriginatingSystem" type="s:string"/>
-                        <s:element name="DataSourceID" type="s:string"/>
-                        <s:element name="HighwayAuthorityID" type="s:string"/>
-                        <s:element name="EntitySourceID" type="s:string"/>
-                        <s:element name="StartDate" type="s:dateTime"/>
-                        <s:element name="EndDate" type="s:dateTime"/>
-                        <s:element name="LastUpdated" type="s:dateTime"/>
-                        <s:element name="EntityGroup" type="e:EntityGroupSType"/>
-                        <s:element name="EntityCategory" type="e:EntityCategorySType"/>
-                        <s:element name="ItemType" type="e:ItemTypeSType"/>
-                    </s:choice>
-                    <s:attribute name="DataGrouping" type="e:DataCType"/>
+                    <s:sequence>
+                        <s:element name="DataParamter" type="api:DataParameterType"/>
+                    </s:sequence>
                 </s:complexType>
             </s:element>
+            <s:complexType name="DataParameterType">
+                <s:sequence>
+                    <s:element name="EntityOriginatingSystem" type="s:string" minOccurs="0"/>
+                    <s:element name="ItemOriginatingSystem" type="s:string" minOccurs="0"/>
+                    <s:element name="DataSourceID" type="s:string" minOccurs="0"/>
+                    <s:element name="HighwayAuthorityID" type="s:string" minOccurs="0"/>
+                    <s:element name="EntitySourceID" type="s:string" minOccurs="0"/>
+                    <s:element name="StartDate" type="s:dateTime" minOccurs="0" nillable="true"/>
+                    <s:element name="EndDate" type="s:dateTime" minOccurs="0" nillable="true"/>
+                    <s:element name="LastUpdated" type="s:dateTime" minOccurs="0" nillable="true"/>
+                    <s:element name="EntityGroup" type="e:EntityGroupSType" minOccurs="0"/>
+                    <s:element name="EntityCategory" type="e:EntityCategorySType" minOccurs="0"/>
+                    <s:element name="ItemType" type="e:ItemTypeSType" minOccurs="0"/>
+                </s:sequence>
+                <s:attribute name="DataGrouping" type="e:DataCType" default="Entities"/>
+                <s:attribute name="Account" type="s:string"/>
+                <s:attribute name="Key" type="s:string"/>
+            </s:complexType>
             <s:element name="GetDataResponse">
                 <s:complexType>
                     <s:sequence>
@@ -53,7 +62,7 @@
         </s:schema>
     </types>
     <message name="GetDataRequest">
-        <part element="api:GetData" name="parameters"></part>
+        <part element="api:GetDataRequest" name="parameters"></part>
     </message>
     <message name="GetDataResponse">
         <part element="api:GetDataResponse" name="parameters"></part>
@@ -100,7 +109,7 @@
     </binding>
     <service name="Elgin">
         <port binding="api:ElginSOAP" name="ElginSOAP">
-            <soap:address location="http://services.roadworks.org/api/" />
+            <soap:address location="http://localhost:8080/soap/api/" />
         </port>
     </service>
 </definitions>

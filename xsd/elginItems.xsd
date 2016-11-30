@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<s:schema xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:e="http://www.elgin.org.uk/schemas/data"
+	xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.elgin.org.uk/schemas/data"
+	elementFormDefault="qualified">
+	<s:import namespace="http://www.opengis.net/gml"
+		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/geometryBasic2d.xsd"/>
+	<s:import namespace="http://www.opengis.net/gml"
+		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/feature.xsd"/>
+	<s:include schemaLocation="elginTypes.xsd"/>
+	<s:element name="Out">
+		<s:complexType>
+			<s:choice maxOccurs="1">
+				<s:element ref="e:Entities"/>
+				<s:element ref="e:Items"/>
+			</s:choice>
+		</s:complexType>
+	</s:element>
+	<s:element name="In">
+		<s:complexType>
+			<s:choice maxOccurs="1">
+				<s:element ref="e:Entities"/>
+				<s:element ref="e:Items"/>
+			</s:choice>
+		</s:complexType>
+	</s:element>
+	<s:simpleType name="DataCType" final="restriction">
+		<s:restriction base="s:string">
+			<s:enumeration value="Entities"/>
+			<s:enumeration value="Items"/>
+		</s:restriction>
+	</s:simpleType>
+	<s:element name="Items">
+		<s:complexType>
+			<s:complexContent>
+				<s:extension base="e:ItemsCType">
+					<s:annotation>
+						<s:documentation>Items is the root element for REST implimentations</s:documentation>
+					</s:annotation>
+					<s:anyAttribute/>
+				</s:extension>
+			</s:complexContent>
+		</s:complexType>
+	</s:element>
+	<s:element name="Item" type="e:ItemCType"/>
+	<s:element name="Entities">
+		<s:complexType>
+			<s:complexContent>
+				<s:extension base="e:EntitiesCType">
+					<s:annotation>
+						<s:documentation>Entities is the root element for REST implimentations</s:documentation>
+					</s:annotation>
+					<s:anyAttribute/>
+				</s:extension>
+			</s:complexContent>
+		</s:complexType>
+	</s:element>
+	<s:element name="Entity" type="e:EntityCType"/>
+	<s:attributeGroup name="DefaultAttributesGroup">
+		<s:attribute name="Created" type="s:dateTime" use="required">
+			<s:annotation>
+				<s:documentation>Datetime when the data row was created</s:documentation>
+			</s:annotation>
+		</s:attribute>
+		<s:attribute name="Checksum" type="s:string" use="required">
+			<s:annotation>
+				<s:documentation>A checksum derived from the data fields of the individual feed.</s:documentation>
+			</s:annotation>
+		</s:attribute>
+		<s:attribute name="EntityID" type="s:string" use="required">
+			<s:annotation>
+				<s:documentation>ID of "parent" Entity. Both EntityID and ItemID are persistently unique in their own right. Because the 2-level hierarchy is flattened Entity information will be passed through for each Item record – and consequently the EntityID is repeated in the XML</s:documentation>
+			</s:annotation>
+		</s:attribute>
+		<s:attribute name="ItemID" type="s:string" use="required">
+			<s:annotation>
+				<s:documentation>ID of traffic management Item. Persistently unique</s:documentation>
+			</s:annotation>
+		</s:attribute>
+	</s:attributeGroup>
+	<s:complexType name="ItemCType">
+		<s:sequence>
+			<s:element ref="e:LastUpdated"/>
+			<s:element ref="e:ResponsibleOrganisation"/>
+			<s:element ref="e:HighwayAuthority"/>
+			<s:element ref="e:EToNVersion" minOccurs="0"/>
+			<s:group ref="e:EntityGroup"/>
+			<s:group ref="e:ItemGroup" minOccurs="0"/>
+		</s:sequence>
+		<s:attributeGroup ref="e:DefaultAttributesGroup"/>
+	</s:complexType>
+	<s:complexType name="ItemsCType">
+		<s:sequence minOccurs="0" maxOccurs="unbounded">
+			<s:element ref="e:Item"/>
+		</s:sequence>
+		<s:attribute name="Created" type="s:dateTime" use="optional"/>
+		<s:attribute name="Version" type="s:string" use="optional"/>
+	</s:complexType>
+	<s:group name="EntityGroup">
+		<s:sequence>
+			<s:element ref="e:eDataSource"/>
+			<s:element ref="e:eCollection" minOccurs="0"/>
+			<s:element ref="e:eCategory"/>
+			<s:element ref="e:eSourceID" minOccurs="0"/>
+			<s:element ref="e:eGroup"/>
+			<s:element ref="e:eDescription" minOccurs="0"/>
+            <s:element ref="e:eShortDescription" minOccurs="0"/>
+			<s:element ref="e:eTrafficImpact" minOccurs="0"/>
+			<s:element ref="e:eTrafficManagement" minOccurs="0"/>
+			<s:element ref="e:eStatus" minOccurs="0"/>
+			<s:element ref="e:ePermitStatus" minOccurs="0"/>
+			<s:element ref="e:eWorksActivity" minOccurs="0"/>
+			<s:element ref="e:eStart"/>
+			<s:element ref="e:eEnd"/>
+			<s:element ref="e:eSchedule" minOccurs="0"/>
+			<s:element ref="e:eLocationDescription" minOccurs="0"/>
+			<s:element ref="e:eRoadName" minOccurs="0"/>
+			<s:element ref="e:eUsrnList" minOccurs="0"/>
+			<s:element ref="e:eURL" minOccurs="0"/>
+			<s:element ref="e:eCancelled" minOccurs="0"/>
+			<s:element ref="e:eConfirmed"/>
+			<s:element ref="e:eOriginatingSystem" minOccurs="0"/>
+			<s:element ref="e:ePoint"/>
+			<s:sequence minOccurs="0" maxOccurs="unbounded">
+				<s:element ref="e:eWayPoints" minOccurs="0"/>
+				<s:element ref="e:eLineString" minOccurs="0"/>
+				<s:element ref="e:ePolygon" minOccurs="0"/>
+				<s:sequence minOccurs="0">
+					<s:element ref="e:eFrom"/>
+					<s:element ref="e:eTo"/>
+				</s:sequence>
+			</s:sequence>
+		</s:sequence>
+	</s:group>
+	<s:group name="ItemGroup">
+		<s:sequence>
+			<s:element ref="e:iDataSource"/>
+			<s:element ref="e:iContractor" minOccurs="0"/>
+			<s:element ref="e:iType" minOccurs="0"/>
+			<s:element ref="e:iStart"/>
+			<s:element ref="e:iEnd"/>
+			<s:element ref="e:iSchedule" minOccurs="0"/>
+			<s:element ref="e:iLocationDescription" minOccurs="0"/>
+                        <s:element ref="e:iShortDescription" minOccurs="0"/>
+			<s:element ref="e:iRoadName" minOccurs="0"/>
+			<s:element ref="e:iUsrnList" minOccurs="0"/>
+			<s:element ref="e:iDirectionOfTravel" minOccurs="0"/>
+			<s:element ref="e:iFootwayClosure" minOccurs="0"/>
+			<s:element ref="e:iNoticeSequence" minOccurs="0"/>
+			<s:element ref="e:iNotificationType" minOccurs="0"/>
+			<s:element ref="e:iWorksCategory" minOccurs="0"/>
+			<s:element ref="e:iParkingSuspensions" minOccurs="0"/>
+			<s:element ref="e:iNoticeOutgoing" minOccurs="0"/>
+			<s:element ref="e:iPermitCondition" minOccurs="0"/>
+			<s:element ref="e:iOutOfHours" minOccurs="0"/>
+			<s:element ref="e:iReinstateCategory" minOccurs="0"/>
+			<s:element ref="e:iTrafficSensitive" minOccurs="0"/>
+			<s:element ref="e:iReverseRoute" minOccurs="0"/>
+			<s:element ref="e:iSpeedLimit" minOccurs="0"/>
+			<s:element ref="e:iWeightRestriction" minOccurs="0"/>
+			<s:element ref="e:iURL" minOccurs="0"/>
+			<s:element ref="e:iCancelled" minOccurs="0"/>
+			<s:element ref="e:iConfirmed"/>
+			<s:element ref="e:iOriginatingSystem" minOccurs="0"/>
+			<s:element ref="e:iPoint"/>
+			<s:sequence minOccurs="0" maxOccurs="unbounded">
+				<s:element ref="e:iWayPoints" minOccurs="0"/>
+				<s:element ref="e:iLineString" minOccurs="0"/>
+				<s:element ref="e:iPolygon" minOccurs="0"/>
+				<s:sequence minOccurs="0">
+					<s:element ref="e:iFrom"/>
+					<s:element ref="e:iTo"/>
+				</s:sequence>
+			</s:sequence>
+		</s:sequence>
+	</s:group>
+	<s:complexType name="EntityCType">
+		<s:sequence>
+			<s:element ref="e:LastUpdated"/>
+			<s:element ref="e:ResponsibleOrganisation"/>
+			<s:element ref="e:HighwayAuthority"/>
+			<s:element ref="e:EToNVersion" minOccurs="0"/>
+			<s:group ref="e:EntityGroup"/>
+			<s:sequence maxOccurs="unbounded" minOccurs="0">
+				<s:element name="Item">
+					<s:complexType>
+						<s:group ref="e:ItemGroup"/>
+						<s:attribute name="ItemID" type="s:string" use="required">
+							<s:annotation>
+								<s:documentation>ID of traffic management Item. Persistently unique</s:documentation>
+							</s:annotation>
+						</s:attribute>
+						<s:attribute name="Checksum" type="s:string" use="required">
+							<s:annotation>
+								<s:documentation>A checksum derived from the data fields of the individual feed.</s:documentation>
+							</s:annotation>
+						</s:attribute>
+					</s:complexType>
+				</s:element>
+			</s:sequence>
+		</s:sequence>
+		<s:attribute name="Created" type="s:dateTime" use="required">
+			<s:annotation>
+				<s:documentation>Datetime when the data row was created</s:documentation>
+			</s:annotation>
+		</s:attribute>
+		<s:attribute name="Checksum" type="s:string" use="required">
+			<s:annotation>
+				<s:documentation>A checksum derived from the data fields of the individual feed.</s:documentation>
+			</s:annotation>
+		</s:attribute>
+		<s:attribute name="EntityID" type="s:string" use="required">
+			<s:annotation>
+				<s:documentation>ID of "parent" Entity. Both EntityID and ItemID are persistently unique in their own right. Because the 2-level hierarchy is flattened Entity information will be passed through for each Item record – and consequently the EntityID is repeated in the XML</s:documentation>
+			</s:annotation>
+		</s:attribute>
+	</s:complexType>
+	<s:complexType name="EntitiesCType">
+		<s:sequence minOccurs="0" maxOccurs="unbounded">
+			<s:element ref="e:Entity"/>
+		</s:sequence>
+		<s:attribute name="Created" type="s:dateTime" use="optional"/>
+		<s:attribute name="Version" type="s:string" use="optional"/>
+	</s:complexType>
+</s:schema>
