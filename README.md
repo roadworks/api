@@ -32,7 +32,7 @@ wsimport -keep -verbose .\elgin-api.wsdl -p com.elgin.elginws.ties
 ~~~~
 
 ###.NET
-To create C# POCOs from the WSDL and included XSD files run the following:
+To create C# POCOs from the WSDL and included XSD files run the following statement.  You will first need to download the `elgin-api.wsdl` and XSD files (see `xsd` folder).
 ~~~~
 svcutil.exe .\elgin-api.wsdl .\xsd\elginItems.xsd .\xsd\elginTypes.xsd .\xsd\gml\03-105r1_GML_3.1.1\GML-3.1.1\base\geometryBasic0d1d.xsd  .\xsd\gml\03-105r1_GML_3.1.1\GML-3.1.1\base\basicTypes.xsd .\xsd\gml\03-105r1_GML_3.1.1\GML-3.1.1\base\defaultStyle.xsd .\xsd\gml\03-105r1_GML_3.1.1\GML-3.1.1\base\gmlBase.xsd .\xsd\gml\03-105r1_GML_3.1.1\GML-3.1.1\xlink\xlinks.xsd .\xsd\gml\03-105r1_GML_3.1.1\GML-3.1.1\base\geometryBasic2d.xsd .\xsd\gml\03-105r1_GML_3.1.1\GML-3.1.1\base\measures.xsd .\xsd\gml\03-105r1_GML_3.1.1\GML-3.1.1\smil\smil20.xsd  .\xsd\gml\03-105r1_GML_3.1.1\GML-3.1.1\smil\smil20-language.xsd .\xsd\gml\03-105r1_GML_3.1.1\GML-3.1.1\smil\xml-mod.xsd  /language:C# /dataContractOnly /importxmltypes /out:ElginApi.ContractOnly.cs
 ~~~~
