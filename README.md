@@ -38,8 +38,7 @@ svcutil.exe .\elgin-api.wsdl .\xsd\elginItems.xsd .\xsd\elginTypes.xsd .\xsd\gml
 ~~~~
 This will create a file including the web service contract and configuration file with the default endpoint (change this).
 
-The above code is a bit nasty to run. This is due to the WSDL's use of <imports> to include data types in xsd files - this is perfectly normal. However, it's causing the .NET tools to fall over. I am attempting to use the SVCUTIL.EXE tool by hand outside of VS2015 to generate the contract and it does produce a bunch of classes but by the looks of things.
-This is the code that works but by the looks of things the resulting ElginApi.ContractOnly.cs is lacking the web service definition.
+The above code is a bit nasty to run. This is due to the WSDL's use of <imports> to include data types in xsd files - this is perfectly normal. 
 
 An easier option than the above is using the `elgin-api-single.wsdl` file that contains all the types and elements as the `elgin-api.wsdl` file and its includes.  However, this single file is an interpretation of the original files and has many of the types and elements copied or abbreviated from the included XSD schemas. I would use the  `elgin-api-single.wsdl` if you are not sure what you are doing in Visual Studio - make sure you change the web service endpoint in the App.config file to bind to a real web service on the Elgin side.
 
