@@ -40,7 +40,7 @@ This will create a file including the web service contract and configuration fil
 
 The above code is a bit nasty to run. This is due to the WSDL's use of <imports> to include data types in xsd files - this is perfectly normal. 
 
-An easier option than the above is using the `elgin-api-single.wsdl` file that contains all the types and elements as the `elgin-api.wsdl` file and its includes.  However, this single file is an interpretation of the original files and has many of the types and elements copied or abbreviated from the included XSD schemas. I would use the  `elgin-api-single.wsdl` if you are not sure what you are doing in Visual Studio - make sure you change the web service endpoint in the App.config file to bind to a real web service on the Elgin side. You can use this (https://raw.githubusercontent.com/roadworks/api/master/elgin-api-single.wsdl "link") in Visual Studio.
+An easier option than the above is using the `elgin-api-single.wsdl` file that contains all the types and elements as the `elgin-api.wsdl` file and its includes.  However, this single file is an interpretation of the original files and has many of the types and elements copied or abbreviated from the included XSD schemas. I would use the  `elgin-api-single.wsdl` if you are not sure what you are doing in Visual Studio - make sure you change the web service endpoint in the App.config file to bind to a real web service on the Elgin side. You can use this [link](https://raw.githubusercontent.com/roadworks/api/master/elgin-api-single.wsdl "elgin-api-single.wsdl WSDL file") in Visual Studio.
 
 The .NET configuration file, `App.Config`, after running the above process will look something like this.
 ~~~~
