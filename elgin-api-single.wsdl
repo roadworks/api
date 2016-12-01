@@ -21,8 +21,8 @@
             </s:element>
             <s:complexType name="DataParameterType">
                 <s:sequence>
-                    <s:element name="EntityOriginatingSystem" type="s:string" minOccurs="0"/>
-                    <s:element name="ItemOriginatingSystem" type="s:string" minOccurs="0"/>
+                    <s:element name="EntityOriginatingSystem" type="e:OriginatingSystemSType" minOccurs="0"/>
+                    <s:element name="ItemOriginatingSystem" type="e:OriginatingSystemSType" minOccurs="0"/>
                     <s:element name="DataSourceID" type="s:string" minOccurs="0"/>
                     <s:element name="HighwayAuthorityID" type="s:string" minOccurs="0"/>
                     <s:element name="EntitySourceID" type="s:string" minOccurs="0"/>
@@ -116,18 +116,25 @@
                    <s:documentation>Current status of Entity, e.g. "Advanced planning".</s:documentation>
                </s:annotation>
            </s:element>
-           <s:element name="iOriginatingSystem" type="s:string">
+           <s:element name="iOriginatingSystem" type="e:OriginatingSystemSType">
                <s:annotation>
                    <s:documentation>Identifies the system in which the Item data content was
                    	created</s:documentation>
                </s:annotation>
            </s:element>
-           <s:element name="eOriginatingSystem" type="s:string">
+           <s:element name="eOriginatingSystem" type="e:OriginatingSystemSType">
                <s:annotation>
                    <s:documentation>Identifies the system in which the Entity data content was
                    	created</s:documentation>
                </s:annotation>
            </s:element>
+            <s:complexType name="OriginatingSystemSType">
+                <s:simpleContent>
+                    <s:extension base="s:string">
+                        <s:attribute name="id" type="s:string" use="optional"/>
+                    </s:extension>
+                </s:simpleContent>
+            </s:complexType>
            <s:element name="eURL" type="s:anyURI">
                <s:annotation>
                    <s:documentation>Deep link to Entity on roadworks.org</s:documentation>

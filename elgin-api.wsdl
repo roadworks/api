@@ -21,8 +21,8 @@
             </s:element>
             <s:complexType name="DataParameterType">
                 <s:sequence>
-                    <s:element name="EntityOriginatingSystem" type="s:string" minOccurs="0"/>
-                    <s:element name="ItemOriginatingSystem" type="s:string" minOccurs="0"/>
+                    <s:element name="EntityOriginatingSystem" type="e:OriginatingSystemSType" minOccurs="0"/>
+                    <s:element name="ItemOriginatingSystem" type="e:OriginatingSystemSType" minOccurs="0"/>
                     <s:element name="DataSourceID" type="s:string" minOccurs="0"/>
                     <s:element name="HighwayAuthorityID" type="s:string" minOccurs="0"/>
                     <s:element name="EntitySourceID" type="s:string" minOccurs="0"/>
