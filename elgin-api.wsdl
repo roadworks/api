@@ -21,8 +21,10 @@
             </s:element>
             <s:complexType name="DataParameterType">
                 <s:sequence>
-                    <s:element name="EntityOriginatingSystem" type="e:OriginatingSystemSType" minOccurs="0"/>
-                    <s:element name="ItemOriginatingSystem" type="e:OriginatingSystemSType" minOccurs="0"/>
+                    <s:element name="EntityOriginatingSystem" type="s:string" minOccurs="0"/>
+                    <s:element name="ItemOriginatingSystem" type="s:string" minOccurs="0"/>
+                    <s:element name="EntityOriginatingSystemId" type="s:string" minOccurs="0"/>
+                    <s:element name="ItemOriginatingSystemId" type="s:string" minOccurs="0"/>
                     <s:element name="DataSourceID" type="s:string" minOccurs="0"/>
                     <s:element name="HighwayAuthorityID" type="s:string" minOccurs="0"/>
                     <s:element name="EntitySourceID" type="s:string" minOccurs="0"/>
@@ -32,6 +34,7 @@
                     <s:element name="EntityGroup" type="e:EntityGroupSType" minOccurs="0"/>
                     <s:element name="EntityCategory" type="e:EntityCategorySType" minOccurs="0"/>
                     <s:element name="ItemType" type="e:ItemTypeSType" minOccurs="0"/>
+                    <s:element ref="e:BoundingBox"/>
                 </s:sequence>
                 <s:attribute name="DataGrouping" type="e:DataCType" default="Entities"/>
                 <s:attribute name="Account" type="s:string"/>
@@ -109,7 +112,7 @@
     </binding>
     <service name="Elgin">
         <port binding="api:ElginSOAP" name="ElginSOAP">
-            <soap:address location="http://localhost:8080/soap/api/" />
+            <soap:address location="http://api.roadworks.org/" />
         </port>
     </service>
 </definitions>
