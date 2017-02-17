@@ -59,6 +59,13 @@
                     </s:sequence>
                 </s:complexType>
             </s:element>
+            <s:element name="FaultResponse">
+                <s:complexType>
+                    <s:all>
+                        <s:element name="details" type="s:string"/>
+                    </s:all>
+                </s:complexType>
+            </s:element>
         </s:schema>
         <s:schema elementFormDefault="qualified" targetNamespace="http://www.elgin.org.uk/schemas/data">
            <s:import namespace="http://www.opengis.net/gml" />
@@ -1410,14 +1417,34 @@
     <message name="PublishDataResponse">
         <part name="parameters" element="api:PublishDataResponse"></part>
     </message>
+    <message name="LANotAuthorizedFault">
+        <part name="exception" element="api:FaultResponse"></part>
+    </message>
+    <message name="MissingRequiredParamsFault">
+        <part name="exception" element="api:FaultResponse"></part>
+    </message>
+    <message name="BadParamsFault">
+        <part name="exception" element="api:FaultResponse"></part>
+    </message>
+    <message name="InternalErrorFault">
+        <part name="exception" element="api:FaultResponse"></part>
+    </message>
     <portType name="Elgin">
         <operation name="GetData">
             <input message="api:GetDataRequest"></input>
             <output message="api:GetDataResponse"></output>
+            <fault name="laNotAuthorizedFault" message="api:LANotAuthorizedFault"></fault>
+            <fault name="missingParamsFault" message="api:MissingRequiredParamsFault"></fault>
+            <fault name="badParamsFault" message="api:BadParamsFault"></fault>
+            <fault name="internalErrorFault" message="api:InternalErrorFault"></fault>
         </operation>
         <operation name="PublishData">
             <input message="api:PublishDataRequest"></input>
             <output message="api:PublishDataResponse"></output>
+            <fault name="laNotAuthorized" message="api:LANotAuthorizedFault"></fault>
+            <fault name="missingParams" message="api:MissingRequiredParamsFault"></fault>
+            <fault name="badParams" message="api:BadParamsFault"></fault>
+            <fault name="internalError" message="api:InternalErrorFault"></fault>
         </operation>
     </portType>
     <binding name="ElginSOAP" type="api:Elgin">
@@ -1446,7 +1473,7 @@
     </binding>
     <service name="Elgin">
         <port binding="api:ElginSOAP" name="ElginSOAP">
-            <soap:address location="http://localhost:8080/soap/api/" />
+            <soap:address location="http://api.roadworks.org/" />
         </port>
     </service>
 </definitions>
