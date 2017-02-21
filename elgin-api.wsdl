@@ -52,6 +52,8 @@
                     <s:sequence>
                         <s:element ref="e:In"/>
                     </s:sequence>
+                    <s:attribute name="Account" type="s:string"/>
+                    <s:attribute name="Key" type="s:string"/>
                 </s:complexType>
             </s:element>
             <s:element name="PublishDataResponse">
@@ -62,7 +64,23 @@
                     </s:sequence>
                 </s:complexType>
             </s:element>
-            <s:element name="FaultResponse">
+            <s:element name="LANotAuthorized">
+            </s:element>
+            <s:element name="MissingRequiredParams">
+                <s:complexType>
+                    <s:all>
+                        <s:element name="details" type="s:string"/>
+                    </s:all>
+                </s:complexType>
+            </s:element>
+            <s:element name="BadParams">
+                <s:complexType>
+                    <s:all>
+                        <s:element name="details" type="s:string"/>
+                    </s:all>
+                </s:complexType>
+            </s:element>
+            <s:element name="InternalError">
                 <s:complexType>
                     <s:all>
                         <s:element name="details" type="s:string"/>
