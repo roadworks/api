@@ -84,16 +84,16 @@
         <part name="parameters" element="api:PublishDataResponse"></part>
     </message>
     <message name="LANotAuthorizedFault">
-        <part name="exception" element="api:FaultResponse"></part>
+        <part name="exception" element="api:LANotAuthorized"></part>
     </message>
     <message name="MissingRequiredParamsFault">
-        <part name="exception" element="api:FaultResponse"></part>
+        <part name="exception" element="api:MissingRequiredParams"></part>
     </message>
     <message name="BadParamsFault">
-        <part name="exception" element="api:FaultResponse"></part>
+        <part name="exception" element="api:BadParams"></part>
     </message>
     <message name="InternalErrorFault">
-        <part name="exception" element="api:FaultResponse"></part>
+        <part name="exception" element="api:InternalError"></part>
     </message>
 
     <portType name="Elgin">
