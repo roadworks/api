@@ -50,6 +50,8 @@
                         <s:element ref="e:In"/>
                     </s:sequence>
                 </s:complexType>
+                <s:attribute name="Account" type="s:string"/>
+                <s:attribute name="Key" type="s:string"/>
             </s:element>
             <s:element name="PublishDataResponse">
                 <s:complexType>
