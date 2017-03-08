@@ -763,4 +763,12 @@
 			<s:enumeration value="Unclassified"/>
 		</s:restriction>
 	</s:simpleType>
+	<s:simpleType name="PublishDataMessages">
+		<s:restriction base="s:string">
+			<s:enumeration value="LA not authorized" />
+			<s:enumeration value="Missing required params" />
+			<s:enumeration value="Bad params" />
+			<s:enumeration value="Internal Error" />
+		</s:restriction>
+	</s:simpleType>
 </s:schema>

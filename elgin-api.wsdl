@@ -12,13 +12,12 @@
                       schemaLocation="xsd/elginItems.xsd"/>
             <s:import namespace="http://www.elgin.org.uk/schemas/data"
                       schemaLocation="xsd/elginTypes.xsd"/>
-            <s:element name="GetDataRequest">
-                <s:complexType>
-                    <s:sequence>
-                        <s:element name="DataParamter" type="api:DataParameterType"/>
-                    </s:sequence>
-                </s:complexType>
-            </s:element>
+
+            <s:complexType name="RequestType">
+                <s:attribute name="Account" type="s:string"/>
+                <s:attribute name="Key" type="s:string"/>
+            </s:complexType>
+
             <s:complexType name="DataParameterType">
                 <s:sequence>
                     <s:element name="EntityOriginatingSystem" type="s:string" minOccurs="0"/>
@@ -37,9 +36,18 @@
                     <s:element ref="e:BoundingBox"/>
                 </s:sequence>
                 <s:attribute name="DataGrouping" type="e:DataCType" default="Entities"/>
-                <s:attribute name="Account" type="s:string"/>
-                <s:attribute name="Key" type="s:string"/>
             </s:complexType>
+
+            <s:complexType name="GetDataRequest">
+                <s:complexContent>
+                    <s:extension base="api:RequestType">
+                        <s:sequence>
+                            <s:element name="DataParameter" type="api:DataParameterType"/>
+                        </s:sequence>
+                    </s:extension>
+                </s:complexContent>
+            </s:complexType>
+
             <s:element name="GetDataResponse">
                 <s:complexType>
                     <s:sequence>
@@ -47,23 +55,27 @@
                     </s:sequence>
                 </s:complexType>
             </s:element>
-            <s:element name="PublishData">
-                <s:complexType>
-                    <s:sequence>
-                        <s:element ref="e:In"/>
-                    </s:sequence>
-                    <s:attribute name="Account" type="s:string"/>
-                    <s:attribute name="Key" type="s:string"/>
-                </s:complexType>
-            </s:element>
+
+            <s:complexType name="PublishDataRequest">
+                <s:complexContent>
+                    <s:extension base="api:RequestType">
+                        <s:sequence>
+                            <s:element ref="e:In" />
+                        </s:sequence>
+                    </s:extension>
+                </s:complexContent>
+            </s:complexType>
+
             <s:element name="PublishDataResponse">
                 <s:complexType>
                     <s:sequence>
                         <s:element name="success" type="s:boolean"></s:element>
                         <s:element name="message" type="s:string"></s:element>
+                        <s:element name="details" type="e:PublishDataMessages"></s:element>
                     </s:sequence>
                 </s:complexType>
             </s:element>
+
             <s:element name="LANotAuthorized">
             </s:element>
             <s:element name="MissingRequiredParams">
@@ -90,17 +102,18 @@
         </s:schema>
     </types>
     <message name="GetDataRequest">
-        <part element="api:GetDataRequest" name="parameters"></part>
+        <part type="api:GetDataRequest" name="GetDataRequest"></part>
     </message>
     <message name="GetDataResponse">
-        <part element="api:GetDataResponse" name="parameters"></part>
+        <part element="api:GetDataResponse" name="GetDataResponse"></part>
     </message>
     <message name="PublishDataRequest">
-        <part name="parameters" element="api:PublishData"></part>
+        <part type="api:PublishDataRequest" name="PublishDataRequest" ></part>
     </message>
     <message name="PublishDataResponse">
-        <part name="parameters" element="api:PublishDataResponse"></part>
+        <part element="api:PublishDataResponse" name="PublishDataResponse" ></part>
     </message>
+
     <message name="LANotAuthorizedFault">
         <part name="exception" element="api:LANotAuthorized"></part>
     </message>
