@@ -843,59 +843,67 @@
         </s:complexType>
       </s:element>
       <s:simpleType name="EntityCategorySType">
-        <s:restriction base="s:string">
-          <s:enumeration value="Incident"/>
-          <s:enumeration value="Accident"/>
-          <s:enumeration value="Carnival / Parade / Street party"/>
-          <s:enumeration value="Entertainment event"/>
-          <s:enumeration value="Incident"/>
-          <s:enumeration value="License (Other)"/>
-          <s:enumeration value="Market"/>
-          <s:enumeration value="Materials"/>
-          <s:enumeration value="Obstruction"/>
-          <s:enumeration value="Public event"/>
-          <s:enumeration value="Roadworks"/>
-          <s:enumeration value="Roadworks / Licence"/>
-          <s:enumeration value="Scaffolding"/>
-          <s:enumeration value="Skip"/>
-          <s:enumeration value="Sport event"/>
-          <s:enumeration value="Unclassified"/>
-          <s:enumeration value="Weather incident"/>
-        </s:restriction>
-      </s:simpleType>
-      <s:simpleType name="EntitySubCategorySType">
-        <s:restriction base="s:string">
-          <s:enumeration value="Accident"/>
-          <s:enumeration value="Carnival / Parade / Street party"/>
-          <s:enumeration value="Crane"/>
-          <s:enumeration value="Cruise ship"/>
-          <s:enumeration value="Cycling"/>
-          <s:enumeration value="Development works"/>
-          <s:enumeration value="Emergency works"/>
-          <s:enumeration value="Entertainment event"/>
-          <s:enumeration value="Festival"/>
-          <s:enumeration value="Flood"/>
-          <s:enumeration value="Football"/>
-          <s:enumeration value="Funeral"/>
-          <s:enumeration value="Hoarding"/>
-          <s:enumeration value="Horse racing"/>
-          <s:enumeration value="Incident"/>
-          <s:enumeration value="Landslip"/>
-          <s:enumeration value="Market"/>
-          <s:enumeration value="Materials on highway"/>
-          <s:enumeration value="Motor sport event"/>
-          <s:enumeration value="Obstruction"/>
-          <s:enumeration value="Other"/>
-          <s:enumeration value="Roadworks"/>
-          <s:enumeration value="Rugby"/>
-          <s:enumeration value="Running"/>
-          <s:enumeration value="Scaffolding"/>
-          <s:enumeration value="Skip"/>
-          <s:enumeration value="Sport event"/>
-          <s:enumeration value="Table &amp; chairs"/>
-          <s:enumeration value="Weather event"/>
-        </s:restriction>
-      </s:simpleType>
+    		<s:restriction base="s:string">
+    			<s:enumeration value="Incident"/>
+    			<s:enumeration value="Accident"/>
+    			<s:enumeration value="Carnival / Parade / Street party"/>
+    			<s:enumeration value="Entertainment event"/>
+    			<s:enumeration value="Incident"/>
+    			<s:enumeration value="License (Other)"/>
+    			<s:enumeration value="Market"/>
+    			<s:enumeration value="Materials"/>
+    			<s:enumeration value="Obstruction"/>
+    			<s:enumeration value="Public event"/>
+    			<s:enumeration value="Roadworks"/>
+    			<s:enumeration value="Roadworks / Licence"/>
+    			<s:enumeration value="Scaffolding"/>
+    			<s:enumeration value="Skip"/>
+    			<s:enumeration value="Sport event"/>
+    			<s:enumeration value="Unclassified"/>
+    			<s:enumeration value="Weather incident"/>
+    		</s:restriction>
+    	</s:simpleType>
+    	<s:simpleType name="EntitySubCategorySType">
+    		<s:restriction base="s:string">
+    			<s:enumeration value="Abnormal load"/>
+    			<s:enumeration value="Accident"/>
+    			<s:enumeration value="Agricultural show"/>
+    			<s:enumeration value="Air show"/>
+    			<s:enumeration value="Carnival / Parade / Street party"/>
+    			<s:enumeration value="Christmas event"/>
+    			<s:enumeration value="Crane"/>
+    			<s:enumeration value="Cruise ship"/>
+    			<s:enumeration value="Cycling"/>
+    			<s:enumeration value="Development works"/>
+    			<s:enumeration value="Emergency works"/>
+    			<s:enumeration value="Entertainment event"/>
+    			<s:enumeration value="Festival"/>
+    			<s:enumeration value="Flood"/>
+    			<s:enumeration value="Football"/>
+    			<s:enumeration value="Funeral"/>
+    			<s:enumeration value="Hoarding"/>
+    			<s:enumeration value="Horse racing"/>
+    			<s:enumeration value="Incident"/>
+    			<s:enumeration value="Landslip"/>
+    			<s:enumeration value="Market"/>
+    			<s:enumeration value="Materials on highway"/>
+    			<s:enumeration value="Minor routine maintenance"/>
+    			<s:enumeration value="Motor sport event"/>
+    			<s:enumeration value="Obstruction"/>
+    			<s:enumeration value="Other"/>
+    			<s:enumeration value="Polling station"/>
+    			<s:enumeration value="Remembrance parade"/>
+    			<s:enumeration value="Roadworks"/>
+    			<s:enumeration value="Rugby"/>
+    			<s:enumeration value="Running"/>
+    			<s:enumeration value="Scaffolding"/>
+    			<s:enumeration value="Skip"/>
+    			<s:enumeration value="Sport event"/>
+    			<s:enumeration value="Table &amp; chairs"/>
+    			<s:enumeration value="Traffic survey equipment"/>
+    			<s:enumeration value="Weather event"/>
+    		</s:restriction>
+    	</s:simpleType>
       <s:element name="iType">
         <s:complexType>
           <s:simpleContent>
@@ -904,44 +912,44 @@
         </s:complexType>
       </s:element>
       <s:simpleType name="ItemTypeSType">
-        <s:restriction base="s:string">
-          <s:enumeration value="Advisory and preferred access route"/>
-          <s:enumeration value="Bridge closure"/>
-          <s:enumeration value="Contraflow"/>
-          <s:enumeration value="Closed to HGVs"/>
-          <s:enumeration value="Convoy working"/>
-          <s:enumeration value="Diversion route"/>
-          <s:enumeration value="Footway closure"/>
-          <s:enumeration value="Gritting in progress"/>
-          <s:enumeration value="Give and take"/>
-          <s:enumeration value="HGV diversion route"/>
-          <s:enumeration value="HGV road closure"/>
-          <s:enumeration value="Lane closure"/>
-          <s:enumeration value="Multi-way traffic signals"/>
-          <s:enumeration value="No carriageway incursion"/>
-          <s:enumeration value="No left turn"/>
-          <s:enumeration value="No right turn"/>
-          <s:enumeration value="Clearway / no stopping"/>
-          <s:enumeration value="No vehicle access"/>
-          <s:enumeration value="Temporary one-way"/>
-          <s:enumeration value="Temporary parking restriction"/>
-          <s:enumeration value="Priority signs"/>
-          <s:enumeration value="Road ahead closed"/>
-          <s:enumeration value="Road closure"/>
-          <s:enumeration value="Road closure crossing point"/>
-          <s:enumeration value="Stop and go"/>
-          <s:enumeration value="Some carriageway incursion"/>
-          <s:enumeration value="Temporary speed limit"/>
-          <s:enumeration value="Suspension of parking restriction"/>
-          <s:enumeration value="Suspension of weight restriction"/>
-          <s:enumeration value="Undefined road closure"/>
-          <s:enumeration value="Two-way traffic signals"/>
-          <s:enumeration value="Tow away zone"/>
-          <s:enumeration value="Weight restriction"/>
-          <s:enumeration value="Works stop"/>
-          <s:enumeration value="Unclassified"/>
-        </s:restriction>
-      </s:simpleType>
+    		<s:restriction base="s:string">
+    			<s:enumeration value="Advisory and preferred access route"/>
+    			<s:enumeration value="Bridge closure"/>
+    			<s:enumeration value="Contraflow"/>
+    			<s:enumeration value="Closed to HGVs"/>
+    			<s:enumeration value="Convoy working"/>
+    			<s:enumeration value="Diversion route"/>
+    			<s:enumeration value="Footway closure"/>
+    			<s:enumeration value="Gritting in progress"/>
+    			<s:enumeration value="Give and take"/>
+    			<s:enumeration value="HGV diversion route"/>
+    			<s:enumeration value="HGV road closure"/>
+    			<s:enumeration value="Lane closure"/>
+    			<s:enumeration value="Multi-way traffic signals"/>
+    			<s:enumeration value="No carriageway incursion"/>
+    			<s:enumeration value="No left turn"/>
+    			<s:enumeration value="No right turn"/>
+    			<s:enumeration value="Clearway / no stopping"/>
+    			<s:enumeration value="No vehicle access"/>
+    			<s:enumeration value="Temporary one-way"/>
+    			<s:enumeration value="Temporary parking restriction"/>
+    			<s:enumeration value="Priority signs"/>
+    			<s:enumeration value="Road ahead closed"/>
+    			<s:enumeration value="Road closure"/>
+    			<s:enumeration value="Road closure crossing point"/>
+    			<s:enumeration value="Stop and go"/>
+    			<s:enumeration value="Some carriageway incursion"/>
+    			<s:enumeration value="Temporary speed limit"/>
+    			<s:enumeration value="Suspension of parking restriction"/>
+    			<s:enumeration value="Suspension of weight restriction"/>
+    			<s:enumeration value="Undefined road closure"/>
+    			<s:enumeration value="Two-way traffic signals"/>
+    			<s:enumeration value="Tow away zone"/>
+    			<s:enumeration value="Weight restriction"/>
+    			<s:enumeration value="Works stop"/>
+    			<s:enumeration value="Unclassified"/>
+    		</s:restriction>
+    	</s:simpleType>
       <s:element name="Out">
         <s:complexType>
           <s:choice maxOccurs="1">
