@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
-    xmlns:api="http://www.elgin.org.uk/schemas/api" 
+<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:api="http://www.elgin.org.uk/schemas/api"
     xmlns:e="http://www.elgin.org.uk/schemas/data"
-    xmlns="http://schemas.xmlsoap.org/wsdl/" 
-    xmlns:s="http://www.w3.org/2001/XMLSchema" 
-    name="Elgin" 
+    xmlns="http://schemas.xmlsoap.org/wsdl/"
+    xmlns:s="http://www.w3.org/2001/XMLSchema"
+    name="Elgin"
     targetNamespace="http://www.elgin.org.uk/schemas/api">
     <types>
         <s:schema elementFormDefault="qualified" targetNamespace="http://www.elgin.org.uk/schemas/api">
-            <s:import namespace="http://www.elgin.org.uk/schemas/data" 
+            <s:import namespace="http://www.elgin.org.uk/schemas/data"
                       schemaLocation="xsd/elginItems.xsd"/>
             <s:import namespace="http://www.elgin.org.uk/schemas/data"
                       schemaLocation="xsd/elginTypes.xsd"/>

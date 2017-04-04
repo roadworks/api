@@ -3,9 +3,9 @@
 	xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.elgin.org.uk/schemas/data"
 	elementFormDefault="qualified">
 	<s:import namespace="http://www.opengis.net/gml"
-		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/geometryBasic2d.xsd"/>
+		schemaLocation="xsd/gml/03-105r1_GML_3.1.1/GML-3.1.1/base/geometryBasic2d.xsd"/>
 	<s:import namespace="http://www.opengis.net/gml"
-		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/feature.xsd"/>
+		schemaLocation="xsd/gml/03-105r1_GML_3.1.1/GML-3.1.1/base/feature.xsd"/>
 	<s:element name="EToNVersion" type="s:integer">
 		<s:annotation>
 			<s:documentation>The EToN version used in the EToN data. Not applicable to Incident and TM
@@ -39,7 +39,7 @@
 	</s:element>
 	<s:element name="eWorksActivity">
 		<s:annotation>
-			<s:documentation>"The works Activity. 
+			<s:documentation>"The works Activity.
 				Relevant to EToN data"
 			</s:documentation>
 		</s:annotation>
@@ -277,7 +277,7 @@
 				roadworks.org</s:documentation>
 		</s:annotation>
 	</s:element>
-	<s:element name="eSourceID">
+	<s:element name="eSourceID" type="s:string">
 		<s:annotation>
 			<s:documentation>The reference used by the originating system from which the data was
 				sourced. For roadworks this is the Eton works reference.</s:documentation>
@@ -661,7 +661,6 @@
 			<s:enumeration value="Accident"/>
 			<s:enumeration value="Carnival / Parade / Street party"/>
 			<s:enumeration value="Entertainment event"/>
-			<s:enumeration value="Incident"/>
 			<s:enumeration value="License (Other)"/>
 			<s:enumeration value="Market"/>
 			<s:enumeration value="Materials"/>
