@@ -3,9 +3,9 @@
 	xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.elgin.org.uk/schemas/data"
 	elementFormDefault="qualified">
 	<s:import namespace="http://www.opengis.net/gml"
-		schemaLocation="xsd/gml/03-105r1_GML_3.1.1/GML-3.1.1/base/geometryBasic2d.xsd"/>
+		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/geometryBasic2d.xsd"/>
 	<s:import namespace="http://www.opengis.net/gml"
-		schemaLocation="xsd/gml/03-105r1_GML_3.1.1/GML-3.1.1/base/feature.xsd"/>
+		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/feature.xsd"/>
 	<s:element name="EToNVersion" type="s:integer">
 		<s:annotation>
 			<s:documentation>The EToN version used in the EToN data. Not applicable to Incident and TM
