@@ -273,7 +273,7 @@
 				roadworks.org</s:documentation>
 		</s:annotation>
 	</s:element>
-	<s:element name="eSourceID">
+	<s:element name="eSourceID" type="s:string">
 		<s:annotation>
 			<s:documentation>The reference used by the originating system from which the data was
 				sourced. For roadworks this is the Eton works reference.</s:documentation>

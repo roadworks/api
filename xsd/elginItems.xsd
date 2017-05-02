@@ -99,7 +99,7 @@
 			<s:element ref="e:eSourceID" minOccurs="0"/>
 			<s:element ref="e:eGroup"/>
 			<s:element ref="e:eDescription" minOccurs="0"/>
-            <s:element ref="e:eShortDescription" minOccurs="0"/>
+      <s:element ref="e:eShortDescription" minOccurs="0"/>
 			<s:element ref="e:eTrafficImpact" minOccurs="0"/>
 			<s:element ref="e:eTrafficManagement" minOccurs="0"/>
 			<s:element ref="e:eStatus" minOccurs="0"/>
