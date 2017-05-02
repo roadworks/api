@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <s:schema xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:e="http://www.elgin.org.uk/schemas/data"
-	xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.elgin.org.uk/schemas/data"
+	targetNamespace="http://www.elgin.org.uk/schemas/data"
 	elementFormDefault="qualified">
-	<s:import namespace="http://www.opengis.net/gml"
-		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/geometryBasic2d.xsd"/>
-	<s:import namespace="http://www.opengis.net/gml"
-		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/feature.xsd"/>
 	<s:include schemaLocation="elginTypes.xsd"/>
 	<s:element name="Out">
 		<s:complexType>
@@ -29,14 +25,6 @@
 			<s:enumeration value="Items"/>
 		</s:restriction>
 	</s:simpleType>
-  <s:element name="BoundingBox">
-          <s:complexType>
-              <s:attribute name="southWestY" type="s:float" />
-		<s:attribute name="southWestX" type="s:float" />
-		<s:attribute name="northEastX" type="s:float" />
-              <s:attribute name="northEasrY" type="s:float" />
-          </s:complexType>
-  </s:element>
 	<s:element name="Items">
 		<s:complexType>
 			<s:complexContent>
@@ -111,7 +99,7 @@
 			<s:element ref="e:eSourceID" minOccurs="0"/>
 			<s:element ref="e:eGroup"/>
 			<s:element ref="e:eDescription" minOccurs="0"/>
-      <s:element ref="e:eShortDescription" minOccurs="0"/>
+            <s:element ref="e:eShortDescription" minOccurs="0"/>
 			<s:element ref="e:eTrafficImpact" minOccurs="0"/>
 			<s:element ref="e:eTrafficManagement" minOccurs="0"/>
 			<s:element ref="e:eStatus" minOccurs="0"/>
@@ -149,7 +137,7 @@
 			<s:element ref="e:iEnd"/>
 			<s:element ref="e:iSchedule" minOccurs="0"/>
 			<s:element ref="e:iLocationDescription" minOccurs="0"/>
-      <s:element ref="e:iShortDescription" minOccurs="0"/>
+            <s:element ref="e:iShortDescription" minOccurs="0"/>
 			<s:element ref="e:iRoadName" minOccurs="0"/>
 			<s:element ref="e:iUsrnList" minOccurs="0"/>
 			<s:element ref="e:iDirectionOfTravel" minOccurs="0"/>

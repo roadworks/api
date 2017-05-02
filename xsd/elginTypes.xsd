@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <s:schema xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:e="http://www.elgin.org.uk/schemas/data"
-	xmlns:gml="http://www.opengis.net/gml" targetNamespace="http://www.elgin.org.uk/schemas/data"
+	targetNamespace="http://www.elgin.org.uk/schemas/data"
 	elementFormDefault="qualified">
-	<s:import namespace="http://www.opengis.net/gml"
-		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/geometryBasic2d.xsd"/>
-	<s:import namespace="http://www.opengis.net/gml"
-		schemaLocation="gml/03-105r1_GML_3.1.1/GML-3.1.1/base/feature.xsd"/>
 	<s:element name="EToNVersion" type="s:integer">
 		<s:annotation>
 			<s:documentation>The EToN version used in the EToN data. Not applicable to Incident and TM
@@ -277,7 +273,7 @@
 				roadworks.org</s:documentation>
 		</s:annotation>
 	</s:element>
-	<s:element name="eSourceID" type="s:string">
+	<s:element name="eSourceID">
 		<s:annotation>
 			<s:documentation>The reference used by the originating system from which the data was
 				sourced. For roadworks this is the Eton works reference.</s:documentation>
@@ -441,19 +437,6 @@
 		</s:annotation>
 	</s:element>
 	<s:element name="iPoint" type="e:PointCType"/>
-	<s:complexType name="PointCType">
-		<s:complexContent mixed="false">
-			<s:extension base="gml:PointType">
-				<s:attribute name="derived" type="s:boolean" use="required">
-					<s:annotation>
-						<s:documentation>Indicates whether the point location has been derived by
-							Elgin. False indicates that the location was present in the source
-							data.</s:documentation>
-					</s:annotation>
-				</s:attribute>
-			</s:extension>
-		</s:complexContent>
-	</s:complexType>
 	<s:element name="eWayPoints" type="e:WayPointsCType">
 		<s:annotation>
 			<s:documentation>A delimited list of coords that represent the user defined way points in
@@ -470,87 +453,54 @@
 	</s:element>
 	<s:element name="eLineString" type="e:LineStringCType">
 		<s:annotation>
-			<s:documentation>Entity line geometry is described in GML 3.1. Longitude and latitude and
+			<s:documentation>Entity line geometry is described in WKT. Longitude and latitude and
 				vertices are space delimited. </s:documentation>
 		</s:annotation>
 	</s:element>
 	<s:element name="iLineString" type="e:LineStringCType">
 		<s:annotation>
-			<s:documentation>Item line geometry is described in GML 3.1. Longitude and latitude and
+			<s:documentation>Item line geometry is described in WKT. Longitude and latitude and
 				vertices are space delimited. </s:documentation>
 		</s:annotation>
 	</s:element>
-	<s:complexType name="LineStringCType">
-		<s:complexContent mixed="false">
-			<s:extension base="gml:LineStringType">
-				<s:attribute name="derived" type="s:boolean" use="required">
-					<s:annotation>
-						<s:documentation>Indicates whether the LineString location has been derived by
-							Elgin. False indicates that the location was present in the source
-							data.</s:documentation>
-					</s:annotation>
-				</s:attribute>
-			</s:extension>
-		</s:complexContent>
-	</s:complexType>
-	<s:complexType name="WayPointsCType">
-		<s:choice maxOccurs="1" minOccurs="1">
-			<s:element ref="gml:pos"/>
-			<s:element ref="gml:posList"/>
-		</s:choice>
-		<s:attributeGroup ref="gml:SRSReferenceGroup"/>
-	</s:complexType>
 	<s:element name="ePolygon" type="e:PolygonCType">
 		<s:annotation>
-			<s:documentation>Entity polygon geometry is described in GML 3.1. Longitude and latitude
+			<s:documentation>Entity polygon geometry is described in WKT. Longitude and latitude
 				and vertices are space delimited. The last vertex in a polygon is always the start
 				and first vertex in the string.</s:documentation>
 		</s:annotation>
 	</s:element>
 	<s:element name="iPolygon" type="e:PolygonCType">
 		<s:annotation>
-			<s:documentation>Item polygon geometry is described in GML 3.1. Longitude and latitude and
+			<s:documentation>Item polygon geometry is described in WKT. Longitude and latitude and
 				vertices are space delimited. The last vertex in a polygon is always the start and
 				first vertex in the string.</s:documentation>
 		</s:annotation>
 	</s:element>
-	<s:complexType name="PolygonCType">
-		<s:complexContent mixed="false">
-			<s:extension base="gml:PolygonType">
-				<s:attribute name="derived" type="s:boolean" use="required">
-					<s:annotation>
-						<s:documentation>Indicates whether the Polygon location has been derived by
-							Elgin. False indicates that the location was present in the source
-							data.</s:documentation>
-					</s:annotation>
-				</s:attribute>
-			</s:extension>
-		</s:complexContent>
-	</s:complexType>
 	<s:element name="eFrom" type="e:PointCType">
 		<s:annotation>
-			<s:documentation>Entity From/To route geometry is described in GML 3.1. Longitude and
+			<s:documentation>Entity From/To route geometry is described in WKT. Longitude and
 				latitude and vertices are space delimited. The last vertex in a polygon is always
 				the start and first vertex in the string.</s:documentation>
 		</s:annotation>
 	</s:element>
 	<s:element name="eTo" type="e:PointCType">
 		<s:annotation>
-			<s:documentation>Entity From/To route geometry is described in GML 3.1. Longitude and
+			<s:documentation>Entity From/To route geometry is described in WKT. Longitude and
 				latitude and vertices are space delimited. The last vertex in a polygon is always
 				the start and first vertex in the string.</s:documentation>
 		</s:annotation>
 	</s:element>
 	<s:element name="iFrom" type="e:PointCType">
 		<s:annotation>
-			<s:documentation>Item From/To data is described in GML 3.1. Longitude and latitude and
+			<s:documentation>Item From/To data is described in WKT. Longitude and latitude and
 				vertices are space delimited. The last vertex in a polygon is always the start and
 				first vertex in the string.</s:documentation>
 		</s:annotation>
 	</s:element>
 	<s:element name="iTo" type="e:PointCType">
 		<s:annotation>
-			<s:documentation>Item From/To data is described in GML 3.1. Longitude and latitude and
+			<s:documentation>Item From/To data is described in WKT. Longitude and latitude and
 				vertices are space delimited. The last vertex in a polygon is always the start and
 				first vertex in the string.</s:documentation>
 		</s:annotation>
@@ -560,6 +510,58 @@
 			<s:documentation>Traffic Management Code - only applies to EToN roadworks.</s:documentation>
 		</s:annotation>
 	</s:element>
+	<s:element name="BoundingBox">
+		<s:complexType>
+			<s:attribute name="southWestY" type="s:float" />
+			<s:attribute name="southWestX" type="s:float" />
+			<s:attribute name="northEastX" type="s:float" />
+			<s:attribute name="northEasrY" type="s:float" />
+		</s:complexType>
+	</s:element>
+
+	<s:complexType name="BaseGeometryCType">
+		<s:simpleContent>
+			<s:extension base="s:string">
+				<s:attribute name="derived" type="s:boolean" use="required">
+					<s:annotation>
+						<s:documentation>Indicates whether the point location has been derived by
+							Elgin. False indicates that the location was present in the source
+							data.</s:documentation>
+					</s:annotation>
+				</s:attribute>
+				<s:attribute name="srsName" type="s:string" use="required">
+					<s:annotation>
+						<s:documentation></s:documentation>
+					</s:annotation>
+				</s:attribute>
+			</s:extension>
+		</s:simpleContent>
+	</s:complexType>
+	<s:complexType name="PointCType">
+		<s:simpleContent>
+			<s:extension base="e:BaseGeometryCType">
+			</s:extension>
+		</s:simpleContent>
+	</s:complexType>
+	<s:complexType name="LineStringCType">
+		<s:simpleContent>
+			<s:extension base="e:BaseGeometryCType">
+			</s:extension>
+		</s:simpleContent>
+	</s:complexType>
+	<s:complexType name="PolygonCType">
+		<s:simpleContent>
+			<s:extension base="e:BaseGeometryCType">
+			</s:extension>
+		</s:simpleContent>
+	</s:complexType>
+	<s:complexType name="WayPointsCType">
+		<s:simpleContent>
+			<s:extension base="e:BaseGeometryCType"></s:extension>
+		</s:simpleContent>
+	</s:complexType>
+
+
 	<s:simpleType name="PermitStatusCType">
 		<s:restriction base="s:string">
 			<s:enumeration value="None"/>

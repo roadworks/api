@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
-    xmlns:api="http://www.elgin.org.uk/schemas/api"
-    xmlns:e="http://www.elgin.org.uk/schemas/data"
-    xmlns="http://schemas.xmlsoap.org/wsdl/"
-    xmlns:s="http://www.w3.org/2001/XMLSchema"
-    xmlns:s2="http://www.opengis.net/gml"
-    xmlns:gml="http://www.opengis.net/gml"
-    xmlns:s3="http://www.w3.org/1999/xlink"
-    name="Elgin"
-    targetNamespace="http://www.elgin.org.uk/schemas/api">
+<definitions
+  xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+  xmlns:api="http://www.elgin.org.uk/schemas/api"
+  xmlns:e="http://www.elgin.org.uk/schemas/data"
+  xmlns="http://schemas.xmlsoap.org/wsdl/"
+  xmlns:s="http://www.w3.org/2001/XMLSchema"
+  name="Elgin"
+  targetNamespace="http://www.elgin.org.uk/schemas/api">
   <types>
     <s:schema elementFormDefault="qualified" targetNamespace="http://www.elgin.org.uk/schemas/api">
       <s:import namespace="http://www.elgin.org.uk/schemas/data"/>
@@ -18,860 +16,792 @@
         <s:attribute name="Key" type="s:string"/>
       </s:complexType>
 
-      <s:complexType name="RequestType">
-          <s:attribute name="Account" type="s:string"/>
-          <s:attribute name="Key" type="s:string"/>
-      </s:complexType>
-
       <s:complexType name="DataParameterType">
-          <s:sequence>
-              <s:element name="EntityOriginatingSystem" type="s:string" minOccurs="0"/>
-              <s:element name="ItemOriginatingSystem" type="s:string" minOccurs="0"/>
-              <s:element name="EntityOriginatingSystemId" type="s:string" minOccurs="0"/>
-              <s:element name="ItemOriginatingSystemId" type="s:string" minOccurs="0"/>
-              <s:element name="DataSourceID" type="s:string" minOccurs="0"/>
-              <s:element name="HighwayAuthorityID" type="s:string" minOccurs="0"/>
-              <s:element name="EntitySourceID" type="s:string" minOccurs="0"/>
-              <s:element name="StartDate" type="s:dateTime" minOccurs="0" nillable="true"/>
-              <s:element name="EndDate" type="s:dateTime" minOccurs="0" nillable="true"/>
-              <s:element name="LastUpdated" type="s:dateTime" minOccurs="0" nillable="true"/>
-              <s:element name="EntityGroup" type="e:EntityGroupSType" minOccurs="0"/>
-              <s:element name="EntityCategory" type="e:EntityCategorySType" minOccurs="0"/>
-              <s:element name="ItemType" type="e:ItemTypeSType" minOccurs="0"/>
-              <s:element ref="e:BoundingBox"/>
-          </s:sequence>
-          <s:attribute name="DataGrouping" type="e:DataCType" default="Entities"/>
+        <s:sequence>
+          <s:element name="EntityOriginatingSystem" type="s:string" minOccurs="0"/>
+          <s:element name="ItemOriginatingSystem" type="s:string" minOccurs="0"/>
+          <s:element name="EntityOriginatingSystemId" type="s:string" minOccurs="0"/>
+          <s:element name="ItemOriginatingSystemId" type="s:string" minOccurs="0"/>
+          <s:element name="DataSourceID" type="s:string" minOccurs="0"/>
+          <s:element name="HighwayAuthorityID" type="s:string" minOccurs="0"/>
+          <s:element name="EntitySourceID" type="s:string" minOccurs="0"/>
+          <s:element name="StartDate" type="s:dateTime" minOccurs="0" nillable="true"/>
+          <s:element name="EndDate" type="s:dateTime" minOccurs="0" nillable="true"/>
+          <s:element name="LastUpdated" type="s:dateTime" minOccurs="0" nillable="true"/>
+          <s:element name="EntityGroup" type="e:EntityGroupSType" minOccurs="0"/>
+          <s:element name="EntityCategory" type="e:EntityCategorySType" minOccurs="0"/>
+          <s:element name="ItemType" type="e:ItemTypeSType" minOccurs="0"/>
+          <s:element ref="e:BoundingBox"/>
+        </s:sequence>
+        <s:attribute name="DataGrouping" type="e:DataCType" default="Entities"/>
       </s:complexType>
 
       <s:complexType name="GetDataRequest">
-          <s:complexContent>
-              <s:extension base="api:RequestType">
-                  <s:sequence>
-                      <s:element name="DataParameter" type="api:DataParameterType"/>
-                  </s:sequence>
-              </s:extension>
-          </s:complexContent>
+        <s:complexContent>
+          <s:extension base="api:RequestType">
+            <s:sequence>
+              <s:element name="DataParameter" type="api:DataParameterType"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
       </s:complexType>
 
       <s:element name="GetDataResponse">
-          <s:complexType>
-              <s:sequence>
-                  <s:element ref="e:Out"/>
-              </s:sequence>
-          </s:complexType>
+        <s:complexType>
+          <s:sequence>
+            <s:element ref="e:Out"/>
+          </s:sequence>
+        </s:complexType>
       </s:element>
 
       <s:complexType name="PublishDataRequest">
-          <s:complexContent>
-              <s:extension base="api:RequestType">
-                  <s:sequence>
-                      <s:element ref="e:In" />
-                  </s:sequence>
-              </s:extension>
-          </s:complexContent>
+        <s:complexContent>
+          <s:extension base="api:RequestType">
+            <s:sequence>
+              <s:element ref="e:In"/>
+            </s:sequence>
+          </s:extension>
+        </s:complexContent>
       </s:complexType>
 
       <s:element name="PublishDataResponse">
-          <s:complexType>
-              <s:sequence>
-                  <s:element name="success" type="s:boolean"></s:element>
-                  <s:element name="message" type="s:string"></s:element>
-                  <s:element name="details" type="e:PublishDataMessages"></s:element>
-              </s:sequence>
-          </s:complexType>
+        <s:complexType>
+          <s:sequence>
+            <s:element name="success" type="s:boolean"></s:element>
+            <s:element name="message" type="s:string"></s:element>
+            <s:element name="details" type="e:PublishDataMessages"></s:element>
+          </s:sequence>
+        </s:complexType>
       </s:element>
 
-      <s:element name="LANotAuthorized">
-      </s:element>
+      <s:element name="LANotAuthorized"></s:element>
       <s:element name="MissingRequiredParams">
-          <s:complexType>
-              <s:all>
-                  <s:element name="details" type="s:string"/>
-              </s:all>
-          </s:complexType>
+        <s:complexType>
+          <s:all>
+            <s:element name="details" type="s:string"/>
+          </s:all>
+        </s:complexType>
       </s:element>
       <s:element name="BadParams">
-          <s:complexType>
-              <s:all>
-                  <s:element name="details" type="s:string"/>
-              </s:all>
-          </s:complexType>
+        <s:complexType>
+          <s:all>
+            <s:element name="details" type="s:string"/>
+          </s:all>
+        </s:complexType>
       </s:element>
       <s:element name="InternalError">
-          <s:complexType>
-              <s:all>
-                  <s:element name="details" type="s:string"/>
-              </s:all>
-          </s:complexType>
+        <s:complexType>
+          <s:all>
+            <s:element name="details" type="s:string"/>
+          </s:all>
+        </s:complexType>
       </s:element>
     </s:schema>
 
     <s:schema elementFormDefault="qualified" targetNamespace="http://www.elgin.org.uk/schemas/data">
-      <s:import namespace="http://www.opengis.net/gml" />
       <s:element name="EToNVersion" type="s:integer">
-    		<s:annotation>
-    			<s:documentation>The EToN version used in the EToN data. Not applicable to Incident and TM
-    				data</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="HighwayAuthority">
-    		<s:annotation>
-    			<s:documentation>Identifies the Highway Authority area in which the data is
-    				located.</s:documentation>
-    		</s:annotation>
-    		<s:complexType mixed="true">
-    			<s:attribute name="id" type="s:string" use="required">
-    				<s:annotation>
-    					<s:documentation>Identifies the Highway Authority area in which the data is
-    						located.</s:documentation>
-    				</s:annotation>
-    			</s:attribute>
-    		</s:complexType>
-    	</s:element>
-    	<s:element name="eLocationDescription" type="s:string">
-    		<s:annotation>
-    			<s:documentation>Road name and location of the Entity</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="ePermitStatus" type="e:PermitStatusCType">
-    		<s:annotation>
-    			<s:documentation>The Permit status of the EToN works. Only relevant to EToN works where
-    				the works is on a permitable USRN </s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eWorksActivity">
-    		<s:annotation>
-    			<s:documentation>"The works Activity.
-    				Relevant to EToN data"
-    			</s:documentation>
-    		</s:annotation>
-    		<s:complexType>
-    			<s:simpleContent>
-    				<s:extension base="s:string">
-    					<s:attribute name="code" type="s:string">
-    						<s:annotation>
-    							<s:documentation>The code for EntityWorksActivity</s:documentation>
-    						</s:annotation>
-    					</s:attribute>
-    				</s:extension>
-    			</s:simpleContent>
-    		</s:complexType>
-    	</s:element>
-    	<s:element name="eStatus" type="s:string">
-    		<s:annotation>
-    			<s:documentation>Current status of Entity, e.g. "Advanced planning".</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iOriginatingSystem" type="s:string">
-    		<s:annotation>
-    			<s:documentation>Identifies the system in which the Item data content was
-    				created</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eOriginatingSystem" type="s:string">
-    		<s:annotation>
-    			<s:documentation>Identifies the system in which the Entity data content was
-    				created</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eOriginatingSystemId" type="s:string">
-    		<s:annotation>
-    			<s:documentation>Identifier for the entity in the originating system</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iOriginatingSystemId" type="s:string">
-    		<s:annotation>
-    			<s:documentation>Identifier for the item in the originating system</s:documentation>
-    		</s:annotation>
-    	</s:element>
+        <s:annotation>
+          <s:documentation>The EToN version used in the EToN data. Not applicable to Incident and TM data</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="HighwayAuthority">
+        <s:annotation>
+          <s:documentation>Identifies the Highway Authority area in which the data is located.</s:documentation>
+        </s:annotation>
+        <s:complexType mixed="true">
+          <s:attribute name="id" type="s:string" use="required">
+            <s:annotation>
+              <s:documentation>Identifies the Highway Authority area in which the data is located.</s:documentation>
+            </s:annotation>
+          </s:attribute>
+        </s:complexType>
+      </s:element>
+      <s:element name="eLocationDescription" type="s:string">
+        <s:annotation>
+          <s:documentation>Road name and location of the Entity</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="ePermitStatus" type="e:PermitStatusCType">
+        <s:annotation>
+          <s:documentation>The Permit status of the EToN works. Only relevant to EToN works where the works is on a permitable USRN
+          </s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eWorksActivity">
+        <s:annotation>
+          <s:documentation>"The works Activity. Relevant to EToN data"
+          </s:documentation>
+        </s:annotation>
+        <s:complexType>
+          <s:simpleContent>
+            <s:extension base="s:string">
+              <s:attribute name="code" type="s:string">
+                <s:annotation>
+                  <s:documentation>The code for EntityWorksActivity</s:documentation>
+                </s:annotation>
+              </s:attribute>
+            </s:extension>
+          </s:simpleContent>
+        </s:complexType>
+      </s:element>
+      <s:element name="eStatus" type="s:string">
+        <s:annotation>
+          <s:documentation>Current status of Entity, e.g. "Advanced planning".</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iOriginatingSystem" type="s:string">
+        <s:annotation>
+          <s:documentation>Identifies the system in which the Item data content was created</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eOriginatingSystem" type="s:string">
+        <s:annotation>
+          <s:documentation>Identifies the system in which the Entity data content was created</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eOriginatingSystemId" type="s:string">
+        <s:annotation>
+          <s:documentation>Identifier for the entity in the originating system</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iOriginatingSystemId" type="s:string">
+        <s:annotation>
+          <s:documentation>Identifier for the item in the originating system</s:documentation>
+        </s:annotation>
+      </s:element>
 
-    	<s:element name="eURL" type="s:anyURI">
-    		<s:annotation>
-    			<s:documentation>Deep link to Entity on roadworks.org</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iURL" type="s:anyURI">
-    		<s:annotation>
-    			<s:documentation>Deep link to Item on roadworks.org</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eCancelled" type="s:boolean">
-    		<s:annotation>
-    			<s:documentation>Indicates if the Entity is cancelled</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iCancelled" type="s:boolean">
-    		<s:annotation>
-    			<s:documentation>Indicates if the Item is cancelled</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eConfirmed" type="s:boolean">
-    		<s:annotation>
-    			<s:documentation>A flag to identify if the works has been confirmed. An EToN works, and a
-    				TM works associated with an EToN works is considered CONFIRMED unless: 1) When an
-    				EToN roadworks' start date has passed but no confirmed works start alert has been
-    				receieved from the LHA 2) When an EToN roadworks' end date has passed and the works
-    				is still in it's grace period, but still considered active as no confirmed works
-    				stop alert has been received from the LHA All other TM works and Incidents are
-    				considered CONFIRMED </s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iConfirmed" type="s:boolean">
-    		<s:annotation>
-    			<s:documentation>A flag to identify if the works has been confirmed. An EToN works, and a
-    				TM works associated with an EToN works is considered CONFIRMED unless: 1) When an
-    				EToN roadworks' start date has passed but no confirmed works start alert has been
-    				receieved from the LHA 2) When an EToN roadworks' end date has passed and the works
-    				is still in it's grace period, but still considered active as no confirmed works
-    				stop alert has been received from the LHA All other TM works and Incidents are
-    				considered CONFIRMED </s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iDirectionOfTravel" type="s:string">
-    		<s:annotation>
-    			<s:documentation>The direction of the travel where the Item occurs</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eRoadName" type="s:string">
-    		<s:annotation>
-    			<s:documentation>The name of the road on which the Entity lies.</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iRoadName" type="s:string">
-    		<s:annotation>
-    			<s:documentation>The name of the road on which the item lies.</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eUsrnList" type="s:string">
-    		<s:annotation>
-    			<s:documentation>Comma delimited list of USRNs corresponding to Entity geometry USRN
-    				stands for Unique Street Reference Number. A USRN identifies a street segment in the
-    				UK Natonal Street Gazetteer </s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iUsrnList" type="s:string">
-    		<s:annotation>
-    			<s:documentation>Comma delimited list of USRNs corresponding to Item geometry USRN stands
-    				for Unique Street Reference Number. A USRN identifies a street segment in the UK
-    				Natonal Street Gazetteer </s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="ResponsibleOrganisation">
-    		<s:annotation>
-    			<s:documentation>The organisation responsible for the traffic disruption. Identifies the
-    				organisation source of the data. The name of the Local Authority/Utility/National
-    				Highways Agency from whom the data was sourced. Please refer to an authoritative
-    				list <s:a href="http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026">here</s:a>. </s:documentation>
-    		</s:annotation>
-    		<s:complexType mixed="true">
-    			<s:attribute name="id" type="s:string" use="required">
-    				<s:annotation>
-    					<s:documentation>The Responsible Organisation's Section ID. This is an EToN field.
-    						This is an official DfT code associated with the Publisher's SWA_ORG_REF.
-    						Ref: http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026
-    					</s:documentation>
-    				</s:annotation>
-    			</s:attribute>
-    			<s:attribute name="district" type="s:string" use="optional">
-    				<s:annotation>
-    					<s:documentation>Identifies the organisation source of the data</s:documentation>
-    				</s:annotation>
-    			</s:attribute>
-    		</s:complexType>
-    	</s:element>
-    	<s:simpleType name="CodeSType">
-    		<s:restriction base="s:string">
-    			<s:pattern value=".+"/>
-    		</s:restriction>
-    	</s:simpleType>
-    	<s:element name="eCollection">
-    		<s:annotation>
-    			<s:documentation>A textual description for the eCollection/@ID</s:documentation>
-    		</s:annotation>
-    		<s:complexType mixed="true">
-    			<s:attribute name="id" type="s:string" use="optional">
-    				<s:annotation>
-    					<s:documentation>ID identifying a collection of Entities. Grouping by this field
-    						will generate a list of all Entities belonging to a collection such as a
-    						major road scheme. For a majority of the roadworks data this reference code
-    						is the same format as the SourceReference field. Where an EToN ProjectID is
-    						present it is encoded as the EntityCollectionID. For Incidents this data
-    						will be Null </s:documentation>
-    				</s:annotation>
-    			</s:attribute>
-    		</s:complexType>
-    	</s:element>
-    	<s:element name="eDescription" type="s:string">
-    		<s:annotation>
-    			<s:documentation>Description of "parent" Entity</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eShortDescription" type="s:string">
-    		<s:annotation>
-    			<s:documentation>Entity Short Description</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eEnd" type="e:UnDerivedDateTimeSType">
-    		<s:annotation>
-    			<s:documentation>End datetime of "parent" Entity</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eStart" type="e:UnDerivedDateTimeSType">
-    		<s:annotation>
-    			<s:documentation>Start datetime of "parent" Entity</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iEnd" type="e:DateTimeSType">
-    		<s:annotation>
-    			<s:documentation>End datetime of "child" Item. This value is mandatory as where it is
-    				missing from the source data it is derived from the Entity.</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iStart" type="e:DateTimeSType">
-    		<s:annotation>
-    			<s:documentation>Start datetime of "child" Item. This value is mandatory as where it is
-    				missing from the source data it is derived from the Entity.</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eSchedule">
-    		<s:annotation>
-    			<s:documentation>Array of start and end datetimes when Entity is active. AKA Enforcement
-    				Pattern.</s:documentation>
-    		</s:annotation>
-    		<s:complexType>
-    			<s:sequence minOccurs="1" maxOccurs="unbounded">
-    				<s:element ref="e:ScheduleStartEnd" maxOccurs="unbounded"/>
-    				<s:element name="Text" type="s:string" maxOccurs="unbounded"/>
-    			</s:sequence>
-    		</s:complexType>
-    	</s:element>
-    	<s:element name="iSchedule">
-    		<s:annotation>
-    			<s:documentation>Array of start and end datetimes when Item is active. AKA Enforcement
-    				Pattern</s:documentation>
-    		</s:annotation>
-    		<s:complexType>
-    			<s:sequence minOccurs="1" maxOccurs="unbounded">
-    				<s:element ref="e:ScheduleStartEnd" maxOccurs="unbounded"/>
-    				<s:element name="Text" type="s:string" maxOccurs="unbounded"/>
-    			</s:sequence>
-    		</s:complexType>
-    	</s:element>
-    	<s:element name="ScheduleStartEnd">
-    		<s:complexType>
-    			<s:attribute name="Start" type="s:dateTime"/>
-    			<s:attribute name="End" type="s:dateTime"/>
-    		</s:complexType>
-    	</s:element>
-    	<s:element name="iLocationDescription" type="s:string">
-    		<s:annotation>
-    			<s:documentation>Road name and location of the Item</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iShortDescription" type="s:string">
-    		<s:annotation>
-    			<s:documentation>Item Short Description</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="LastUpdated" type="s:dateTime">
-    		<s:annotation>
-    			<s:documentation>Datetime when the data was last updated within
-    				roadworks.org</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eSourceID">
-    		<s:annotation>
-    			<s:documentation>The reference used by the originating system from which the data was
-    				sourced. For roadworks this is the Eton works reference.</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eDataSource">
-    		<s:annotation>
-    			<s:documentation>Identifies the organisation from which the data is sourced. The name of
-    				the Local Authority/Utility/National Highways Agency or third party from whom the
-    				data was sourced.   </s:documentation>
-    		</s:annotation>
-    		<s:complexType mixed="true">
-    			<s:attribute name="id" type="s:string" use="required">
-    				<s:annotation>
-    					<s:documentation>Identifies the organisation from which the data is sourced. The
-    						name of the Local Authority/Utility/National Highways Agency or third party
-    						from whom the data was sourced. </s:documentation>
-    				</s:annotation>
-    			</s:attribute>
-    			<s:attribute name="district" type="s:string" use="optional">
-    				<s:annotation>
-    					<s:documentation>The Entity's Datasource Section ID. This is an official DfT code
-    						associated with the Publisher's SWA_ORG_REF. Ref:
-    						http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026
-    					</s:documentation>
-    				</s:annotation>
-    			</s:attribute>
-    		</s:complexType>
-    	</s:element>
-    	<s:element name="iDataSource">
-    		<s:annotation>
-    			<s:documentation>Identifies the organisation from which the data is sourced. The name of
-    				the Local Authority/Utility/National Highways Agency or third party from whom the
-    				data was sourced.   </s:documentation>
-    		</s:annotation>
-    		<s:complexType mixed="true">
-    			<s:attribute name="id" type="s:string" use="required">
-    				<s:annotation>
-    					<s:documentation>Identifies the organisation from which the data is sourced. The
-    						name of the Local Authority/Utility/National Highways Agency or third party
-    						from whom the data was sourced. </s:documentation>
-    				</s:annotation>
-    			</s:attribute>
-    			<s:attribute name="district" type="s:string" use="optional">
-    				<s:annotation>
-    					<s:documentation>The Entity's Datasource Section ID. This is an official DfT code
-    						associated with the Publisher's SWA_ORG_REF. Ref:
-    						http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026
-    					</s:documentation>
-    				</s:annotation>
-    			</s:attribute>
-    		</s:complexType>
-    	</s:element>
-    	<s:element name="iContractor" type="s:string">
-    		<s:annotation>
-    			<s:documentation>The name of the Contractor. i.e who is carrying out the
-    				work.</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iFootwayClosure" type="s:boolean">
-    		<s:annotation>
-    			<s:documentation>Indicates whether the works will close the footway</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iNoticeSequence" type="s:integer">
-    		<s:annotation>
-    			<s:documentation>The EToN notice sequence number</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iNotificationType" type="s:integer">
-    		<s:annotation>
-    			<s:documentation>The last EToN Notification Type received See
-    				https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/181675/eton-6-technical-specification.pdf
-    				for details </s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iWorksCategory" type="s:integer">
-    		<s:annotation>
-    			<s:documentation>The EToN works category</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iParkingSuspensions" type="s:boolean">
-    		<s:annotation>
-    			<s:documentation>The EToN parking suspensions flag</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iNoticeOutgoing" type="s:boolean">
-    		<s:annotation>
-    			<s:documentation>The EToN outgoing flag</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iPermitCondition" type="s:string">
-    		<s:annotation>
-    			<s:documentation>the EToN Permit Condition description</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iOutOfHours" type="s:boolean">
-    		<s:annotation>
-    			<s:documentation>Is there out of hours working? An EToN field</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iReinstateCategory" type="s:string">
-    		<s:annotation>
-    			<s:documentation>The Reinstatement Categories that apply to the road on which the works
-    				are being carried out. EToN only</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iTrafficSensitive" type="s:string">
-    		<s:annotation>
-    			<s:documentation>The Traffic Sensitive information that applies to the road on whicih the
-    				works are being carried out. EToN only</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iReverseRoute" type="s:boolean">
-    		<s:annotation>
-    			<s:documentation>If true then the reverse route of the TM diversion route plan
-    				applies</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iSpeedLimit" type="s:integer">
-    		<s:annotation>
-    			<s:documentation>The speed limit in mph (if any) on the TM Item</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iWeightRestriction" type="s:integer">
-    		<s:annotation>
-    			<s:documentation>The weight restriction in tonnes (if any) that applies to the TM
-    				Item</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:complexType name="UnDerivedDateTimeSType">
-    		<s:simpleContent>
-    			<s:extension base="s:dateTime">
-    				<s:attribute name="estimated" type="s:boolean" use="required"/>
-    			</s:extension>
-    		</s:simpleContent>
-    	</s:complexType>
-    	<s:complexType name="DateTimeSType">
-    		<s:simpleContent>
-    			<s:extension base="s:dateTime">
-    				<s:attribute name="estimated" type="s:boolean" use="required">
-    					<s:annotation>
-    						<s:documentation>Boolean flag to say the date is estimated or exact. This
-    							value is mandatory as where it is missing from the source data it is
-    							derived from the Entity (please see "derived" field)..</s:documentation>
-    					</s:annotation>
-    				</s:attribute>
-    				<s:attribute name="derived" type="s:string" use="required">
-    					<s:annotation>
-    						<s:documentation>Boolean flag to say the date is derived from its parent
-    							Entity. False indicates the date is present in the source
-    							data.</s:documentation>
-    					</s:annotation>
-    				</s:attribute>
-    			</s:extension>
-    		</s:simpleContent>
-    	</s:complexType>
-    	<s:element name="ePoint" type="e:PointCType">
-    		<s:annotation>
-    			<s:documentation>Point coordinate of Entity location</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iPoint" type="e:PointCType"/>
-    	<s:complexType name="PointCType">
-    		<s:complexContent mixed="false">
-    			<s:extension base="gml:PointType">
-    				<s:attribute name="derived" type="s:boolean" use="required">
-    					<s:annotation>
-    						<s:documentation>Indicates whether the point location has been derived by
-    							Elgin. False indicates that the location was present in the source
-    							data.</s:documentation>
-    					</s:annotation>
-    				</s:attribute>
-    			</s:extension>
-    		</s:complexContent>
-    	</s:complexType>
-    	<s:element name="eWayPoints" type="e:WayPointsCType">
-    		<s:annotation>
-    			<s:documentation>A delimited list of coords that represent the user defined way points in
-    				a route. Ie: the points along the route explicitly defined by the user when
-    				digitising their route on the map.</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iWayPoints" type="e:WayPointsCType">
-    		<s:annotation>
-    			<s:documentation>A delimited list of coords that represent the user defined way points in
-    				a route. Ie: the points along the route explicitly defined by the user when
-    				digitising their route on the map.</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eLineString" type="e:LineStringCType">
-    		<s:annotation>
-    			<s:documentation>Entity line geometry is described in GML 3.1. Longitude and latitude and
-    				vertices are space delimited. </s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iLineString" type="e:LineStringCType">
-    		<s:annotation>
-    			<s:documentation>Item line geometry is described in GML 3.1. Longitude and latitude and
-    				vertices are space delimited. </s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:complexType name="LineStringCType">
-    		<s:complexContent mixed="false">
-    			<s:extension base="gml:LineStringType">
-    				<s:attribute name="derived" type="s:boolean" use="required">
-    					<s:annotation>
-    						<s:documentation>Indicates whether the LineString location has been derived by
-    							Elgin. False indicates that the location was present in the source
-    							data.</s:documentation>
-    					</s:annotation>
-    				</s:attribute>
-    			</s:extension>
-    		</s:complexContent>
-    	</s:complexType>
-    	<s:complexType name="WayPointsCType">
-    		<s:choice maxOccurs="1" minOccurs="1">
-    			<s:element ref="gml:pos"/>
-    			<s:element ref="gml:posList"/>
-    		</s:choice>
-    		<s:attributeGroup ref="gml:SRSReferenceGroup"/>
-    	</s:complexType>
-    	<s:element name="ePolygon" type="e:PolygonCType">
-    		<s:annotation>
-    			<s:documentation>Entity polygon geometry is described in GML 3.1. Longitude and latitude
-    				and vertices are space delimited. The last vertex in a polygon is always the start
-    				and first vertex in the string.</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iPolygon" type="e:PolygonCType">
-    		<s:annotation>
-    			<s:documentation>Item polygon geometry is described in GML 3.1. Longitude and latitude and
-    				vertices are space delimited. The last vertex in a polygon is always the start and
-    				first vertex in the string.</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:complexType name="PolygonCType">
-    		<s:complexContent mixed="false">
-    			<s:extension base="gml:PolygonType">
-    				<s:attribute name="derived" type="s:boolean" use="required">
-    					<s:annotation>
-    						<s:documentation>Indicates whether the Polygon location has been derived by
-    							Elgin. False indicates that the location was present in the source
-    							data.</s:documentation>
-    					</s:annotation>
-    				</s:attribute>
-    			</s:extension>
-    		</s:complexContent>
-    	</s:complexType>
-    	<s:element name="eFrom" type="e:PointCType">
-    		<s:annotation>
-    			<s:documentation>Entity From/To route geometry is described in GML 3.1. Longitude and
-    				latitude and vertices are space delimited. The last vertex in a polygon is always
-    				the start and first vertex in the string.</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eTo" type="e:PointCType">
-    		<s:annotation>
-    			<s:documentation>Entity From/To route geometry is described in GML 3.1. Longitude and
-    				latitude and vertices are space delimited. The last vertex in a polygon is always
-    				the start and first vertex in the string.</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iFrom" type="e:PointCType">
-    		<s:annotation>
-    			<s:documentation>Item From/To data is described in GML 3.1. Longitude and latitude and
-    				vertices are space delimited. The last vertex in a polygon is always the start and
-    				first vertex in the string.</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="iTo" type="e:PointCType">
-    		<s:annotation>
-    			<s:documentation>Item From/To data is described in GML 3.1. Longitude and latitude and
-    				vertices are space delimited. The last vertex in a polygon is always the start and
-    				first vertex in the string.</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:element name="eTrafficManagement" type="e:TrafficManagementCType">
-    		<s:annotation>
-    			<s:documentation>Traffic Management Code - only applies to EToN roadworks.</s:documentation>
-    		</s:annotation>
-    	</s:element>
-    	<s:simpleType name="PermitStatusCType">
-    		<s:restriction base="s:string">
-    			<s:enumeration value="None"/>
-    			<s:enumeration value="Application"/>
-    			<s:enumeration value="Application Made"/>
-    			<s:enumeration value="Refused"/>
-    			<s:enumeration value="Granted"/>
-    			<s:enumeration value="Revoked"/>
-    			<s:enumeration value="Superseded"/>
-    			<s:enumeration value="Cancelled"/>
-    			<s:enumeration value="PAA Granted"/>
-    			<s:enumeration value="Permit Granted"/>
-    			<s:enumeration value="Variation Granted"/>
-    			<s:enumeration value="PAA Pending"/>
-    			<s:enumeration value="Permit Pending"/>
-    			<s:enumeration value="Refused with PAA"/>
-    			<s:enumeration value="Refused with Permit"/>
-    			<s:enumeration value="PAA Variation Pending"/>
-    			<s:enumeration value="Permit Variation Pending"/>
-    			<s:enumeration value="Immediate Pending"/>
-    			<s:enumeration value="Refused Immediate"/>
-    			<s:enumeration value="Revoked Permit"/>
-    			<s:enumeration value="Revoked PAA"/>
-    			<s:enumeration value="PAA with Perm"/>
-    		</s:restriction>
-    	</s:simpleType>
-    	<s:simpleType name="TrafficManagementCType">
-    		<s:restriction base="s:string">
-    			<s:enumeration value="Contra-flow"/>
-    			<s:enumeration value="Footway closure"/>
-    			<s:enumeration value="Lane closure"/>
-    			<s:enumeration value="No carriageway incursion"/>
-    			<s:enumeration value="Road closure"/>
-    			<s:enumeration value="Some carriageway incursion"/>
-    			<s:enumeration value="Traffic control(convoy working)"/>
-    			<s:enumeration value="Traffic control(give and take)"/>
-    			<s:enumeration value="Traffic control(multi-way signals)"/>
-    			<s:enumeration value="Traffic control(priority working)"/>
-    			<s:enumeration value="Traffic control(stop/go boards)"/>
-    			<s:enumeration value="Traffic control(two-way signals)"/>
-    		</s:restriction>
-    	</s:simpleType>
-    	<s:simpleType name="TrafficImpactCType">
-    		<s:restriction base="s:string">
-    			<s:enumeration value="High - delays likely"/>
-    			<s:enumeration value="Medium - delays possible"/>
-    			<s:enumeration value="Low - delays unlikely"/>
-    		</s:restriction>
-    	</s:simpleType>
-    	<s:element name="eTrafficImpact">
-    		<s:annotation>
-    			<s:documentation>Estimated impact on road traffic of Entity</s:documentation>
-    		</s:annotation>
-    		<s:complexType>
-    			<s:simpleContent>
-    				<s:extension base="e:TrafficImpactCType"/>
-    			</s:simpleContent>
-    		</s:complexType>
-    	</s:element>
-    	<s:element name="eGroup">
-    		<s:annotation>
-    			<s:documentation>The top level category of "parent" Entity (can be thought of as the
-    				"Cause" or "Consequence")</s:documentation>
-    		</s:annotation>
-    		<s:complexType>
-    			<s:simpleContent>
-    				<s:extension base="e:EntityGroupSType"/>
-    			</s:simpleContent>
-    		</s:complexType>
-    	</s:element>
-    	<s:simpleType name="EntityGroupSType">
-    		<s:restriction base="s:string">
-    			<s:enumeration value="Roadworks"/>
-    			<s:enumeration value="Public Event"/>
-    			<s:enumeration value="Incident"/>
-    			<s:enumeration value="Unclassified"/>
-    		</s:restriction>
-    	</s:simpleType>
-    	<s:element name="eCategory">
-    		<s:annotation>
-    			<s:documentation>The category of "parent" Entity (can be thought of as the
-    				"Cause")</s:documentation>
-    		</s:annotation>
-    		<s:complexType>
-    			<s:simpleContent>
-    				<s:extension base="e:EntityCategorySType">
-    					<s:attribute name="SubCategory" type="e:EntitySubCategorySType" use="optional">
-    						<s:annotation>
-    							<s:documentation/>
-    						</s:annotation>
-    					</s:attribute>
-    				</s:extension>
-    			</s:simpleContent>
-    		</s:complexType>
-    	</s:element>
-    	<s:simpleType name="EntityCategorySType">
-    		<s:restriction base="s:string">
-    			<s:enumeration value="Incident"/>
-    			<s:enumeration value="Accident"/>
-    			<s:enumeration value="Carnival / Parade / Street party"/>
-    			<s:enumeration value="Entertainment event"/>
-    			<s:enumeration value="License (Other)"/>
-    			<s:enumeration value="Market"/>
-    			<s:enumeration value="Materials"/>
-    			<s:enumeration value="Obstruction"/>
-    			<s:enumeration value="Public event"/>
-    			<s:enumeration value="Roadworks"/>
-    			<s:enumeration value="Roadworks / Licence"/>
-    			<s:enumeration value="Scaffolding"/>
-    			<s:enumeration value="Skip"/>
-    			<s:enumeration value="Sport event"/>
-    			<s:enumeration value="Unclassified"/>
-    			<s:enumeration value="Weather incident"/>
-    		</s:restriction>
-    	</s:simpleType>
-    	<s:simpleType name="EntitySubCategorySType">
-    		<s:restriction base="s:string">
-    			<s:enumeration value="Abnormal load"/>
-    			<s:enumeration value="Accident"/>
-    			<s:enumeration value="Agricultural show"/>
-    			<s:enumeration value="Air show"/>
-    			<s:enumeration value="Carnival / Parade / Street party"/>
-    			<s:enumeration value="Christmas event"/>
-    			<s:enumeration value="Crane"/>
-    			<s:enumeration value="Cruise ship"/>
-    			<s:enumeration value="Cycling"/>
-    			<s:enumeration value="Development works"/>
-    			<s:enumeration value="Emergency works"/>
-    			<s:enumeration value="Entertainment event"/>
-    			<s:enumeration value="Festival"/>
-    			<s:enumeration value="Flood"/>
-    			<s:enumeration value="Football"/>
-    			<s:enumeration value="Funeral"/>
-    			<s:enumeration value="Hoarding"/>
-    			<s:enumeration value="Horse racing"/>
-    			<s:enumeration value="Incident"/>
-    			<s:enumeration value="Landslip"/>
-    			<s:enumeration value="Market"/>
-    			<s:enumeration value="Materials on highway"/>
-    			<s:enumeration value="Minor routine maintenance"/>
-    			<s:enumeration value="Motor sport event"/>
-    			<s:enumeration value="Obstruction"/>
-    			<s:enumeration value="Other"/>
-    			<s:enumeration value="Polling station"/>
-    			<s:enumeration value="Remembrance parade"/>
-    			<s:enumeration value="Roadworks"/>
-    			<s:enumeration value="Rugby"/>
-    			<s:enumeration value="Running"/>
-    			<s:enumeration value="Scaffolding"/>
-    			<s:enumeration value="Skip"/>
-    			<s:enumeration value="Sport event"/>
-    			<s:enumeration value="Table &amp; chairs"/>
-    			<s:enumeration value="Traffic survey equipment"/>
-    			<s:enumeration value="Weather event"/>
-    		</s:restriction>
-    	</s:simpleType>
-    	<s:element name="iType">
-    		<s:complexType>
-    			<s:simpleContent>
-    				<s:extension base="e:ItemTypeSType"/>
-    			</s:simpleContent>
-    		</s:complexType>
-    	</s:element>
-    	<s:simpleType name="ItemTypeSType">
-    		<s:restriction base="s:string">
-    			<s:enumeration value="Advisory and preferred access route"/>
-    			<s:enumeration value="Bridge closure"/>
-    			<s:enumeration value="Contraflow"/>
-    			<s:enumeration value="Closed to HGVs"/>
-    			<s:enumeration value="Convoy working"/>
-    			<s:enumeration value="Diversion route"/>
-    			<s:enumeration value="Footway closure"/>
-    			<s:enumeration value="Gritting in progress"/>
-    			<s:enumeration value="Give and take"/>
-    			<s:enumeration value="HGV diversion route"/>
-    			<s:enumeration value="HGV road closure"/>
-    			<s:enumeration value="Lane closure"/>
-    			<s:enumeration value="Multi-way traffic signals"/>
-    			<s:enumeration value="No carriageway incursion"/>
-    			<s:enumeration value="No left turn"/>
-    			<s:enumeration value="No right turn"/>
-    			<s:enumeration value="Clearway / no stopping"/>
-    			<s:enumeration value="No vehicle access"/>
-    			<s:enumeration value="Temporary one-way"/>
-    			<s:enumeration value="Temporary parking restriction"/>
-    			<s:enumeration value="Priority signs"/>
-    			<s:enumeration value="Road ahead closed"/>
-    			<s:enumeration value="Road closure"/>
-    			<s:enumeration value="Road closure crossing point"/>
-    			<s:enumeration value="Stop and go"/>
-    			<s:enumeration value="Some carriageway incursion"/>
-    			<s:enumeration value="Temporary speed limit"/>
-    			<s:enumeration value="Suspension of parking restriction"/>
-    			<s:enumeration value="Suspension of weight restriction"/>
-    			<s:enumeration value="Undefined road closure"/>
-    			<s:enumeration value="Two-way traffic signals"/>
-    			<s:enumeration value="Tow away zone"/>
-    			<s:enumeration value="Weight restriction"/>
-    			<s:enumeration value="Works stop"/>
-    			<s:enumeration value="Unclassified"/>
-    		</s:restriction>
-    	</s:simpleType>
-    	<s:simpleType name="PublishDataMessages">
-    		<s:restriction base="s:string">
-    			<s:enumeration value="LA not authorized" />
-    			<s:enumeration value="Missing required params" />
-    			<s:enumeration value="Bad params" />
-    			<s:enumeration value="Internal Error" />
-    		</s:restriction>
-    	</s:simpleType>
+      <s:element name="eURL" type="s:anyURI">
+        <s:annotation>
+          <s:documentation>Deep link to Entity on roadworks.org</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iURL" type="s:anyURI">
+        <s:annotation>
+          <s:documentation>Deep link to Item on roadworks.org</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eCancelled" type="s:boolean">
+        <s:annotation>
+          <s:documentation>Indicates if the Entity is cancelled</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iCancelled" type="s:boolean">
+        <s:annotation>
+          <s:documentation>Indicates if the Item is cancelled</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eConfirmed" type="s:boolean">
+        <s:annotation>
+          <s:documentation>A flag to identify if the works has been confirmed. An EToN works, and a TM works associated with an EToN works is considered CONFIRMED unless: 1) When an EToN roadworks' start date has passed but no confirmed works start alert has
+            been receieved from the LHA 2) When an EToN roadworks' end date has passed and the works is still in it's grace period, but still considered active as no confirmed works stop alert has been received from the LHA All other TM works and Incidents are
+            considered CONFIRMED
+          </s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iConfirmed" type="s:boolean">
+        <s:annotation>
+          <s:documentation>A flag to identify if the works has been confirmed. An EToN works, and a TM works associated with an EToN works is considered CONFIRMED unless: 1) When an EToN roadworks' start date has passed but no confirmed works start alert has
+            been receieved from the LHA 2) When an EToN roadworks' end date has passed and the works is still in it's grace period, but still considered active as no confirmed works stop alert has been received from the LHA All other TM works and Incidents are
+            considered CONFIRMED
+          </s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iDirectionOfTravel" type="s:string">
+        <s:annotation>
+          <s:documentation>The direction of the travel where the Item occurs</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eRoadName" type="s:string">
+        <s:annotation>
+          <s:documentation>The name of the road on which the Entity lies.</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iRoadName" type="s:string">
+        <s:annotation>
+          <s:documentation>The name of the road on which the item lies.</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eUsrnList" type="s:string">
+        <s:annotation>
+          <s:documentation>Comma delimited list of USRNs corresponding to Entity geometry USRN stands for Unique Street Reference Number. A USRN identifies a street segment in the UK Natonal Street Gazetteer
+          </s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iUsrnList" type="s:string">
+        <s:annotation>
+          <s:documentation>Comma delimited list of USRNs corresponding to Item geometry USRN stands for Unique Street Reference Number. A USRN identifies a street segment in the UK Natonal Street Gazetteer
+          </s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="ResponsibleOrganisation">
+        <s:annotation>
+          <s:documentation>The organisation responsible for the traffic disruption. Identifies the organisation source of the data. The name of the Local Authority/Utility/National Highways Agency from whom the data was sourced. Please refer to an authoritative list
+            <s:a href="http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026">here</s:a>.
+          </s:documentation>
+        </s:annotation>
+        <s:complexType mixed="true">
+          <s:attribute name="id" type="s:string" use="required">
+            <s:annotation>
+              <s:documentation>The Responsible Organisation's Section ID. This is an EToN field. This is an official DfT code associated with the Publisher's SWA_ORG_REF. Ref: http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026
+              </s:documentation>
+            </s:annotation>
+          </s:attribute>
+          <s:attribute name="district" type="s:string" use="optional">
+            <s:annotation>
+              <s:documentation>Identifies the organisation source of the data</s:documentation>
+            </s:annotation>
+          </s:attribute>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="CodeSType">
+        <s:restriction base="s:string">
+          <s:pattern value=".+"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="eCollection">
+        <s:annotation>
+          <s:documentation>A textual description for the eCollection/@ID</s:documentation>
+        </s:annotation>
+        <s:complexType mixed="true">
+          <s:attribute name="id" type="s:string" use="optional">
+            <s:annotation>
+              <s:documentation>ID identifying a collection of Entities. Grouping by this field will generate a list of all Entities belonging to a collection such as a major road scheme. For a majority of the roadworks data this reference code is the same format
+                as the SourceReference field. Where an EToN ProjectID is present it is encoded as the EntityCollectionID. For Incidents this data will be Null
+              </s:documentation>
+            </s:annotation>
+          </s:attribute>
+        </s:complexType>
+      </s:element>
+      <s:element name="eDescription" type="s:string">
+        <s:annotation>
+          <s:documentation>Description of "parent" Entity</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eShortDescription" type="s:string">
+        <s:annotation>
+          <s:documentation>Entity Short Description</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eEnd" type="e:UnDerivedDateTimeSType">
+        <s:annotation>
+          <s:documentation>End datetime of "parent" Entity</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eStart" type="e:UnDerivedDateTimeSType">
+        <s:annotation>
+          <s:documentation>Start datetime of "parent" Entity</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iEnd" type="e:DateTimeSType">
+        <s:annotation>
+          <s:documentation>End datetime of "child" Item. This value is mandatory as where it is missing from the source data it is derived from the Entity.</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iStart" type="e:DateTimeSType">
+        <s:annotation>
+          <s:documentation>Start datetime of "child" Item. This value is mandatory as where it is missing from the source data it is derived from the Entity.</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eSchedule">
+        <s:annotation>
+          <s:documentation>Array of start and end datetimes when Entity is active. AKA Enforcement Pattern.</s:documentation>
+        </s:annotation>
+        <s:complexType>
+          <s:sequence minOccurs="1" maxOccurs="unbounded">
+            <s:element ref="e:ScheduleStartEnd" maxOccurs="unbounded"/>
+            <s:element name="Text" type="s:string" maxOccurs="unbounded"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="iSchedule">
+        <s:annotation>
+          <s:documentation>Array of start and end datetimes when Item is active. AKA Enforcement Pattern</s:documentation>
+        </s:annotation>
+        <s:complexType>
+          <s:sequence minOccurs="1" maxOccurs="unbounded">
+            <s:element ref="e:ScheduleStartEnd" maxOccurs="unbounded"/>
+            <s:element name="Text" type="s:string" maxOccurs="unbounded"/>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ScheduleStartEnd">
+        <s:complexType>
+          <s:attribute name="Start" type="s:dateTime"/>
+          <s:attribute name="End" type="s:dateTime"/>
+        </s:complexType>
+      </s:element>
+      <s:element name="iLocationDescription" type="s:string">
+        <s:annotation>
+          <s:documentation>Road name and location of the Item</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iShortDescription" type="s:string">
+        <s:annotation>
+          <s:documentation>Item Short Description</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="LastUpdated" type="s:dateTime">
+        <s:annotation>
+          <s:documentation>Datetime when the data was last updated within roadworks.org</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eSourceID">
+        <s:annotation>
+          <s:documentation>The reference used by the originating system from which the data was sourced. For roadworks this is the Eton works reference.</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eDataSource">
+        <s:annotation>
+          <s:documentation>Identifies the organisation from which the data is sourced. The name of the Local Authority/Utility/National Highways Agency or third party from whom the data was sourced.
+          </s:documentation>
+        </s:annotation>
+        <s:complexType mixed="true">
+          <s:attribute name="id" type="s:string" use="required">
+            <s:annotation>
+              <s:documentation>Identifies the organisation from which the data is sourced. The name of the Local Authority/Utility/National Highways Agency or third party from whom the data was sourced.
+              </s:documentation>
+            </s:annotation>
+          </s:attribute>
+          <s:attribute name="district" type="s:string" use="optional">
+            <s:annotation>
+              <s:documentation>The Entity's Datasource Section ID. This is an official DfT code associated with the Publisher's SWA_ORG_REF. Ref: http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026
+              </s:documentation>
+            </s:annotation>
+          </s:attribute>
+        </s:complexType>
+      </s:element>
+      <s:element name="iDataSource">
+        <s:annotation>
+          <s:documentation>Identifies the organisation from which the data is sourced. The name of the Local Authority/Utility/National Highways Agency or third party from whom the data was sourced.
+          </s:documentation>
+        </s:annotation>
+        <s:complexType mixed="true">
+          <s:attribute name="id" type="s:string" use="required">
+            <s:annotation>
+              <s:documentation>Identifies the organisation from which the data is sourced. The name of the Local Authority/Utility/National Highways Agency or third party from whom the data was sourced.
+              </s:documentation>
+            </s:annotation>
+          </s:attribute>
+          <s:attribute name="district" type="s:string" use="optional">
+            <s:annotation>
+              <s:documentation>The Entity's Datasource Section ID. This is an official DfT code associated with the Publisher's SWA_ORG_REF. Ref: http://www.thensg.org.uk/iansg/link.htm?legacy=true&amp;nwid=20026
+              </s:documentation>
+            </s:annotation>
+          </s:attribute>
+        </s:complexType>
+      </s:element>
+      <s:element name="iContractor" type="s:string">
+        <s:annotation>
+          <s:documentation>The name of the Contractor. i.e who is carrying out the work.</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iFootwayClosure" type="s:boolean">
+        <s:annotation>
+          <s:documentation>Indicates whether the works will close the footway</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iNoticeSequence" type="s:integer">
+        <s:annotation>
+          <s:documentation>The EToN notice sequence number</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iNotificationType" type="s:integer">
+        <s:annotation>
+          <s:documentation>The last EToN Notification Type received See https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/181675/eton-6-technical-specification.pdf for details
+          </s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iWorksCategory" type="s:integer">
+        <s:annotation>
+          <s:documentation>The EToN works category</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iParkingSuspensions" type="s:boolean">
+        <s:annotation>
+          <s:documentation>The EToN parking suspensions flag</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iNoticeOutgoing" type="s:boolean">
+        <s:annotation>
+          <s:documentation>The EToN outgoing flag</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iPermitCondition" type="s:string">
+        <s:annotation>
+          <s:documentation>the EToN Permit Condition description</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iOutOfHours" type="s:boolean">
+        <s:annotation>
+          <s:documentation>Is there out of hours working? An EToN field</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iReinstateCategory" type="s:string">
+        <s:annotation>
+          <s:documentation>The Reinstatement Categories that apply to the road on which the works are being carried out. EToN only</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iTrafficSensitive" type="s:string">
+        <s:annotation>
+          <s:documentation>The Traffic Sensitive information that applies to the road on whicih the works are being carried out. EToN only</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iReverseRoute" type="s:boolean">
+        <s:annotation>
+          <s:documentation>If true then the reverse route of the TM diversion route plan applies</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iSpeedLimit" type="s:integer">
+        <s:annotation>
+          <s:documentation>The speed limit in mph (if any) on the TM Item</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iWeightRestriction" type="s:integer">
+        <s:annotation>
+          <s:documentation>The weight restriction in tonnes (if any) that applies to the TM Item</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:complexType name="UnDerivedDateTimeSType">
+        <s:simpleContent>
+          <s:extension base="s:dateTime">
+            <s:attribute name="estimated" type="s:boolean" use="required"/>
+          </s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:complexType name="DateTimeSType">
+        <s:simpleContent>
+          <s:extension base="s:dateTime">
+            <s:attribute name="estimated" type="s:boolean" use="required">
+              <s:annotation>
+                <s:documentation>Boolean flag to say the date is estimated or exact. This value is mandatory as where it is missing from the source data it is derived from the Entity (please see "derived" field)..</s:documentation>
+              </s:annotation>
+            </s:attribute>
+            <s:attribute name="derived" type="s:string" use="required">
+              <s:annotation>
+                <s:documentation>Boolean flag to say the date is derived from its parent Entity. False indicates the date is present in the source data.</s:documentation>
+              </s:annotation>
+            </s:attribute>
+          </s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:element name="ePoint" type="e:PointCType">
+        <s:annotation>
+          <s:documentation>Point coordinate of Entity location</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iPoint" type="e:PointCType"/>
+      <s:element name="eWayPoints" type="e:WayPointsCType">
+        <s:annotation>
+          <s:documentation>A delimited list of coords that represent the user defined way points in a route. Ie: the points along the route explicitly defined by the user when digitising their route on the map.</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iWayPoints" type="e:WayPointsCType">
+        <s:annotation>
+          <s:documentation>A delimited list of coords that represent the user defined way points in a route. Ie: the points along the route explicitly defined by the user when digitising their route on the map.</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eLineString" type="e:LineStringCType">
+        <s:annotation>
+          <s:documentation>Entity line geometry is described in WKT. Longitude and latitude and vertices are space delimited.
+          </s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iLineString" type="e:LineStringCType">
+        <s:annotation>
+          <s:documentation>Item line geometry is described in WKT. Longitude and latitude and vertices are space delimited.
+          </s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="ePolygon" type="e:PolygonCType">
+        <s:annotation>
+          <s:documentation>Entity polygon geometry is described in WKT. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iPolygon" type="e:PolygonCType">
+        <s:annotation>
+          <s:documentation>Item polygon geometry is described in WKT. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eFrom" type="e:PointCType">
+        <s:annotation>
+          <s:documentation>Entity From/To route geometry is described in WKT. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eTo" type="e:PointCType">
+        <s:annotation>
+          <s:documentation>Entity From/To route geometry is described in WKT. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iFrom" type="e:PointCType">
+        <s:annotation>
+          <s:documentation>Item From/To data is described in WKT. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="iTo" type="e:PointCType">
+        <s:annotation>
+          <s:documentation>Item From/To data is described in WKT. Longitude and latitude and vertices are space delimited. The last vertex in a polygon is always the start and first vertex in the string.</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="eTrafficManagement" type="e:TrafficManagementCType">
+        <s:annotation>
+          <s:documentation>Traffic Management Code - only applies to EToN roadworks.</s:documentation>
+        </s:annotation>
+      </s:element>
+      <s:element name="BoundingBox">
+        <s:complexType>
+          <s:attribute name="southWestY" type="s:float"/>
+          <s:attribute name="southWestX" type="s:float"/>
+          <s:attribute name="northEastX" type="s:float"/>
+          <s:attribute name="northEasrY" type="s:float"/>
+        </s:complexType>
+      </s:element>
+
+      <s:complexType name="BaseGeometryCType">
+        <s:simpleContent>
+          <s:extension base="s:string">
+            <s:attribute name="derived" type="s:boolean" use="required">
+              <s:annotation>
+                <s:documentation>Indicates whether the point location has been derived by Elgin. False indicates that the location was present in the source data.</s:documentation>
+              </s:annotation>
+            </s:attribute>
+            <s:attribute name="srsName" type="s:string" use="required">
+              <s:annotation>
+                <s:documentation></s:documentation>
+              </s:annotation>
+            </s:attribute>
+          </s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:complexType name="PointCType">
+        <s:simpleContent>
+          <s:extension base="e:BaseGeometryCType"></s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:complexType name="LineStringCType">
+        <s:simpleContent>
+          <s:extension base="e:BaseGeometryCType"></s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:complexType name="PolygonCType">
+        <s:simpleContent>
+          <s:extension base="e:BaseGeometryCType"></s:extension>
+        </s:simpleContent>
+      </s:complexType>
+      <s:complexType name="WayPointsCType">
+        <s:simpleContent>
+          <s:extension base="e:BaseGeometryCType"></s:extension>
+        </s:simpleContent>
+      </s:complexType>
+
+      <s:simpleType name="PermitStatusCType">
+        <s:restriction base="s:string">
+          <s:enumeration value="None"/>
+          <s:enumeration value="Application"/>
+          <s:enumeration value="Application Made"/>
+          <s:enumeration value="Refused"/>
+          <s:enumeration value="Granted"/>
+          <s:enumeration value="Revoked"/>
+          <s:enumeration value="Superseded"/>
+          <s:enumeration value="Cancelled"/>
+          <s:enumeration value="PAA Granted"/>
+          <s:enumeration value="Permit Granted"/>
+          <s:enumeration value="Variation Granted"/>
+          <s:enumeration value="PAA Pending"/>
+          <s:enumeration value="Permit Pending"/>
+          <s:enumeration value="Refused with PAA"/>
+          <s:enumeration value="Refused with Permit"/>
+          <s:enumeration value="PAA Variation Pending"/>
+          <s:enumeration value="Permit Variation Pending"/>
+          <s:enumeration value="Immediate Pending"/>
+          <s:enumeration value="Refused Immediate"/>
+          <s:enumeration value="Revoked Permit"/>
+          <s:enumeration value="Revoked PAA"/>
+          <s:enumeration value="PAA with Perm"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TrafficManagementCType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Contra-flow"/>
+          <s:enumeration value="Footway closure"/>
+          <s:enumeration value="Lane closure"/>
+          <s:enumeration value="No carriageway incursion"/>
+          <s:enumeration value="Road closure"/>
+          <s:enumeration value="Some carriageway incursion"/>
+          <s:enumeration value="Traffic control(convoy working)"/>
+          <s:enumeration value="Traffic control(give and take)"/>
+          <s:enumeration value="Traffic control(multi-way signals)"/>
+          <s:enumeration value="Traffic control(priority working)"/>
+          <s:enumeration value="Traffic control(stop/go boards)"/>
+          <s:enumeration value="Traffic control(two-way signals)"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="TrafficImpactCType">
+        <s:restriction base="s:string">
+          <s:enumeration value="High - delays likely"/>
+          <s:enumeration value="Medium - delays possible"/>
+          <s:enumeration value="Low - delays unlikely"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="eTrafficImpact">
+        <s:annotation>
+          <s:documentation>Estimated impact on road traffic of Entity</s:documentation>
+        </s:annotation>
+        <s:complexType>
+          <s:simpleContent>
+            <s:extension base="e:TrafficImpactCType"/>
+          </s:simpleContent>
+        </s:complexType>
+      </s:element>
+      <s:element name="eGroup">
+        <s:annotation>
+          <s:documentation>The top level category of "parent" Entity (can be thought of as the "Cause" or "Consequence")</s:documentation>
+        </s:annotation>
+        <s:complexType>
+          <s:simpleContent>
+            <s:extension base="e:EntityGroupSType"/>
+          </s:simpleContent>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="EntityGroupSType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Roadworks"/>
+          <s:enumeration value="Public Event"/>
+          <s:enumeration value="Incident"/>
+          <s:enumeration value="Unclassified"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="eCategory">
+        <s:annotation>
+          <s:documentation>The category of "parent" Entity (can be thought of as the "Cause")</s:documentation>
+        </s:annotation>
+        <s:complexType>
+          <s:simpleContent>
+            <s:extension base="e:EntityCategorySType">
+              <s:attribute name="SubCategory" type="e:EntitySubCategorySType" use="optional">
+                <s:annotation>
+                  <s:documentation/>
+                </s:annotation>
+              </s:attribute>
+            </s:extension>
+          </s:simpleContent>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="EntityCategorySType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Incident"/>
+          <s:enumeration value="Accident"/>
+          <s:enumeration value="Carnival / Parade / Street party"/>
+          <s:enumeration value="Entertainment event"/>
+          <s:enumeration value="License (Other)"/>
+          <s:enumeration value="Market"/>
+          <s:enumeration value="Materials"/>
+          <s:enumeration value="Obstruction"/>
+          <s:enumeration value="Public event"/>
+          <s:enumeration value="Roadworks"/>
+          <s:enumeration value="Roadworks / Licence"/>
+          <s:enumeration value="Scaffolding"/>
+          <s:enumeration value="Skip"/>
+          <s:enumeration value="Sport event"/>
+          <s:enumeration value="Unclassified"/>
+          <s:enumeration value="Weather incident"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="EntitySubCategorySType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Abnormal load"/>
+          <s:enumeration value="Accident"/>
+          <s:enumeration value="Agricultural show"/>
+          <s:enumeration value="Air show"/>
+          <s:enumeration value="Carnival / Parade / Street party"/>
+          <s:enumeration value="Christmas event"/>
+          <s:enumeration value="Crane"/>
+          <s:enumeration value="Cruise ship"/>
+          <s:enumeration value="Cycling"/>
+          <s:enumeration value="Development works"/>
+          <s:enumeration value="Emergency works"/>
+          <s:enumeration value="Entertainment event"/>
+          <s:enumeration value="Festival"/>
+          <s:enumeration value="Flood"/>
+          <s:enumeration value="Football"/>
+          <s:enumeration value="Funeral"/>
+          <s:enumeration value="Hoarding"/>
+          <s:enumeration value="Horse racing"/>
+          <s:enumeration value="Incident"/>
+          <s:enumeration value="Landslip"/>
+          <s:enumeration value="Market"/>
+          <s:enumeration value="Materials on highway"/>
+          <s:enumeration value="Minor routine maintenance"/>
+          <s:enumeration value="Motor sport event"/>
+          <s:enumeration value="Obstruction"/>
+          <s:enumeration value="Other"/>
+          <s:enumeration value="Polling station"/>
+          <s:enumeration value="Remembrance parade"/>
+          <s:enumeration value="Roadworks"/>
+          <s:enumeration value="Rugby"/>
+          <s:enumeration value="Running"/>
+          <s:enumeration value="Scaffolding"/>
+          <s:enumeration value="Skip"/>
+          <s:enumeration value="Sport event"/>
+          <s:enumeration value="Table &amp; chairs"/>
+          <s:enumeration value="Traffic survey equipment"/>
+          <s:enumeration value="Weather event"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:element name="iType">
+        <s:complexType>
+          <s:simpleContent>
+            <s:extension base="e:ItemTypeSType"/>
+          </s:simpleContent>
+        </s:complexType>
+      </s:element>
+      <s:simpleType name="ItemTypeSType">
+        <s:restriction base="s:string">
+          <s:enumeration value="Advisory and preferred access route"/>
+          <s:enumeration value="Bridge closure"/>
+          <s:enumeration value="Contraflow"/>
+          <s:enumeration value="Closed to HGVs"/>
+          <s:enumeration value="Convoy working"/>
+          <s:enumeration value="Diversion route"/>
+          <s:enumeration value="Footway closure"/>
+          <s:enumeration value="Gritting in progress"/>
+          <s:enumeration value="Give and take"/>
+          <s:enumeration value="HGV diversion route"/>
+          <s:enumeration value="HGV road closure"/>
+          <s:enumeration value="Lane closure"/>
+          <s:enumeration value="Multi-way traffic signals"/>
+          <s:enumeration value="No carriageway incursion"/>
+          <s:enumeration value="No left turn"/>
+          <s:enumeration value="No right turn"/>
+          <s:enumeration value="Clearway / no stopping"/>
+          <s:enumeration value="No vehicle access"/>
+          <s:enumeration value="Temporary one-way"/>
+          <s:enumeration value="Temporary parking restriction"/>
+          <s:enumeration value="Priority signs"/>
+          <s:enumeration value="Road ahead closed"/>
+          <s:enumeration value="Road closure"/>
+          <s:enumeration value="Road closure crossing point"/>
+          <s:enumeration value="Stop and go"/>
+          <s:enumeration value="Some carriageway incursion"/>
+          <s:enumeration value="Temporary speed limit"/>
+          <s:enumeration value="Suspension of parking restriction"/>
+          <s:enumeration value="Suspension of weight restriction"/>
+          <s:enumeration value="Undefined road closure"/>
+          <s:enumeration value="Two-way traffic signals"/>
+          <s:enumeration value="Tow away zone"/>
+          <s:enumeration value="Weight restriction"/>
+          <s:enumeration value="Works stop"/>
+          <s:enumeration value="Unclassified"/>
+        </s:restriction>
+      </s:simpleType>
+      <s:simpleType name="PublishDataMessages">
+        <s:restriction base="s:string">
+          <s:enumeration value="LA not authorized"/>
+          <s:enumeration value="Missing required params"/>
+          <s:enumeration value="Bad params"/>
+          <s:enumeration value="Internal Error"/>
+        </s:restriction>
+      </s:simpleType>
+
       <s:element name="Out">
         <s:complexType>
           <s:choice maxOccurs="1">
@@ -894,14 +824,6 @@
           <s:enumeration value="Items"/>
         </s:restriction>
       </s:simpleType>
-      <s:element name="BoundingBox">
-              <s:complexType>
-                  <s:attribute name="southWestY" type="s:float" />
-        <s:attribute name="southWestX" type="s:float" />
-        <s:attribute name="northEastX" type="s:float" />
-                  <s:attribute name="northEasrY" type="s:float" />
-              </s:complexType>
-      </s:element>
       <s:element name="Items">
         <s:complexType>
           <s:complexContent>
@@ -941,7 +863,8 @@
         </s:attribute>
         <s:attribute name="EntityID" type="s:string" use="required">
           <s:annotation>
-            <s:documentation>ID of "parent" Entity. Both EntityID and ItemID are persistently unique in their own right. Because the 2-level hierarchy is flattened Entity information will be passed through for each Item record – and consequently the EntityID is repeated in the XML</s:documentation>
+            <s:documentation>ID of "parent" Entity. Both EntityID and ItemID are persistently unique in their own right. Because the 2-level hierarchy is flattened Entity information will be passed through for each Item record – and consequently the EntityID is
+              repeated in the XML</s:documentation>
           </s:annotation>
         </s:attribute>
         <s:attribute name="ItemID" type="s:string" use="required">
@@ -1085,7 +1008,8 @@
         </s:attribute>
         <s:attribute name="EntityID" type="s:string" use="required">
           <s:annotation>
-            <s:documentation>ID of "parent" Entity. Both EntityID and ItemID are persistently unique in their own right. Because the 2-level hierarchy is flattened Entity information will be passed through for each Item record – and consequently the EntityID is repeated in the XML</s:documentation>
+            <s:documentation>ID of "parent" Entity. Both EntityID and ItemID are persistently unique in their own right. Because the 2-level hierarchy is flattened Entity information will be passed through for each Item record – and consequently the EntityID is
+              repeated in the XML</s:documentation>
           </s:annotation>
         </s:attribute>
       </s:complexType>
@@ -1098,346 +1022,8 @@
       </s:complexType>
     </s:schema>
 
-    <s:schema elementFormDefault="qualified" targetNamespace="http://www.opengis.net/gml">
-      <s:import namespace="http://www.w3.org/1999/xlink" />
-      <s:complexType name="AbstractFeatureType" abstract="true">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:AbstractGMLType">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="boundedBy" type="s2:BoundingShapeType" />
-              <s:element minOccurs="0" maxOccurs="1" name="location" type="s2:LocationPropertyType" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="AbstractGMLType" abstract="true">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="unbounded" name="metaDataProperty" type="s2:metaDataProperty" />
-          <s:element minOccurs="0" maxOccurs="1" name="description" type="s2:description" />
-          <s:element minOccurs="0" maxOccurs="unbounded" name="name" type="s2:name" />
-        </s:sequence>
-        <s:attribute name="id" type="s:ID" />
-      </s:complexType>
-      <s:complexType name="metaDataProperty">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:MetaDataPropertyType" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="MetaDataPropertyType">
-        <s:sequence>
-          <s:any minOccurs="0" maxOccurs="1" />
-        </s:sequence>
-        <s:attribute ref="s3:type" />
-        <s:attribute ref="s3:href" />
-        <s:attribute ref="s3:role" />
-        <s:attribute ref="s3:arcrole" />
-        <s:attribute ref="s3:title" />
-        <s:attribute ref="s3:show" />
-        <s:attribute ref="s3:actuate" />
-        <s:attribute form="qualified" name="remoteSchema" type="s:anyURI" />
-        <s:attribute form="qualified" name="about" type="s:anyURI" />
-      </s:complexType>
-      <s:simpleType name="show">
-        <s:restriction base="s:string">
-          <s:enumeration value="new" />
-          <s:enumeration value="replace" />
-          <s:enumeration value="embed" />
-          <s:enumeration value="other" />
-          <s:enumeration value="none" />
-        </s:restriction>
-      </s:simpleType>
-      <s:simpleType name="actuate">
-        <s:restriction base="s:string">
-          <s:enumeration value="onLoad" />
-          <s:enumeration value="onRequest" />
-          <s:enumeration value="other" />
-          <s:enumeration value="none" />
-        </s:restriction>
-      </s:simpleType>
-      <s:complexType name="description">
-        <s:simpleContent>
-          <s:extension base="s2:StringOrRefType" />
-        </s:simpleContent>
-      </s:complexType>
-      <s:complexType name="StringOrRefType">
-        <s:simpleContent>
-          <s:extension base="s:string">
-            <s:attribute ref="s3:type" />
-            <s:attribute ref="s3:href" />
-            <s:attribute ref="s3:role" />
-            <s:attribute ref="s3:arcrole" />
-            <s:attribute ref="s3:title" />
-            <s:attribute ref="s3:show" />
-            <s:attribute ref="s3:actuate" />
-            <s:attribute form="qualified" name="remoteSchema" type="s:anyURI" />
-          </s:extension>
-        </s:simpleContent>
-      </s:complexType>
-      <s:complexType name="name">
-        <s:simpleContent>
-          <s:extension base="s2:CodeType" />
-        </s:simpleContent>
-      </s:complexType>
-      <s:complexType name="CodeType">
-        <s:simpleContent>
-          <s:extension base="s:string">
-            <s:attribute name="codeSpace" type="s:anyURI" />
-          </s:extension>
-        </s:simpleContent>
-      </s:complexType>
-      <s:complexType name="AbstractGeometryType" abstract="true">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:AbstractGMLType">
-            <s:attribute name="gid" type="s:string" />
-            <s:attribute name="srsName" type="s:anyURI" />
-            <s:attribute name="srsDimension" type="s:positiveInteger" />
-            <s:attribute name="axisLabels" type="s:string" />
-            <s:attribute name="uomLabels" type="s:string" />
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="AbstractGeometricPrimitiveType" abstract="true">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:AbstractGeometryType" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="AbstractSurfaceType">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:AbstractGeometricPrimitiveType" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="PolygonType">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:AbstractSurfaceType">
-            <s:sequence>
-              <s:choice minOccurs="1" maxOccurs="1">
-                <s:element minOccurs="0" maxOccurs="1" name="exterior" type="s2:AbstractRingPropertyType" />
-                <s:element minOccurs="0" maxOccurs="1" name="outerBoundaryIs" type="s2:AbstractRingPropertyType" />
-              </s:choice>
-              <s:choice minOccurs="0" maxOccurs="unbounded">
-                <s:element minOccurs="0" maxOccurs="1" name="innerBoundaryIs" type="s2:AbstractRingPropertyType" />
-                <s:element minOccurs="0" maxOccurs="1" name="interior" type="s2:AbstractRingPropertyType" />
-              </s:choice>
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="AbstractRingPropertyType">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="_Ring" type="s2:AbstractRingType" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="AbstractRingType" abstract="true">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:AbstractGeometryType" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="LinearRingType">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:AbstractRingType">
-            <s:sequence>
-              <s:choice minOccurs="0" maxOccurs="unbounded">
-                <s:element minOccurs="0" maxOccurs="1" name="pos" type="s2:DirectPositionType" />
-                <s:element minOccurs="0" maxOccurs="1" name="coord" type="s2:CoordType" />
-                <s:element minOccurs="0" maxOccurs="1" name="coordinates" type="s2:CoordinatesType" />
-                <s:element minOccurs="0" maxOccurs="1" name="pointProperty" type="s2:PointPropertyType" />
-                <s:element minOccurs="0" maxOccurs="1" name="posList" type="s2:DirectPositionListType" />
-                <s:element minOccurs="0" maxOccurs="1" name="pointRep" type="s2:PointPropertyType" />
-              </s:choice>
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="DirectPositionType" mixed="true">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:doubleList">
-            <s:attribute name="srsName" type="s:anyURI" />
-            <s:attribute name="srsDimension" type="s:positiveInteger" />
-            <s:attribute name="axisLabels" type="s:string" />
-            <s:attribute name="uomLabels" type="s:string" />
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="doubleList" />
-      <s:complexType name="DirectPositionListType" mixed="true">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:doubleList">
-            <s:attribute name="srsName" type="s:anyURI" />
-            <s:attribute name="srsDimension" type="s:positiveInteger" />
-            <s:attribute name="count" type="s:positiveInteger" />
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="posList">
-        <s:complexContent mixed="true">
-          <s:extension base="s2:DirectPositionListType" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="pos">
-        <s:complexContent mixed="true">
-          <s:extension base="s2:DirectPositionType" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="CoordType">
-        <s:sequence>
-          <s:element minOccurs="1" maxOccurs="1" name="X" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Y" type="s:decimal" />
-          <s:element minOccurs="1" maxOccurs="1" name="Z" type="s:decimal" />
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="coord">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:CoordType" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="CoordinatesType">
-        <s:simpleContent>
-          <s:extension base="s:string">
-            <s:attribute name="decimal" type="s:string" />
-            <s:attribute name="cs" type="s:string" />
-            <s:attribute name="ts" type="s:string" />
-          </s:extension>
-        </s:simpleContent>
-      </s:complexType>
-      <s:complexType name="coordinates">
-        <s:simpleContent>
-          <s:extension base="s2:CoordinatesType" />
-        </s:simpleContent>
-      </s:complexType>
-      <s:complexType name="PointPropertyType">
-        <s:sequence>
-          <s:element minOccurs="0" maxOccurs="1" name="Point" type="s2:PointType" />
-        </s:sequence>
-        <s:attribute ref="s3:type" />
-        <s:attribute ref="s3:href" />
-        <s:attribute ref="s3:role" />
-        <s:attribute ref="s3:arcrole" />
-        <s:attribute ref="s3:title" />
-        <s:attribute ref="s3:show" />
-        <s:attribute ref="s3:actuate" />
-        <s:attribute form="qualified" name="remoteSchema" type="s:anyURI" />
-      </s:complexType>
-      <s:complexType name="PointType">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:AbstractGeometricPrimitiveType">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="pos" type="s2:pos" />
-              <s:element minOccurs="0" maxOccurs="1" name="coordinates" type="s2:coordinates" />
-              <s:element minOccurs="0" maxOccurs="1" name="coord" type="s2:coord" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="Point">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:PointType" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="pointRep">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:PointPropertyType" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="pointProperty">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:PointPropertyType" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="LinearRing">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:LinearRingType" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="exteriorType">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:AbstractRingPropertyType">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="1" name="LinearRing" type="s2:LinearRing" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="exterior">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:exteriorType" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="Polygon">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:PolygonType" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="AbstractCurveType" abstract="true">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:AbstractGeometricPrimitiveType" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="LineStringType">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:AbstractCurveType">
-            <s:sequence>
-              <s:element minOccurs="0" maxOccurs="unbounded" name="pos" type="s2:pos" />
-              <s:element minOccurs="0" maxOccurs="unbounded" name="pointProperty" type="s2:pointProperty" />
-              <s:element minOccurs="0" maxOccurs="unbounded" name="pointRep" type="s2:pointRep" />
-              <s:element minOccurs="0" maxOccurs="unbounded" name="coord" type="s2:coord" />
-              <s:element minOccurs="0" maxOccurs="1" name="posList" type="s2:posList" />
-              <s:element minOccurs="0" maxOccurs="1" name="coordinates" type="s2:coordinates" />
-            </s:sequence>
-          </s:extension>
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="LineString">
-        <s:complexContent mixed="false">
-          <s:extension base="s2:LineStringType" />
-        </s:complexContent>
-      </s:complexType>
-      <s:complexType name="BoundingShapeType">
-        <s:sequence>
-          <s:choice minOccurs="1" maxOccurs="1">
-            <s:element minOccurs="0" maxOccurs="1" name="Envelope" type="s2:EnvelopeType" />
-            <s:element minOccurs="0" maxOccurs="1" name="Null" type="s:string" />
-          </s:choice>
-        </s:sequence>
-      </s:complexType>
-      <s:complexType name="EnvelopeType">
-        <s:sequence>
-          <s:choice minOccurs="0" maxOccurs="unbounded">
-            <s:element minOccurs="0" maxOccurs="1" name="coord" type="s2:CoordType" />
-            <s:element minOccurs="0" maxOccurs="1" name="coordinates" type="s2:CoordinatesType" />
-            <s:element minOccurs="0" maxOccurs="1" name="lowerCorner" type="s2:DirectPositionType" />
-            <s:element minOccurs="0" maxOccurs="1" name="pos" type="s2:DirectPositionType" />
-            <s:element minOccurs="0" maxOccurs="1" name="upperCorner" type="s2:DirectPositionType" />
-          </s:choice>
-        </s:sequence>
-        <s:attribute name="srsName" type="s:anyURI" />
-        <s:attribute name="srsDimension" type="s:positiveInteger" />
-      </s:complexType>
-      <s:complexType name="LocationPropertyType">
-        <s:sequence>
-          <s:choice minOccurs="1" maxOccurs="1">
-            <s:element minOccurs="0" maxOccurs="1" name="LocationString" type="s2:StringOrRefType" />
-            <s:element minOccurs="0" maxOccurs="1" name="Null" type="s:string" />
-            <s:element minOccurs="0" maxOccurs="1" name="_Geometry" type="s2:AbstractGeometryType" />
-            <s:element minOccurs="0" maxOccurs="1" name="LocationKeyWord" type="s2:CodeType" />
-          </s:choice>
-        </s:sequence>
-        <s:attribute form="qualified" name="remoteSchema" type="s:anyURI" />
-      </s:complexType>
-      <s:element name="Polygon" type="s2:Polygon" />
-      <s:element name="Point" type="s2:Point" />
-      <s:element name="LineString" type="s2:LineString" />
-    </s:schema>
-    <s:schema elementFormDefault="qualified" targetNamespace="http://www.w3.org/1999/xlink">
-      <s:import namespace="http://www.opengis.net/gml" />
-      <s:attribute name="type" type="s:string" />
-      <s:attribute name="href" type="s:anyURI" />
-      <s:attribute name="role" type="s:anyURI" />
-      <s:attribute name="arcrole" type="s:anyURI" />
-      <s:attribute name="title" type="s:string" />
-      <s:attribute name="show" type="s2:show" />
-      <s:attribute name="actuate" type="s2:actuate" />
-    </s:schema>
   </types>
+  
   <message name="GetDataRequest">
     <part type="api:GetDataRequest" name="GetDataRequest"></part>
   </message>
@@ -1445,11 +1031,12 @@
     <part element="api:GetDataResponse" name="GetDataResponse"></part>
   </message>
   <message name="PublishDataRequest">
-    <part type="api:PublishDataRequest" name="PublishDataRequest" ></part>
+    <part type="api:PublishDataRequest" name="PublishDataRequest"></part>
   </message>
   <message name="PublishDataResponse">
-    <part element="api:PublishDataResponse" name="PublishDataResponse" ></part>
+    <part element="api:PublishDataResponse" name="PublishDataResponse"></part>
   </message>
+
   <message name="LANotAuthorizedFault">
     <part name="exception" element="api:LANotAuthorized"></part>
   </message>
@@ -1462,6 +1049,7 @@
   <message name="InternalErrorFault">
     <part name="exception" element="api:InternalError"></part>
   </message>
+
   <portType name="Elgin">
     <operation name="GetData">
       <input message="api:GetDataRequest"></input>
@@ -1481,32 +1069,29 @@
     </operation>
   </portType>
   <binding name="ElginSOAP" type="api:Elgin">
-    <soap:binding style="document"
-        transport="http://schemas.xmlsoap.org/soap/http" />
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
     <operation name="GetData">
-      <soap:operation
-          soapAction="http://www.elgin.org.uk/elgin/api/GetData" />
+      <soap:operation soapAction="http://www.elgin.org.uk/elgin/api/GetData"/>
       <input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </input>
       <output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </output>
     </operation>
     <operation name="PublishData">
-      <soap:operation
-          soapAction="http://www.elgin.org.uk/elgin/api/PublishData" />
+      <soap:operation soapAction="http://www.elgin.org.uk/elgin/api/PublishData"/>
       <input>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </input>
       <output>
-        <soap:body use="literal" />
+        <soap:body use="literal"/>
       </output>
     </operation>
   </binding>
   <service name="Elgin">
     <port binding="api:ElginSOAP" name="ElginSOAP">
-      <soap:address location="http://api.roadworks.org/" />
+      <soap:address location="http://api.roadworks.org/"/>
     </port>
   </service>
 </definitions>
