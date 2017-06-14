@@ -548,11 +548,15 @@
         </s:annotation>
       </s:element>
       <s:element name="BoundingBox">
+        <s:annotation>
+          <s:documentation>Currently only accepts coordinates in BNG.
+          The maximum area for the box is 25.000 square kilometers</s:documentation>
+        </s:annotation>
         <s:complexType>
           <s:attribute name="southWestY" type="s:float"/>
           <s:attribute name="southWestX" type="s:float"/>
           <s:attribute name="northEastX" type="s:float"/>
-          <s:attribute name="northEasrY" type="s:float"/>
+          <s:attribute name="northEastY" type="s:float"/>
         </s:complexType>
       </s:element>
 
