@@ -74,6 +74,13 @@
         </s:complexType>
       </s:element>
 
+      <s:element name="Authorization">
+          <s:complexType>
+              <s:all>
+                  <s:element name="details" type="s:string"/>
+              </s:all>
+          </s:complexType>
+      </s:element>
       <s:element name="LANotAuthorized"></s:element>
       <s:element name="MissingRequiredParams">
         <s:complexType>
@@ -1041,6 +1048,9 @@
     <part element="api:PublishDataResponse" name="PublishDataResponse"></part>
   </message>
 
+  <message name="AuthorizationFault">
+        <part name="exception" element="api:Authorization" />
+    </message>
   <message name="LANotAuthorizedFault">
     <part name="exception" element="api:LANotAuthorized"></part>
   </message>
@@ -1062,6 +1072,7 @@
       <fault name="missingParamsFault" message="api:MissingRequiredParamsFault"></fault>
       <fault name="badParamsFault" message="api:BadParamsFault"></fault>
       <fault name="internalErrorFault" message="api:InternalErrorFault"></fault>
+      <fault name="authorizationFault" message="api:AuthorizationFault" />
     </operation>
     <operation name="PublishData">
       <input message="api:PublishDataRequest"></input>
@@ -1070,6 +1081,7 @@
       <fault name="missingParams" message="api:MissingRequiredParamsFault"></fault>
       <fault name="badParams" message="api:BadParamsFault"></fault>
       <fault name="internalError" message="api:InternalErrorFault"></fault>
+      <fault name="authorizationFault" message="api:AuthorizationFault" />
     </operation>
   </portType>
   <binding name="ElginSOAP" type="api:Elgin">

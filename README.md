@@ -1,5 +1,5 @@
 
-#Elgin Traffic Disruptions Data API
+# Elgin Traffic Disruptions Data API
 
 Welcome to the public repo for Elgin Traffic Disruptions Data API.
 Here you can find the specification of the data in form of XSD and WSDL schemas.
@@ -22,16 +22,16 @@ The following files and directories are included:
 - Illustrates WGS84 and British National Grid coordinate systems
 
 
-##WSDL
+## WSDL
 SOAP implementations
 
-###Java
+### Java
 To create Java POJOs from the WSDL and included XSD files run the following (choose any package name):
 ~~~~
 wsimport -keep -verbose .\elgin-api.wsdl -p com.elgin.elginws.ties
 ~~~~
 
-###.NET
+### .NET
 To create C# POCOs from the WSDL and included XSD files run the following statement.  You will first need to download the `elgin-api.wsdl` and XSD files (see `xsd` folder).
 ~~~~
 svcutil.exe .\elgin-api.wsdl .\xsd\elginItems.xsd .\xsd\elginTypes.xsd /language:C# /dataContractOnly /importxmltypes /out:ElginApi.ContractOnly.cs
@@ -78,17 +78,15 @@ namespace ConsoleApplication1
                 var param = new DataParameterType
                 {
                     DataGrouping = DataCType.Items,
-                    Account = "username",
-                    Key = "xxxxxxxxxxxxx",
                     EntitySourceID = "3450"
                 };
-                var output = client.GetData(param);
+                var output = client.GetData("username", "xxxxxxxxxxxxx", param);
             }
         }
     }
 }
 ~~~~
-###HTTP POST
+### HTTP POST
 The following demonstrates an example POST to the web service. Note that the XXXX denote a specific customer endpoint.
 ~~~~
 POST http://api.roadworks.org/XXXXXXXX/ HTTP/1.1
@@ -101,9 +99,8 @@ Connection: Keep-Alive
 <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
     <s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-        <GetDataRequest xmlns="http://www.elgin.org.uk/schemas/api">
-            <DataParamter DataGrouping="Items" Account="username"
-                Key="xxxxxxxxxxxxx">
+        <GetDataRequest Account="username" Key="xxxxxxxxxxxxx" xmlns="http://www.elgin.org.uk/schemas/api">
+            <DataParameter DataGrouping="Items">
                 <ItemType>Road closure</ItemType>
             </DataParamter>
         </GetDataRequest>
@@ -111,4 +108,4 @@ Connection: Keep-Alive
 </s:Envelope>
 ~~~~
 
-##Good Luck!
+## Good Luck!
